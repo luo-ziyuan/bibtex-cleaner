@@ -1,0 +1,138 @@
+# How to extend this file
+# - Keep entries as a YAML list (each starts with "- id: ...").
+# - Fields: id (unique across all files, lowercase, no spaces), type (conference|journal|organization), full, abbreviation, acronym, variants[], patterns[].
+# - Quote all strings; patterns are Python regex; avoid adding workshop patterns unless that is the intent.
+# - Add new items under the closest "# -- ..." subgroup; create a new subgroup comment if needed.
+# - Prefer ASCII text; keep consistent abbreviations/variants to improve matching.
+# arXiv top-level: econ - Economics, Law & Society
+# Sub-groups are lightweight clusters for readability.
+
+# -- Economics & Finance
+- id: aea
+  type: "conference"
+  full: "Proceedings of the Annual Meeting of the American Economic Association"
+  abbreviation: "Proc. AEA Annu. Meeting"
+  acronym: "AEA"
+  variants:
+    - "American Economic Association Annual Meeting"
+  patterns:
+    - '(?i)american economic association(?!.*workshop)'
+- id: nber
+  type: "conference"
+  full: "Proceedings of the National Bureau of Economic Research Conference"
+  abbreviation: "Proc. NBER Conf."
+  acronym: "NBER"
+  variants:
+    - "National Bureau of Economic Research Conference"
+  patterns:
+    - '(?i)nber conference(?!.*workshop)'
+- id: jef
+  type: "journal"
+  full: "Journal of Economic Forecasting"
+  abbreviation: "J. Econ. Forecast."
+  acronym: "JEF"
+  variants:
+    - "Journal of Economic Forecasting (JEF)"
+  patterns:
+    - '(?i)^journal of economic forecasting'
+- id: qje
+  type: "journal"
+  full: "The Quarterly Journal of Economics"
+  abbreviation: "Q. J. Econ."
+  acronym: "QJE"
+  variants:
+    - "Quarterly Journal of Economics"
+  patterns:
+    - '(?i)^quarterly journal of economics'
+
+# -- Law, Policy & Governance
+- id: weis
+  type: "conference"
+  full: "Proceedings of the Workshop on the Economics of Information Security"
+  abbreviation: "Proc. Workshop Econ. Inf. Secur."
+  acronym: "WEIS"
+  variants:
+    - "Workshop on the Economics of Information Security"
+  patterns:
+    - '(?i)economics of information security(?!.*workshop)'
+- id: icail
+  type: "conference"
+  full: "Proceedings of the International Conference on Artificial Intelligence and Law"
+  abbreviation: "Proc. Int. Conf. Artif. Intell. Law"
+  acronym: "ICAIL"
+  variants:
+    - "International Conference on Artificial Intelligence and Law"
+  patterns:
+    - '(?i)artificial intelligence and law(?!.*workshop)'
+- id: jilt
+  type: "journal"
+  full: "Journal of Information, Law and Technology"
+  abbreviation: "J. Inf. Law Technol."
+  acronym: "JILT"
+  variants:
+    - "Journal of Information Law and Technology"
+  patterns:
+    - '(?i)^journal of information law and technology'
+- id: glj
+  type: "journal"
+  full: "German Law Journal"
+  abbreviation: "Ger. Law J."
+  acronym: "GLJ"
+  variants:
+    - "German Law Journal"
+  patterns:
+    - '(?i)^german law journal'
+- id: jlp
+  type: "journal"
+  full: "Journal of Law and Policy"
+  abbreviation: "J. Law Policy"
+  acronym: "JLP"
+  variants:
+    - "Journal of Law and Policy"
+  patterns:
+    - '(?i)^journal of law and policy'
+- id: techsociety
+  type: "journal"
+  full: "Technology in Society"
+  abbreviation: "Technol. Soc."
+  acronym: "TechSoc"
+  variants:
+    - "Technology in Society Journal"
+  patterns:
+    - '(?i)^technology in society'
+- id: ethics_info_tech
+  type: "journal"
+  full: "Ethics and Information Technology"
+  abbreviation: "Ethics Inf. Technol."
+  acronym: "EthicsIT"
+  variants:
+    - "Ethics & Information Technology Journal"
+  patterns:
+    - '(?i)^ethics and information technology'
+- id: philosophy_tech
+  type: "journal"
+  full: "Philosophy & Technology"
+  abbreviation: "Philos. Technol."
+  acronym: "PhilTech"
+  variants:
+    - "Philosophy and Technology Journal"
+  patterns:
+    - '(?i)^philosophy.*technology'
+- id: is4si
+  type: "conference"
+  full: "Proceedings of the International Society for the Study of Information Summit"
+  abbreviation: "Proc. IS4SI Summit"
+  acronym: "IS4SI"
+  variants:
+    - "International Society for the Study of Information Summit"
+  patterns:
+    - '(?i)study of information summit(?!.*workshop)'
+- id: nature_humanities
+  type: "journal"
+  full: "Nature Humanities and Social Sciences Communications"
+  abbreviation: "Nat. Hum. Soc. Sci. Commun."
+  acronym: "NHSSC"
+  variants:
+    - "Nature Humanities and Social Sciences Communications"
+  patterns:
+    - '(?i)^nature humanities'

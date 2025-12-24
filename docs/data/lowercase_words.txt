@@ -1,0 +1,24 @@
+# Words that stay lowercase in title case unless at the start or after a colon.
+a
+an
+and
+as
+at
+but
+by
+for
+from
+in
+into
+nor
+of
+on
+onto
+or
+the
+to
+upon
+versus
+via
+vs
+with

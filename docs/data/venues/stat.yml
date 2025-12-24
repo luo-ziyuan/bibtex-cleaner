@@ -1,0 +1,278 @@
+# How to extend this file
+# - Keep entries as a YAML list (each starts with "- id: ...").
+# - Fields: id (unique across all files, lowercase, no spaces), type (conference|journal|organization), full, abbreviation, acronym, variants[], patterns[].
+# - Quote all strings; patterns are Python regex; avoid adding workshop patterns unless that is the intent.
+# - Add new items under the closest "# -- ..." subgroup; create a new subgroup comment if needed.
+# - Prefer ASCII text; keep consistent abbreviations/variants to improve matching.
+# arXiv top-level: stat - Statistics
+# Sub-groups are lightweight clusters for readability.
+
+# -- ML & Statistics
+- id: aistats
+  type: "conference"
+  full: "Proceedings of the International Conference on Artificial Intelligence and Statistics"
+  abbreviation: "Proc. Int. Conf. Artif. Intell. Stat."
+  acronym: "AISTATS"
+  variants:
+    - "International Conference on Artificial Intelligence and Statistics"
+    - "AISTATS"
+  patterns:
+    - '(?i)international conference on artificial intelligence and statistics(?!.*workshop)'
+    - '(?i)^proceedings of the \d+(st|nd|rd|th) international conference on artificial intelligence and statistics(?!.*workshop)'
+- id: colt
+  type: "conference"
+  full: "Proceedings of the Annual Conference on Learning Theory"
+  abbreviation: "Proc. Annu. Conf. Learn. Theory"
+  acronym: "COLT"
+  variants:
+    - "Conference on Learning Theory"
+    - "Annual Conference on Learning Theory"
+  patterns:
+    - '(?i)conference on learning theory(?!.*workshop)'
+    - '(?i)annual conference on learning theory(?!.*workshop)'
+- id: uai
+  type: "conference"
+  full: "Proceedings of the Conference on Uncertainty in Artificial Intelligence"
+  abbreviation: "Proc. Conf. Uncertain. Artif. Intell."
+  acronym: "UAI"
+  variants:
+    - "Conference on Uncertainty in Artificial Intelligence"
+    - "Uncertainty in Artificial Intelligence"
+  patterns:
+    - '(?i)conference on uncertainty in artificial intelligence(?!.*workshop)'
+- id: jmlr
+  type: "journal"
+  full: "Journal of Machine Learning Research"
+  abbreviation: "J. Mach. Learn. Res."
+  acronym: "JMLR"
+  variants:
+    - "Journal of Machine Learning Research (JMLR)"
+    - "JMLR"
+  patterns:
+    - '(?i)^journal of machine learning research'
+    - '(?i)^jmlr$'
+- id: tmlr
+  type: "journal"
+  full: "Transactions on Machine Learning Research"
+  abbreviation: "Trans. Mach. Learn. Res."
+  acronym: "TMLR"
+  variants:
+    - "Transactions on Machine Learning Research (TMLR)"
+    - "TMLR"
+  patterns:
+    - '(?i)^transactions on machine learning research'
+    - '(?i)^tmlr$'
+- id: mlj
+  type: "journal"
+  full: "Machine Learning"
+  abbreviation: "Mach. Learn."
+  acronym: "MLJ"
+  variants:
+    - "Machine Learning Journal"
+  patterns:
+    - '(?i)^machine learning$'
+
+# -- Data Mining & IR
+- id: kdd
+  type: "conference"
+  full: "Proceedings of the ACM SIGKDD International Conference on Knowledge Discovery and Data Mining"
+  abbreviation: "Proc. ACM SIGKDD Int. Conf. Knowl. Discov. Data Min."
+  acronym: "KDD"
+  variants:
+    - "ACM SIGKDD Conference on Knowledge Discovery and Data Mining"
+    - "ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining"
+    - "Knowledge Discovery and Data Mining Conference"
+  patterns:
+    - '(?i)acm sigkdd (international )?conference on knowledge discovery and data mining(?!.*workshop)'
+    - '(?i)^proceedings of the \d+(st|nd|rd|th) acm sigkdd international conference on knowledge discovery and data mining(?!.*workshop)'
+- id: icdm
+  type: "conference"
+  full: "Proceedings of the IEEE International Conference on Data Mining"
+  abbreviation: "Proc. IEEE Int. Conf. Data Min."
+  acronym: "ICDM"
+  variants:
+    - "IEEE International Conference on Data Mining"
+  patterns:
+    - '(?i)ieee international conference on data mining(?!.*workshop)'
+- id: sdm
+  type: "conference"
+  full: "Proceedings of the SIAM International Conference on Data Mining"
+  abbreviation: "Proc. SIAM Int. Conf. Data Min."
+  acronym: "SDM"
+  variants:
+    - "SIAM International Conference on Data Mining"
+  patterns:
+    - '(?i)siam international conference on data mining(?!.*workshop)'
+- id: sigir
+  type: "conference"
+  full: "Proceedings of the ACM SIGIR Conference on Research and Development in Information Retrieval"
+  abbreviation: "Proc. ACM SIGIR Conf. Res. Dev. Inf. Retr."
+  acronym: "SIGIR"
+  variants:
+    - "ACM SIGIR Conference on Research and Development in Information Retrieval"
+    - "SIGIR Conference on Research and Development in Information Retrieval"
+    - "ACM SIGIR Conf. on Research and Development in Information Retrieval"
+  patterns:
+    - '(?i)acm sigir (conference|conf\.) on research and development in information retrieval(?!.*workshop)'
+    - '(?i)^proceedings of the \d+(st|nd|rd|th) acm sigir (conference|international conference) on research and development in information retrieval(?!.*workshop)'
+- id: www
+  type: "conference"
+  full: "Proceedings of the ACM Web Conference"
+  abbreviation: "Proc. ACM Web Conf."
+  acronym: "WWW"
+  variants:
+    - "The Web Conference"
+    - "International World Wide Web Conference"
+    - "Proceedings of the ACM Web Conference (WWW)"
+  patterns:
+    - '(?i)(the )?web conference(?!.*workshop)'
+    - '(?i)international world wide web conference(?!.*workshop)'
+    - '(?i)^proceedings of the \d+(st|nd|rd|th) (acm )?web conference(?!.*workshop)'
+- id: wsdm
+  type: "conference"
+  full: "Proceedings of the ACM International Conference on Web Search and Data Mining"
+  abbreviation: "Proc. ACM Int. Conf. Web Search Data Min."
+  acronym: "WSDM"
+  variants:
+    - "ACM International Conference on Web Search and Data Mining"
+    - "ACM Int. Conf. on Web Search and Data Mining"
+  patterns:
+    - '(?i)acm (international )?conference on web search and data mining(?!.*workshop)'
+- id: cikm
+  type: "conference"
+  full: "Proceedings of the ACM International Conference on Information and Knowledge Management"
+  abbreviation: "Proc. ACM Int. Conf. Inf. Knowl. Manag."
+  acronym: "CIKM"
+  variants:
+    - "ACM International Conference on Information and Knowledge Management"
+  patterns:
+    - '(?i)acm (international )?conference on information and knowledge management(?!.*workshop)'
+- id: recsys
+  type: "conference"
+  full: "Proceedings of the ACM Conference on Recommender Systems"
+  abbreviation: "Proc. ACM Conf. Recomm. Syst."
+  acronym: "RecSys"
+  variants:
+    - "ACM Conference on Recommender Systems"
+    - "RecSys Conference"
+  patterns:
+    - '(?i)acm (conference|conf\.) on recommender systems(?!.*workshop)'
+- id: tkde
+  type: "journal"
+  full: "IEEE Transactions on Knowledge and Data Engineering"
+  abbreviation: "IEEE Trans. Knowl. Data Eng."
+  acronym: "TKDE"
+  variants:
+    - "IEEE Transactions on Knowledge and Data Engineering (TKDE)"
+  patterns:
+    - '(?i)^ieee transactions on knowledge and data engineering'
+- id: dmkd
+  type: "journal"
+  full: "Data Mining and Knowledge Discovery"
+  abbreviation: "Data Min. Knowl. Discov."
+  acronym: "DMKD"
+  variants:
+    - "Data Mining and Knowledge Discovery Journal"
+  patterns:
+    - '(?i)^data mining and knowledge discovery$'
+- id: tkdd
+  type: "journal"
+  full: "ACM Transactions on Knowledge Discovery from Data"
+  abbreviation: "ACM Trans. Knowl. Discov. Data"
+  acronym: "TKDD"
+  variants:
+    - "ACM Transactions on Knowledge Discovery from Data (TKDD)"
+  patterns:
+    - '(?i)^acm transactions on knowledge discovery from data'
+- id: tois
+  type: "journal"
+  full: "ACM Transactions on Information Systems"
+  abbreviation: "ACM Trans. Inf. Syst."
+  acronym: "TOIS"
+  variants:
+    - "ACM Transactions on Information Systems (TOIS)"
+  patterns:
+    - '(?i)^acm transactions on information systems'
+- id: ijds
+  type: "journal"
+  full: "International Journal of Data Science and Analytics"
+  abbreviation: "Int. J. Data Sci. Anal."
+  acronym: "IJDSA"
+  variants:
+    - "International Journal of Data Science and Analytics"
+  patterns:
+    - '(?i)^international journal of data science and analytics'
+- id: data_mining_letters
+  type: "journal"
+  full: "Data Mining Letters"
+  abbreviation: "Data Min. Lett."
+  acronym: "DML"
+  variants:
+    - "Data Mining Letters Journal"
+  patterns:
+    - '(?i)^data mining letters'
+- id: nature_data
+  type: "journal"
+  full: "Scientific Data"
+  abbreviation: "Sci. Data"
+  acronym: "Scientific Data"
+  variants:
+    - "Nature Scientific Data"
+  patterns:
+    - '(?i)^scientific data'
+- id: patterns
+  type: "journal"
+  full: "Patterns"
+  abbreviation: "Patterns"
+  acronym: "Patterns"
+  variants:
+    - "Patterns Journal"
+  patterns:
+    - '(?i)^patterns$'
+- id: sigir_w
+  type: "conference"
+  full: "ACM SIGIR Conference on Research and Development in Information Retrieval Workshops"
+  abbreviation: "SIGIR Workshops"
+  acronym: "SIGIRW"
+  variants:
+    - "SIGIR Workshop"
+    - "SIGIR Workshops"
+  patterns:
+    - '(?i)sigir.*workshop'
+    - '(?i)sigirw'
+- id: kdd_w
+  type: "conference"
+  full: "ACM SIGKDD Conference on Knowledge Discovery and Data Mining Workshops"
+  abbreviation: "KDD Workshops"
+  acronym: "KDDW"
+  variants:
+    - "KDD Workshop"
+    - "KDD Workshops"
+  patterns:
+    - '(?i)kdd.*workshop'
+    - '(?i)kddw'
+- id: www_w
+  type: "conference"
+  full: "The Web Conference Workshops"
+  abbreviation: "WWW Workshops"
+  acronym: "WWWW"
+  variants:
+    - "WWW Workshop"
+    - "WWW Workshops"
+    - "TheWebConf Workshop"
+    - "TheWebConf Workshops"
+  patterns:
+    - '(?i)www.*workshop'
+    - '(?i)wwww'
+    - '(?i)thewebconf.*workshop'
+- id: wsdm_w
+  type: "conference"
+  full: "ACM International Conference on Web Search and Data Mining Workshops"
+  abbreviation: "WSDM Workshops"
+  acronym: "WSDMW"
+  variants:
+    - "WSDM Workshop"
+    - "WSDM Workshops"
+  patterns:
+    - '(?i)wsdm.*workshop'
+    - '(?i)wsdmw'

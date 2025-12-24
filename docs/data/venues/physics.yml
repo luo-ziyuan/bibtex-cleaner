@@ -1,0 +1,300 @@
+# How to extend this file
+# - Keep entries as a YAML list (each starts with "- id: ...").
+# - Fields: id (unique across all files, lowercase, no spaces), type (conference|journal|organization), full, abbreviation, acronym, variants[], patterns[].
+# - Quote all strings; patterns are Python regex; avoid adding workshop patterns unless that is the intent.
+# - Add new items under the closest "# -- ..." subgroup; create a new subgroup comment if needed.
+# - Prefer ASCII text; keep consistent abbreviations/variants to improve matching.
+# arXiv top-level: physics - Physics and Earth Sciences
+# Sub-groups are lightweight clusters for readability.
+
+# -- General Science & Physics
+- id: pnas
+  type: "journal"
+  full: "Proceedings of the National Academy of Sciences"
+  abbreviation: "Proc. Natl. Acad. Sci. USA"
+  acronym: "PNAS"
+  variants:
+    - "Proceedings of the National Academy of Sciences of the United States of America"
+    - "PNAS USA"
+    - "Proc. Natl. Acad. Sci."
+  patterns:
+    - '(?i)^proceedings of the national academy of sciences'
+    - '(?i)^pnas$'
+- id: nature
+  type: "journal"
+  full: "Nature"
+  abbreviation: "Nature"
+  acronym: "Nature"
+  variants:
+    - "Nature Journal"
+  patterns:
+    - '(?i)^nature$'
+- id: science
+  type: "journal"
+  full: "Science"
+  abbreviation: "Science"
+  acronym: "Science"
+  variants:
+    - "Science Journal"
+  patterns:
+    - '(?i)^science$'
+- id: science_advances
+  type: "journal"
+  full: "Science Advances"
+  abbreviation: "Sci. Adv."
+  acronym: "Science Advances"
+  variants:
+    - "Science Advances Journal"
+  patterns:
+    - '(?i)^science advances'
+- id: nature_computational_science
+  type: "journal"
+  full: "Nature Computational Science"
+  abbreviation: "Nat. Comput. Sci."
+  acronym: "Nat Comput Sci"
+  variants:
+    - "Nature Computational Science Journal"
+  patterns:
+    - '(?i)^nature computational science'
+- id: jcp
+  type: "journal"
+  full: "Journal of Computational Physics"
+  abbreviation: "J. Comput. Phys."
+  acronym: "JCP"
+  variants:
+    - "Journal of Computational Physics (JCP)"
+  patterns:
+    - '(?i)^journal of computational physics'
+- id: nature_physics
+  type: "journal"
+  full: "Nature Physics"
+  abbreviation: "Nat. Phys."
+  acronym: "Nature Physics"
+  variants:
+    - "Nature Physics Journal"
+  patterns:
+    - '(?i)^nature physics'
+- id: nature_reviews_physics
+  type: "journal"
+  full: "Nature Reviews Physics"
+  abbreviation: "Nat. Rev. Phys."
+  acronym: "Nat Rev Phys"
+  variants:
+    - "Nature Reviews Physics Journal"
+  patterns:
+    - '(?i)^nature reviews physics'
+- id: pcs_earth
+  type: "journal"
+  full: "Physics and Chemistry of the Earth, Parts A/B/C"
+  abbreviation: "Phys. Chem. Earth"
+  acronym: "Phys Chem Earth"
+  variants:
+    - "Physics and Chemistry of the Earth"
+    - "Physics and Chemistry of the Earth (A/B/C)"
+  patterns:
+    - '(?i)^physics and chemistry of the earth'
+- id: jfi
+  type: "journal"
+  full: "Journal of the Franklin Institute"
+  abbreviation: "J. Franklin Inst."
+  acronym: "JFI"
+  variants:
+    - "Journal of the Franklin Institute (JFI)"
+  patterns:
+    - '(?i)^journal of the franklin institute'
+- id: prl_physics
+  type: "journal"
+  full: "Physical Review Letters"
+  abbreviation: "Phys. Rev. Lett."
+  acronym: "PRL"
+  variants:
+    - "Physical Review Letters (PRL)"
+  patterns:
+    - '(?i)^physical review letters'
+- id: nature_photonics
+  type: "journal"
+  full: "Nature Photonics"
+  abbreviation: "Nat. Photon."
+  acronym: "Nature Photonics"
+  variants:
+    - "Nature Photonics Journal"
+  patterns:
+    - '(?i)^nature photonics'
+- id: josa_a
+  type: "journal"
+  full: "Journal of the Optical Society of America A"
+  abbreviation: "J. Opt. Soc. Am. A"
+  acronym: "JOSA A"
+  variants:
+    - "JOSA A"
+    - "J. Opt. Soc. Am. A"
+  patterns:
+    - '(?i)^journal of the optical society of america\s*a?$'
+- id: nature_chemistry
+  type: "journal"
+  full: "Nature Chemistry"
+  abbreviation: "Nat. Chem."
+  acronym: "Nature Chem."
+  variants:
+    - "Nature Chemistry Journal"
+  patterns:
+    - '(?i)^nature chemistry'
+- id: nature_energy
+  type: "journal"
+  full: "Nature Energy"
+  abbreviation: "Nat. Energy"
+  acronym: "Nature Energy"
+  variants:
+    - "Nature Energy Journal"
+  patterns:
+    - '(?i)^nature energy'
+- id: nature_sustainability
+  type: "journal"
+  full: "Nature Sustainability"
+  abbreviation: "Nat. Sustain."
+  acronym: "Nature Sustainability"
+  variants:
+    - "Nature Sustainability Journal"
+  patterns:
+    - '(?i)^nature sustainability'
+- id: nature_climate
+  type: "journal"
+  full: "Nature Climate Change"
+  abbreviation: "Nat. Clim. Change"
+  acronym: "Nature Climate Change"
+  variants:
+    - "Nature Climate Change Journal"
+  patterns:
+    - '(?i)^nature climate change'
+- id: nature_geoscience
+  type: "journal"
+  full: "Nature Geoscience"
+  abbreviation: "Nat. Geosci."
+  acronym: "Nature Geosci."
+  variants:
+    - "Nature Geoscience Journal"
+  patterns:
+    - '(?i)^nature geoscience'
+- id: optics_comm
+  type: "journal"
+  full: "Optics Communications"
+  abbreviation: "Opt. Commun."
+  acronym: "Optics Commun."
+  variants:
+    - "Optics Communications Journal"
+  patterns:
+    - '(?i)^optics communications$'
+- id: inverse_problems
+  type: "journal"
+  full: "Inverse Problems"
+  abbreviation: "Inverse Probl."
+  acronym: "Inverse Problems"
+  variants:
+    - "Inverse Problems Journal"
+  patterns:
+    - '(?i)^inverse problems$'
+- id: acta_materialia
+  type: "journal"
+  full: "Acta Materialia"
+  abbreviation: "Acta Mater."
+  acronym: "Acta Materialia"
+  variants:
+    - "Acta Materialia Journal"
+  patterns:
+    - '(?i)^acta materialia'
+- id: agu
+  type: "conference"
+  full: "Proceedings of the American Geophysical Union Fall Meeting"
+  abbreviation: "Proc. AGU Fall Meeting"
+  acronym: "AGU"
+  variants:
+    - "AGU Fall Meeting"
+  patterns:
+    - '(?i)american geophysical union(?!.*workshop)'
+- id: egu
+  type: "conference"
+  full: "Proceedings of the European Geosciences Union General Assembly"
+  abbreviation: "Proc. EGU Gen. Assem."
+  acronym: "EGU"
+  variants:
+    - "European Geosciences Union General Assembly"
+  patterns:
+    - '(?i)european geosciences union(?!.*workshop)'
+- id: scireports
+  type: "journal"
+  full: "Scientific Reports"
+  abbreviation: "Sci. Rep."
+  acronym: "SciReports"
+  variants:
+    - "Scientific Reports Journal"
+  patterns:
+    - '(?i)^scientific reports'
+- id: nature_communications
+  type: "journal"
+  full: "Nature Communications"
+  abbreviation: "Nat. Commun."
+  acronym: "Nat Commun"
+  variants:
+    - "Nature Communications (Nat Commun)"
+  patterns:
+    - '(?i)^nature communications'
+- id: nature_comms
+  type: "journal"
+  full: "Nature Communications"
+  abbreviation: "Nat. Commun."
+  acronym: "Nature Comms"
+  variants:
+    - "Nature Communications Journal"
+  patterns:
+    - '(?i)^nature communications'
+
+# -- Materials & Chemistry
+- id: jacs
+  type: "journal"
+  full: "Journal of the American Chemical Society"
+  abbreviation: "J. Am. Chem. Soc."
+  acronym: "JACS"
+  variants:
+    - "Journal of the American Chemical Society (JACS)"
+  patterns:
+    - '(?i)^journal of the american chemical society'
+- id: angewandte
+  type: "journal"
+  full: "Angewandte Chemie International Edition"
+  abbreviation: "Angew. Chem. Int. Ed."
+  acronym: "Angew. Chem."
+  variants:
+    - "Angewandte Chemie International Edition"
+  patterns:
+    - '(?i)^angewandte chemie'
+
+# -- Climate & Environment
+- id: es_t
+  type: "journal"
+  full: "Environmental Science & Technology"
+  abbreviation: "Environ. Sci. Technol."
+  acronym: "ES&T"
+  variants:
+    - "Environmental Science and Technology"
+  patterns:
+    - '(?i)^environmental science.*technology'
+- id: npj_climate_ai
+  type: "journal"
+  full: "npj Climate and Atmospheric Science"
+  abbreviation: "npj Clim. Atmos. Sci."
+  acronym: "NPJ Climate"
+  variants:
+    - "npj Climate and Atmospheric Science"
+  patterns:
+    - '(?i)^npj climate and atmospheric science'
+- id: procede_ieee
+  type: "journal"
+  full: "Proceedings of the IEEE"
+  abbreviation: "Proc. IEEE"
+  acronym: "Proc. IEEE"
+  variants:
+    - "Proceedings IEEE"
+    - "Proceedings of IEEE"
+  patterns:
+    - '(?i)^proceedings of the ieee$'
+    - '(?i)^proc\. ieee$'

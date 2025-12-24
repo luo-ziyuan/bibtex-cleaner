@@ -1,0 +1,340 @@
+# How to extend this file
+# - Keep entries as a YAML list (each starts with "- id: ...").
+# - Fields: id (unique across all files, lowercase, no spaces), type (conference|journal|organization), full, abbreviation, acronym, variants[], patterns[].
+# - Quote all strings; patterns are Python regex; avoid adding workshop patterns unless that is the intent.
+# - Add new items under the closest "# -- ..." subgroup; create a new subgroup comment if needed.
+# - Prefer ASCII text; keep consistent abbreviations/variants to improve matching.
+# arXiv top-level: q-bio - Quantitative Biology & Health
+# Sub-groups are lightweight clusters for readability.
+
+# -- Medical Imaging & Bioinformatics
+- id: isbi
+  type: "conference"
+  full: "Proceedings of the IEEE International Symposium on Biomedical Imaging"
+  abbreviation: "Proc. IEEE Int. Symp. Biomed. Imaging"
+  acronym: "ISBI"
+  variants:
+    - "IEEE International Symposium on Biomedical Imaging"
+  patterns:
+    - '(?i)international symposium on biomedical imaging(?!.*workshop)'
+- id: miccai
+  type: "conference"
+  full: "Proceedings of the International Conference on Medical Image Computing and Computer-Assisted Intervention"
+  abbreviation: "Proc. Int. Conf. Med. Image Comput. Comput. Assist. Interv."
+  acronym: "MICCAI"
+  variants:
+    - "International Conference on Medical Image Computing and Computer-Assisted Intervention"
+  patterns:
+    - '(?i)medical image computing and computer[- ]assisted intervention(?!.*workshop)'
+- id: midl
+  type: "conference"
+  full: "Proceedings of the International Conference on Medical Imaging with Deep Learning"
+  abbreviation: "Proc. Int. Conf. Med. Imaging Deep Learn."
+  acronym: "MIDL"
+  variants:
+    - "International Conference on Medical Imaging with Deep Learning"
+  patterns:
+    - '(?i)medical imaging with deep learning(?!.*workshop)'
+- id: ipmi
+  type: "conference"
+  full: "Proceedings of the Information Processing in Medical Imaging Conference"
+  abbreviation: "Proc. Inf. Process. Med. Imaging"
+  acronym: "IPMI"
+  variants:
+    - "Information Processing in Medical Imaging"
+  patterns:
+    - '(?i)information processing in medical imaging(?!.*workshop)'
+- id: tmi
+  type: "journal"
+  full: "IEEE Transactions on Medical Imaging"
+  abbreviation: "IEEE Trans. Med. Imaging"
+  acronym: "TMI"
+  variants:
+    - "IEEE Transactions on Medical Imaging (TMI)"
+  patterns:
+    - '(?i)^ieee transactions on medical imaging'
+- id: mia
+  type: "journal"
+  full: "Medical Image Analysis"
+  abbreviation: "Med. Image Anal."
+  acronym: "MIA"
+  variants:
+    - "Medical Image Analysis (MIA)"
+  patterns:
+    - '(?i)^medical image analysis'
+- id: bioinformatics
+  type: "journal"
+  full: "Bioinformatics"
+  abbreviation: "Bioinformatics"
+  acronym: "Bioinformatics"
+  variants:
+    - "Bioinformatics Journal"
+  patterns:
+    - '(?i)^bioinformatics$'
+- id: bib
+  type: "journal"
+  full: "Briefings in Bioinformatics"
+  abbreviation: "Brief. Bioinform."
+  acronym: "BIB"
+  variants:
+    - "Briefings in Bioinformatics (BIB)"
+  patterns:
+    - '(?i)^briefings in bioinformatics'
+- id: recomb
+  type: "conference"
+  full: "Proceedings of the Annual International Conference on Research in Computational Molecular Biology"
+  abbreviation: "Proc. Annu. Int. Conf. Res. Comput. Mol. Biol."
+  acronym: "RECOMB"
+  variants:
+    - "International Conference on Research in Computational Molecular Biology"
+  patterns:
+    - '(?i)research in computational molecular biology(?!.*workshop)'
+- id: ismb
+  type: "conference"
+  full: "Proceedings of the Intelligent Systems for Molecular Biology Conference"
+  abbreviation: "Proc. Intell. Syst. Mol. Biol. Conf."
+  acronym: "ISMB"
+  variants:
+    - "Intelligent Systems for Molecular Biology Conference"
+  patterns:
+    - '(?i)intelligent systems for molecular biology(?!.*workshop)'
+- id: plos_cb
+  type: "journal"
+  full: "PLOS Computational Biology"
+  abbreviation: "PLoS Comput. Biol."
+  acronym: "PLOS CB"
+  variants:
+    - "PLOS Computational Biology (PLOS CB)"
+  patterns:
+    - '(?i)^plos computational biology'
+- id: bmcbioinfo
+  type: "journal"
+  full: "BMC Bioinformatics"
+  abbreviation: "BMC Bioinform."
+  acronym: "BMC Bioinformatics"
+  variants:
+    - "BMC Bioinformatics Journal"
+  patterns:
+    - '(?i)^bmc bioinformatics'
+- id: bioinformatics_advances
+  type: "journal"
+  full: "Bioinformatics Advances"
+  abbreviation: "Bioinform. Adv."
+  acronym: "Bioinf Adv"
+  variants:
+    - "Bioinformatics Advances Journal"
+  patterns:
+    - '(?i)^bioinformatics advances'
+- id: nature_biotech
+  type: "journal"
+  full: "Nature Biotechnology"
+  abbreviation: "Nat. Biotechnol."
+  acronym: "Nature Biotech"
+  variants:
+    - "Nature Biotechnology Journal"
+  patterns:
+    - '(?i)^nature biotechnology'
+
+# -- Health Informatics & Bioeng
+- id: embc
+  type: "conference"
+  full: "Proceedings of the IEEE Engineering in Medicine and Biology Conference"
+  abbreviation: "Proc. IEEE Eng. Med. Biol. Conf."
+  acronym: "EMBC"
+  variants:
+    - "IEEE Engineering in Medicine and Biology Conference"
+  patterns:
+    - '(?i)engineering in medicine and biology(?!.*workshop)'
+- id: medinfo
+  type: "conference"
+  full: "Proceedings of the International Medical Informatics Association Conference"
+  abbreviation: "Proc. Int. Med. Inform. Assoc. Conf."
+  acronym: "MedInfo"
+  variants:
+    - "International Medical Informatics Association Conference"
+  patterns:
+    - '(?i)medical informatics association(?!.*workshop)'
+- id: jbhi
+  type: "journal"
+  full: "IEEE Journal of Biomedical and Health Informatics"
+  abbreviation: "IEEE J. Biomed. Health Inform."
+  acronym: "JBHI"
+  variants:
+    - "IEEE Journal of Biomedical and Health Informatics (JBHI)"
+  patterns:
+    - '(?i)^ieee journal of biomedical and health informatics'
+- id: tbme
+  type: "journal"
+  full: "IEEE Transactions on Biomedical Engineering"
+  abbreviation: "IEEE Trans. Biomed. Eng."
+  acronym: "TBME"
+  variants:
+    - "IEEE Transactions on Biomedical Engineering (TBME)"
+  patterns:
+    - '(?i)^ieee transactions on biomedical engineering'
+- id: jbi
+  type: "journal"
+  full: "Journal of Biomedical Informatics"
+  abbreviation: "J. Biomed. Inform."
+  acronym: "JBI"
+  variants:
+    - "Journal of Biomedical Informatics (JBI)"
+  patterns:
+    - '(?i)^journal of biomedical informatics'
+- id: bioeng
+  type: "journal"
+  full: "Bioengineering"
+  abbreviation: "Bioeng."
+  acronym: "Bioengineering"
+  variants:
+    - "Bioengineering Journal"
+  patterns:
+    - '(?i)^bioengineering$'
+- id: world_health_forum
+  type: "conference"
+  full: "Proceedings of the World Health Summit"
+  abbreviation: "Proc. World Health Summit"
+  acronym: "WHS"
+  variants:
+    - "World Health Summit"
+  patterns:
+    - '(?i)world health summit(?!.*workshop)'
+- id: amia
+  type: "conference"
+  full: "Proceedings of the American Medical Informatics Association Annual Symposium"
+  abbreviation: "Proc. AMIA Annu. Symp."
+  acronym: "AMIA"
+  variants:
+    - "American Medical Informatics Association Annual Symposium"
+  patterns:
+    - '(?i)american medical informatics association(?!.*workshop)'
+- id: jmedethics
+  type: "journal"
+  full: "Journal of Medical Ethics"
+  abbreviation: "J. Med. Ethics"
+  acronym: "JME"
+  variants:
+    - "Journal of Medical Ethics (JME)"
+  patterns:
+    - '(?i)^journal of medical ethics'
+- id: health_policy
+  type: "journal"
+  full: "Health Policy"
+  abbreviation: "Health Policy"
+  acronym: "HealthPolicy"
+  variants:
+    - "Health Policy Journal"
+  patterns:
+    - '(?i)^health policy$'
+- id: bmc_public_health
+  type: "journal"
+  full: "BMC Public Health"
+  abbreviation: "BMC Public Health"
+  acronym: "BMCPH"
+  variants:
+    - "BMC Public Health Journal"
+  patterns:
+    - '(?i)^bmc public health'
+- id: nature_medicine
+  type: "journal"
+  full: "Nature Medicine"
+  abbreviation: "Nat. Med."
+  acronym: "Nature Medicine"
+  variants:
+    - "Nature Medicine Journal"
+  patterns:
+    - '(?i)^nature medicine'
+
+# -- Neuroscience & Behavior
+- id: cogsci
+  type: "conference"
+  full: "Proceedings of the Annual Meeting of the Cognitive Science Society"
+  abbreviation: "Proc. Cogn. Sci. Soc."
+  acronym: "CogSci"
+  variants:
+    - "Annual Meeting of the Cognitive Science Society"
+  patterns:
+    - '(?i)cognitive science society(?!.*workshop)'
+- id: neurcompsys
+  type: "journal"
+  full: "Neural Computation"
+  abbreviation: "Neural Comput."
+  acronym: "NeuroComp"
+  variants:
+    - "Neural Computation Journal"
+  patterns:
+    - '(?i)^neural computation$'
+- id: natneuro
+  type: "journal"
+  full: "Nature Neuroscience"
+  abbreviation: "Nat. Neurosci."
+  acronym: "NatNeuro"
+  variants:
+    - "Nature Neuroscience Journal"
+  patterns:
+    - '(?i)^nature neuroscience'
+- id: trends_cogsci
+  type: "journal"
+  full: "Trends in Cognitive Sciences"
+  abbreviation: "Trends Cogn. Sci."
+  acronym: "TICS"
+  variants:
+    - "Trends in Cognitive Sciences Journal"
+  patterns:
+    - '(?i)^trends in cognitive sciences'
+- id: cognition
+  type: "journal"
+  full: "Cognition"
+  abbreviation: "Cognition"
+  acronym: "Cognition"
+  variants:
+    - "Cognition Journal"
+  patterns:
+    - '(?i)^cognition$'
+- id: nature_human_behavior
+  type: "journal"
+  full: "Nature Human Behaviour"
+  abbreviation: "Nat. Hum. Behav."
+  acronym: "Nature Human Behaviour"
+  variants:
+    - "Nature Human Behaviour Journal"
+  patterns:
+    - '(?i)^nature human behaviour'
+- id: cell
+  type: "journal"
+  full: "Cell"
+  abbreviation: "Cell"
+  acronym: "Cell"
+  variants:
+    - "Cell Journal"
+  patterns:
+    - '(?i)^cell$'
+- id: cell_reports
+  type: "journal"
+  full: "Cell Reports"
+  abbreviation: "Cell Rep."
+  acronym: "Cell Reports"
+  variants:
+    - "Cell Reports Journal"
+  patterns:
+    - '(?i)^cell reports'
+- id: cell_systems
+  type: "journal"
+  full: "Cell Systems"
+  abbreviation: "Cell Syst."
+  acronym: "Cell Systems"
+  variants:
+    - "Cell Systems Journal"
+  patterns:
+    - '(?i)^cell systems'
+
+# -- Robotics & Bio Systems
+- id: science_robotics
+  type: "journal"
+  full: "Science Robotics"
+  abbreviation: "Sci. Robot."
+  acronym: "Science Robotics"
+  variants:
+    - "Science Robotics Journal"
+  patterns:
+    - '(?i)^science robotics'

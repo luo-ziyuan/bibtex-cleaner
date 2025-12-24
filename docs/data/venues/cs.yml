@@ -1,0 +1,2435 @@
+# How to extend this file
+# - Keep entries as a YAML list (each starts with "- id: ...").
+# - Fields: id (unique across all files, lowercase, no spaces), type (conference|journal|organization), full, abbreviation, acronym, variants[], patterns[].
+# - Quote all strings; patterns are Python regex; avoid adding workshop patterns unless that is the intent.
+# - Add new items under the closest "# -- ..." subgroup; create a new subgroup comment if needed.
+# - Prefer ASCII text; keep consistent abbreviations/variants to improve matching.
+# arXiv top-level: cs - Computer Science
+# Sub-groups are lightweight clusters for readability.
+
+# -- Computer Vision & Graphics
+- id: cvpr
+  type: "conference"
+  full: "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition"
+  abbreviation: "Proc. IEEE/CVF Conf. Comput. Vis. Pattern Recognit."
+  acronym: "CVPR"
+  variants:
+    - "IEEE/CVF Conference on Computer Vision and Pattern Recognition"
+    - "IEEE Conference on Computer Vision and Pattern Recognition"
+    - "IEEE/CVF Conf. on Computer Vision and Pattern Recognition"
+    - "IEEE Conf. on Computer Vision and Pattern Recognition"
+    - "Proceedings of the Computer Vision and Pattern Recognition Conference"
+    - "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"
+  patterns:
+    - '(?i)^proceedings of the \d{4} ieee/?cvf conference on computer vision and pattern recognition(?!.*workshop)'
+    - '(?i)ieee/?cvf conference on computer vision and pattern recognition(?!.*workshop)'
+    - '(?i)^\d{4} ieee/?cvf conference on computer vision and pattern recognition(?!.*workshop)'
+    - '(?i)^proceedings of the computer vision and pattern recognition conference(?!.*workshop)'
+    - '(?i)^(proceedings of the\s+)?(\d{4}\s+)?ieee(/cvf)?\s+conference on computer vision and pattern recognition(?!.*workshop)'
+- id: iccv
+  type: "conference"
+  full: "Proceedings of the IEEE/CVF International Conference on Computer Vision"
+  abbreviation: "Proc. IEEE/CVF Int. Conf. Comput. Vis."
+  acronym: "ICCV"
+  variants:
+    - "IEEE/CVF International Conference on Computer Vision"
+    - "IEEE International Conference on Computer Vision"
+    - "IEEE/CVF Int. Conf. on Computer Vision"
+    - "IEEE Int. Conf. on Computer Vision"
+    - "Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)"
+  patterns:
+    - '(?i)^proceedings of the \d{4} ieee/?cvf international conference on computer vision(?!.*workshop)'
+    - '(?i)ieee/?cvf international conference on computer vision(?!.*workshop)'
+    - '(?i)^\d{4} ieee/?cvf international conference on computer vision(?!.*workshop)'
+- id: eccv
+  type: "conference"
+  full: "Proceedings of the European Conference on Computer Vision"
+  abbreviation: "Proc. Eur. Conf. Comput. Vis."
+  acronym: "ECCV"
+  variants:
+    - "European Conference on Computer Vision"
+    - "Eur. Conf. on Computer Vision"
+    - "Proceedings of the European Conference on Computer Vision (ECCV)"
+  patterns:
+    - '(?i)proceedings of the \d+(st|nd|rd|th) european conference on computer vision(?!.*workshop)'
+    - '(?i)european conference on computer vision(?!.*workshop)'
+    - '(?i)^\d+(st|nd|rd|th) european conference on computer vision(?!.*workshop)'
+- id: wacv
+  type: "conference"
+  full: "Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision"
+  abbreviation: "Proc. IEEE/CVF Winter Conf. Appl. Comput. Vis."
+  acronym: "WACV"
+  variants:
+    - "IEEE/CVF Winter Conference on Applications of Computer Vision"
+    - "IEEE Winter Conference on Applications of Computer Vision"
+    - "Winter Conf. on Applications of Computer Vision"
+  patterns:
+    - '(?i)ieee/?cvf winter conference on applications of computer vision(?!.*workshop)'
+    - '(?i)^\d{4} ieee/?cvf winter conference on applications of computer vision(?!.*workshop)'
+- id: bmvc
+  type: "conference"
+  full: "Proceedings of the British Machine Vision Conference"
+  abbreviation: "Proc. Br. Mach. Vis. Conf."
+  acronym: "BMVC"
+  variants:
+    - "British Machine Vision Conference"
+    - "Br. Mach. Vis. Conf."
+  patterns:
+    - '(?i)british machine vision conference(?!.*workshop)'
+    - '(?i)^\d+(st|nd|rd|th) british machine vision conference(?!.*workshop)'
+- id: csur
+  type: "journal"
+  full: "ACM Computing Surveys"
+  abbreviation: "ACM Comput. Surv."
+  acronym: "CSUR"
+  variants:
+    - "ACM Computing Surveys (CSUR)"
+  patterns:
+    - '(?i)^acm computing surveys'
+- id: 3dv
+  type: "conference"
+  full: "Proceedings of the International Conference on 3D Vision"
+  abbreviation: "Proc. Int. Conf. 3D Vis."
+  acronym: "3DV"
+  variants:
+    - "International Conference on 3D Vision"
+    - "IEEE International Conference on 3D Vision"
+  patterns:
+    - '(?i)international conference on 3d vision(?!.*workshop)'
+- id: accv
+  type: "conference"
+  full: "Proceedings of the Asian Conference on Computer Vision"
+  abbreviation: "Proc. Asian Conf. Comput. Vis."
+  acronym: "ACCV"
+  variants:
+    - "Asian Conference on Computer Vision"
+  patterns:
+    - '(?i)asian conference on computer vision(?!.*workshop)'
+- id: vis
+  type: "conference"
+  full: "Proceedings of the IEEE Visualization Conference"
+  abbreviation: "Proc. IEEE Vis. Conf."
+  acronym: "VIS"
+  variants:
+    - "IEEE Visualization Conference"
+    - "IEEE VIS"
+  patterns:
+    - '(?i)ieee visualization conference(?!.*workshop)'
+- id: pacificgraphics
+  type: "conference"
+  full: "Proceedings of Pacific Graphics"
+  abbreviation: "Proc. Pacific Graph."
+  acronym: "Pacific Graphics"
+  variants:
+    - "Pacific Graphics Conference"
+  patterns:
+    - '(?i)pacific graphics(?!.*workshop)'
+- id: ivapp
+  type: "conference"
+  full: "Proceedings of the International Conference on Information Visualization Theory and Applications"
+  abbreviation: "Proc. Int. Conf. Inf. Vis. Theory Appl."
+  acronym: "IVAPP"
+  variants:
+    - "International Conference on Information Visualization Theory and Applications"
+  patterns:
+    - '(?i)information visualization theory and applications(?!.*workshop)'
+- id: siggraph
+  type: "conference"
+  full: "Proceedings of the ACM SIGGRAPH Conference"
+  abbreviation: "Proc. ACM SIGGRAPH"
+  acronym: "SIGGRAPH"
+  variants:
+    - "ACM SIGGRAPH"
+    - "SIGGRAPH Conference"
+  patterns:
+    - '(?i)^acm siggraph \d{4}(?!.*workshop)'
+    - '(?i)acm siggraph conference(?!.*workshop)'
+- id: siggraph_asia
+  type: "conference"
+  full: "Proceedings of ACM SIGGRAPH Asia"
+  abbreviation: "Proc. ACM SIGGRAPH Asia"
+  acronym: "SIGGRAPH Asia"
+  variants:
+    - "ACM SIGGRAPH Asia"
+    - "SIGGRAPH Asia Conference"
+  patterns:
+    - '(?i)acm siggraph asia(?!.*workshop)'
+- id: eurographics
+  type: "conference"
+  full: "Proceedings of Eurographics"
+  abbreviation: "Proc. Eurographics"
+  acronym: "Eurographics"
+  variants:
+    - "Eurographics Conference"
+    - "European Association for Computer Graphics Conference"
+  patterns:
+    - '(?i)^eurographics \d{4}(?!.*workshop)'
+    - '(?i)eurographics conference(?!.*workshop)'
+- id: i3d
+  type: "conference"
+  full: "Proceedings of the ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games"
+  abbreviation: "Proc. ACM SIGGRAPH Symp. Interact. 3D Graph. Games"
+  acronym: "I3D"
+  variants:
+    - "ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games"
+    - "Symposium on Interactive 3D Graphics and Games"
+  patterns:
+    - '(?i)symposium on interactive 3d graphics and games(?!.*workshop)'
+- id: tvcg
+  type: "journal"
+  full: "IEEE Transactions on Visualization and Computer Graphics"
+  abbreviation: "IEEE Trans. Vis. Comput. Graph."
+  acronym: "TVCG"
+  variants:
+    - "IEEE Transactions on Visualization and Computer Graphics (TVCG)"
+  patterns:
+    - '(?i)^ieee transactions on visualization and computer graphics'
+- id: tog
+  type: "journal"
+  full: "ACM Transactions on Graphics"
+  abbreviation: "ACM Trans. Graph."
+  acronym: "ToG"
+  variants:
+    - "ACM Trans. on Graphics"
+    - "Transactions on Graphics"
+  patterns:
+    - '(?i)^acm transactions on graphics'
+    - '(?i)^tog$'
+- id: cgf
+  type: "journal"
+  full: "Computer Graphics Forum"
+  abbreviation: "Comput. Graph. Forum"
+  acronym: "CGF"
+  variants:
+    - "Computer Graphics Forum (CGF)"
+  patterns:
+    - '(?i)^computer graphics forum'
+- id: tpami
+  type: "journal"
+  full: "IEEE Transactions on Pattern Analysis and Machine Intelligence"
+  abbreviation: "IEEE Trans. Pattern Anal. Mach. Intell."
+  acronym: "TPAMI"
+  variants:
+    - "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)"
+    - "Trans. Pattern Analysis and Machine Intelligence"
+  patterns:
+    - '(?i)^ieee transactions on pattern analysis and machine intelligence'
+    - '(?i)^tpami'
+- id: ijcv
+  type: "journal"
+  full: "International Journal of Computer Vision"
+  abbreviation: "Int. J. Comput. Vis."
+  acronym: "IJCV"
+  variants:
+    - "International Journal of Computer Vision (IJCV)"
+  patterns:
+    - '(?i)^international journal of computer vision'
+    - '(?i)^ijcv'
+- id: tip
+  type: "journal"
+  full: "IEEE Transactions on Image Processing"
+  abbreviation: "IEEE Trans. Image Process."
+  acronym: "TIP"
+  variants:
+    - "IEEE Transactions on Image Processing (TIP)"
+  patterns:
+    - '(?i)^ieee transactions on image processing'
+- id: pr
+  type: "journal"
+  full: "Pattern Recognition"
+  abbreviation: "Pattern Recognit."
+  acronym: "PR"
+  variants:
+    - "Pattern Recognition Journal"
+    - "Pattern Recognit."
+    - "Pattern Recognition (Elsevier)"
+  patterns:
+    - '(?i)^pattern recognition(?!.*letters)$'
+    - '(?i)^pattern recognit\.?$(?!.*letters)'
+    - '(?i)^elsevier pattern recognition(?!.*letters)$'
+- id: prl
+  type: "journal"
+  full: "Pattern Recognition Letters"
+  abbreviation: "Pattern Recognit. Lett."
+  acronym: "PRL"
+  variants:
+    - "Pattern Recognition Letters Journal"
+    - "Pattern Recognit. Lett."
+    - "Pattern Recognition Letters (Elsevier)"
+  patterns:
+    - '(?i)^pattern recognition letters$'
+    - '(?i)^pattern recognit\.? letters$'
+    - '(?i)^elsevier pattern recognition letters$'
+- id: cviu
+  type: "journal"
+  full: "Computer Vision and Image Understanding"
+  abbreviation: "Comput. Vis. Image Underst."
+  acronym: "CVIU"
+  variants:
+    - "Computer Vision and Image Understanding (CVIU)"
+    - "Computer Vision & Image Understanding"
+    - "CV and Image Understanding"
+  patterns:
+    - '(?i)^computer vision (and|&) image understanding$'
+    - '(?i)^comput\.? vis\.? image underst\.?$'
+    - '(?i)^elsevier computer vision (and|&) image understanding$'
+- id: ivc
+  type: "journal"
+  full: "Image and Vision Computing"
+  abbreviation: "Image Vis. Comput."
+  acronym: "IVC"
+  variants:
+    - "Image and Vision Computing (IVC)"
+    - "Image & Vision Computing"
+    - "Elsevier Image and Vision Computing"
+  patterns:
+    - '(?i)^image (and|&) vision computing$'
+    - '(?i)^image vis\. comput\.?$'
+    - '(?i)^elsevier image (and|&) vision computing$'
+- id: jvcir
+  type: "journal"
+  full: "Journal of Visual Communication and Image Representation"
+  abbreviation: "J. Vis. Commun. Image Represent."
+  acronym: "JVCIR"
+  variants:
+    - "Journal of Visual Communication and Image Representation (JVCIR)"
+    - "J. Vis. Commun. Image Represent."
+    - "Elsevier JVCIR"
+  patterns:
+    - '(?i)^journal of visual communication and image representation$'
+    - '(?i)^j\.? vis\.? commun\.? image represent\.?$'
+    - '(?i)^elsevier journal of visual communication and image representation$'
+- id: jvc
+  type: "journal"
+  full: "Journal of Visual Communication"
+  abbreviation: "J. Vis. Commun."
+  acronym: "JVC"
+  variants:
+    - "Journal of Visual Communication"
+  patterns:
+    - '(?i)^journal of visual communication$'
+- id: acmmm
+  type: "conference"
+  full: "Proceedings of the ACM International Conference on Multimedia"
+  abbreviation: "Proc. ACM Int. Conf. Multimedia"
+  acronym: "ACM MM"
+  variants:
+    - "ACM International Conference on Multimedia"
+    - "Proceedings of the ACM Multimedia Conference (ACM MM)"
+    - "ACM Multimedia"
+    - "ACM Multimedia Conference"
+  patterns:
+    - '(?i)^proceedings\s+of\s+(the\s+)?\d+(?:st|nd|rd|th)?\s*acm\s+international\s+conference\s+on\s+multimedia(?!.*workshop)'
+    - '(?i)^proceedings\s+of\s+the\s+acm\s+international\s+conference\s+on\s+multimedia(?!.*workshop)'
+    - '(?i)^acm\s+international\s+conference\s+on\s+multimedia(?!.*workshop)'
+    - '(?i)^acm\s+multimedia(?!.*workshop)'
+- id: icmr
+  type: "conference"
+  full: "Proceedings of the International Conference on Multimedia Retrieval"
+  abbreviation: "Proc. Int. Conf. Multimedia Retrieval"
+  acronym: "ICMR"
+  variants:
+    - "International Conference on Multimedia Retrieval"
+    - "ACM International Conference on Multimedia Retrieval"
+  patterns:
+    - '(?i)international conference on multimedia retrieval(?!.*workshop)'
+    - '(?i)^proceedings of the international conference on multimedia retrieval'
+- id: tmm
+  type: "journal"
+  full: "IEEE Transactions on Multimedia"
+  abbreviation: "IEEE Trans. Multimedia"
+  acronym: "TMM"
+  variants:
+    - "IEEE Transactions on Multimedia (TMM)"
+  patterns:
+    - '(?i)^ieee transactions on multimedia'
+- id: tomm
+  type: "journal"
+  full: "ACM Transactions on Multimedia Computing, Communications, and Applications"
+  abbreviation: "ACM Trans. Multimedia Comput. Commun. Appl."
+  acronym: "TOMM"
+  variants:
+    - "ACM Transactions on Multimedia Computing, Communications, and Applications (TOMM)"
+  patterns:
+    - '(?i)^acm transactions on multimedia computing'
+- id: siggraph_w
+  type: "conference"
+  full: "ACM SIGGRAPH Conference Workshops"
+  abbreviation: "SIGGRAPH Workshops"
+  acronym: "SIGGRAPHW"
+  variants:
+    - "SIGGRAPH Workshop"
+    - "SIGGRAPH Workshops"
+  patterns:
+    - '(?i)siggraph.*workshop'
+    - '(?i)siggraphw'
+- id: acmmm_w
+  type: "conference"
+  full: "ACM International Conference on Multimedia Workshops"
+  abbreviation: "ACM MM Workshops"
+  acronym: "ACM MMW"
+  variants:
+    - "ACM MM Workshop"
+    - "ACM MM Workshops"
+    - "ACM Multimedia Workshop"
+    - "ACM Multimedia Workshops"
+  patterns:
+    - '(?i)acm\s+mm.*workshop'
+    - '(?i)acm\s+multimedia.*workshop'
+    - '(?i)acm\s+mmw'
+- id: cvpr_w
+  type: "conference"
+  full: "IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops"
+  abbreviation: "CVPR Workshops"
+  acronym: "CVPRW"
+  variants:
+    - "CVPR Workshop"
+    - "CVPR Workshops"
+  patterns:
+    - '(?i)cvpr.*workshop'
+    - '(?i)cvprw'
+- id: iccv_w
+  type: "conference"
+  full: "IEEE/CVF International Conference on Computer Vision Workshops"
+  abbreviation: "ICCV Workshops"
+  acronym: "ICCVW"
+  variants:
+    - "ICCV Workshop"
+    - "ICCV Workshops"
+  patterns:
+    - '(?i)iccv.*workshop'
+    - '(?i)iccvw'
+- id: eccv_w
+  type: "conference"
+  full: "European Conference on Computer Vision Workshops"
+  abbreviation: "ECCV Workshops"
+  acronym: "ECCVW"
+  variants:
+    - "ECCV Workshop"
+    - "ECCV Workshops"
+  patterns:
+    - '(?i)eccv.*workshop'
+    - '(?i)eccvw'
+
+# -- Core ML & AI
+- id: neurips
+  type: "conference"
+  full: "Advances in Neural Information Processing Systems"
+  abbreviation: "Adv. Neural Inf. Process. Syst."
+  acronym: "NeurIPS"
+  variants:
+    - "Advances in Neural Information Processing Systems"
+    - "Neural Information Processing Systems"
+    - "Neural Inf. Process. Syst."
+    - "NIPS"
+  patterns:
+    - '(?i)neural information processing systems(?!.*workshop)'
+    - '(?i)^advances in neural information processing systems \d+(?!.*workshop)'
+    - '(?i)^proceedings of the \d+(st|nd|rd|th) international conference on neural information processing systems(?!.*workshop)'
+- id: iclr
+  type: "conference"
+  full: "International Conference on Learning Representations"
+  abbreviation: "Int. Conf. Learn. Represent."
+  acronym: "ICLR"
+  variants:
+    - "International Conf. on Learning Representations"
+    - "Int. Conf. on Learning Representations"
+  patterns:
+    - '(?i)^proceedings of the \d+(st|nd|rd|th) international conference on learning representations(?!.*workshop)'
+    - '(?i)international conference on learning representations(?!.*workshop)'
+- id: icml
+  type: "conference"
+  full: "International Conference on Machine Learning"
+  abbreviation: "Proc. Int. Conf. Mach. Learn."
+  acronym: "ICML"
+  variants:
+    - "Int. Conf. on Machine Learning"
+    - "International Conf. on Machine Learning"
+    - "Proceedings of the International Conference on Machine Learning (ICML)"
+  patterns:
+    - '(?i)^proceedings of the \d+(st|nd|rd|th) international conference on machine learning(?!.*workshop)'
+    - '(?i)international conference on machine learning(?!.*workshop)'
+- id: aaai
+  type: "conference"
+  full: "Proceedings of the AAAI Conference on Artificial Intelligence"
+  abbreviation: "Proc. AAAI Conf. Artif. Intell."
+  acronym: "AAAI"
+  variants:
+    - "AAAI Conference on Artificial Intelligence"
+    - "AAAI Conf. on Artificial Intelligence"
+  patterns:
+    - '(?i)aaai conference on artificial intelligence(?!.*workshop)'
+    - '(?i)^proceedings of the \d+(st|nd|rd|th) aaai conference on artificial intelligence(?!.*workshop)'
+- id: ijcai
+  type: "conference"
+  full: "Proceedings of the International Joint Conference on Artificial Intelligence"
+  abbreviation: "Proc. Int. Joint Conf. Artif. Intell."
+  acronym: "IJCAI"
+  variants:
+    - "International Joint Conference on Artificial Intelligence"
+    - "Int. Joint Conf. on Artificial Intelligence"
+  patterns:
+    - '(?i)international joint conference on artificial intelligence(?!.*workshop)'
+    - '(?i)^proceedings of the \d+(st|nd|rd|th) international joint conference on artificial intelligence(?!.*workshop)'
+- id: tnn
+  type: "journal"
+  full: "IEEE Transactions on Neural Networks and Learning Systems"
+  abbreviation: "IEEE Trans. Neural Netw. Learn. Syst."
+  acronym: "TNNLS"
+  variants:
+    - "IEEE Transactions on Neural Networks and Learning Systems (TNNLS)"
+  patterns:
+    - '(?i)^ieee transactions on neural networks and learning systems'
+- id: ai
+  type: "journal"
+  full: "Artificial Intelligence"
+  abbreviation: "Artif. Intell."
+  acronym: "AIJ"
+  variants:
+    - "Artificial Intelligence Journal"
+  patterns:
+    - '(?i)^artificial intelligence$'
+- id: jair
+  type: "journal"
+  full: "Journal of Artificial Intelligence Research"
+  abbreviation: "J. Artif. Intell. Res."
+  acronym: "JAIR"
+  variants:
+    - "Journal of Artificial Intelligence Research (JAIR)"
+  patterns:
+    - '(?i)^journal of artificial intelligence research'
+- id: nature_machine_intelligence
+  type: "journal"
+  full: "Nature Machine Intelligence"
+  abbreviation: "Nat. Mach. Intell."
+  acronym: "NMI"
+  variants:
+    - "Nature Machine Intelligence (NMI)"
+  patterns:
+    - '(?i)^nature machine intelligence'
+- id: nature_ai
+  type: "journal"
+  full: "Nature Artificial Intelligence"
+  abbreviation: "Nat. Artif. Intell."
+  acronym: "Nature AI"
+  variants:
+    - "Nature Artificial Intelligence Journal"
+  patterns:
+    - '(?i)^nature artificial intelligence'
+- id: nature_computerscience
+  type: "journal"
+  full: "Nature Computer Science"
+  abbreviation: "Nat. Comput. Sci."
+  acronym: "NCS"
+  variants:
+    - "Nature Computer Science Journal"
+  patterns:
+    - '(?i)^nature computer science'
+- id: aaai_w
+  type: "conference"
+  full: "AAAI Conference on Artificial Intelligence Workshops"
+  abbreviation: "AAAI Workshops"
+  acronym: "AAAIW"
+  variants:
+    - "AAAI Workshop"
+    - "AAAI Workshops"
+  patterns:
+    - '(?i)aaai.*workshop'
+    - '(?i)aaaiw'
+- id: ijcai_w
+  type: "conference"
+  full: "International Joint Conference on Artificial Intelligence Workshops"
+  abbreviation: "IJCAI Workshops"
+  acronym: "IJCAIW"
+  variants:
+    - "IJCAI Workshop"
+    - "IJCAI Workshops"
+  patterns:
+    - '(?i)ijcai.*workshop'
+    - '(?i)ijcaiw'
+- id: neurips_w
+  type: "conference"
+  full: "Conference on Neural Information Processing Systems Workshops"
+  abbreviation: "NeurIPS Workshops"
+  acronym: "NeurIPSW"
+  variants:
+    - "NeurIPS Workshop"
+    - "NeurIPS Workshops"
+    - "NIPS Workshop"
+    - "NIPS Workshops"
+  patterns:
+    - '(?i)neurips.*workshop'
+    - '(?i)nips.*workshop'
+    - '(?i)neuripsw'
+    - '(?i)nipsw'
+- id: icml_w
+  type: "conference"
+  full: "International Conference on Machine Learning Workshops"
+  abbreviation: "ICML Workshops"
+  acronym: "ICMLW"
+  variants:
+    - "ICML Workshop"
+    - "ICML Workshops"
+  patterns:
+    - '(?i)icml.*workshop'
+    - '(?i)icmlw'
+- id: iclr_w
+  type: "conference"
+  full: "International Conference on Learning Representations Workshops"
+  abbreviation: "ICLR Workshops"
+  acronym: "ICLRW"
+  variants:
+    - "ICLR Workshop"
+    - "ICLR Workshops"
+  patterns:
+    - '(?i)iclr.*workshop'
+    - '(?i)iclrw'
+
+# -- NLP
+- id: acl
+  type: "conference"
+  full: "Proceedings of the Annual Meeting of the Association for Computational Linguistics"
+  abbreviation: "Proc. Annu. Meeting Assoc. Comput. Linguist."
+  acronym: "ACL"
+  variants:
+    - "Annual Meeting of the Association for Computational Linguistics"
+    - "Assoc. for Computational Linguistics Annual Meeting"
+    - "ACL Conference"
+  patterns:
+    - '(?i)^proceedings of the \d+(st|nd|rd|th)? annual meeting of the association for computational linguistics(?!.*(workshop|findings))'
+    - '(?i)^annual meeting of the association for computational linguistics(?!.*(workshop|findings))'
+    - '(?i)^acl \d{4}(?!.*(workshop|findings))'
+- id: acl_findings
+  type: "conference"
+  full: "Findings of the Association for Computational Linguistics: ACL"
+  abbreviation: "Findings of ACL"
+  acronym: "ACL-Findings"
+  variants:
+    - "Findings of ACL"
+    - "ACL Findings"
+  patterns:
+    - '(?i)findings.*acl'
+    - '(?i)acl.*findings'
+- id: emnlp
+  type: "conference"
+  full: "Proceedings of the Conference on Empirical Methods in Natural Language Processing"
+  abbreviation: "Proc. Conf. Empirical Methods Natural Lang. Process."
+  acronym: "EMNLP"
+  variants:
+    - "Conference on Empirical Methods in Natural Language Processing"
+    - "Empirical Methods in Natural Language Processing"
+    - "EMNLP Conference"
+  patterns:
+    - '(?i)^proceedings of.*conference on empirical methods in natural language processing(?!.*(workshop|findings))'
+    - '(?i)^conference on empirical methods in natural language processing(?!.*(workshop|findings))'
+    - '(?i)^empirical methods in natural language processing(?!.*(workshop|findings))'
+    - '(?i)^emnlp \d{4}(?!.*(workshop|findings))'
+- id: emnlp_findings
+  type: "conference"
+  full: "Findings of the Association for Computational Linguistics: EMNLP"
+  abbreviation: "Findings of EMNLP"
+  acronym: "EMNLP-Findings"
+  variants:
+    - "Findings of EMNLP"
+    - "EMNLP Findings"
+  patterns:
+    - '(?i)findings.*emnlp'
+    - '(?i)emnlp.*findings'
+- id: naacl
+  type: "conference"
+  full: "Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics"
+  abbreviation: "Proc. Conf. North Amer. Chapter Assoc. Comput. Linguist."
+  acronym: "NAACL"
+  variants:
+    - "Conference of the North American Chapter of the Association for Computational Linguistics"
+    - "North American Chapter of the Association for Computational Linguistics"
+    - "NAACL-HLT"
+    - "NAACL Conference"
+  patterns:
+    - '(?i)^proceedings of.*north american chapter of the association for computational linguistics(?!.*(workshop|findings))'
+    - '(?i)^conference of the north american chapter of the association for computational linguistics(?!.*(workshop|findings))'
+    - '(?i)^naacl[- ]hlt(?!.*(workshop|findings))'
+    - '(?i)^naacl \d{4}(?!.*(workshop|findings))'
+- id: naacl_findings
+  type: "conference"
+  full: "Findings of the Association for Computational Linguistics: NAACL"
+  abbreviation: "Findings of NAACL"
+  acronym: "NAACL-Findings"
+  variants:
+    - "Findings of NAACL"
+    - "NAACL Findings"
+  patterns:
+    - '(?i)findings.*naacl'
+    - '(?i)naacl.*findings'
+- id: coling
+  type: "conference"
+  full: "Proceedings of the International Conference on Computational Linguistics"
+  abbreviation: "Proc. Int. Conf. Comput. Linguist."
+  acronym: "COLING"
+  variants:
+    - "International Conference on Computational Linguistics"
+    - "Int. Conf. on Computational Linguistics"
+  patterns:
+    - '(?i)international conference on computational linguistics(?!.*workshop)'
+    - '(?i)^proceedings of the \d+(st|nd|rd|th) international conference on computational linguistics(?!.*workshop)'
+- id: eacl
+  type: "conference"
+  full: "Proceedings of the Conference of the European Chapter of the Association for Computational Linguistics"
+  abbreviation: "Proc. Conf. Eur. Chapter Assoc. Comput. Linguist."
+  acronym: "EACL"
+  variants:
+    - "Conference of the European Chapter of the Association for Computational Linguistics"
+    - "European Chapter of the Association for Computational Linguistics"
+    - "EACL Conference"
+  patterns:
+    - '(?i)^proceedings of.*european chapter of the association for computational linguistics(?!.*(workshop|findings))'
+    - '(?i)^conference of the european chapter of the association for computational linguistics(?!.*(workshop|findings))'
+    - '(?i)^eacl \d{4}(?!.*(workshop|findings))'
+- id: eacl_findings
+  type: "conference"
+  full: "Findings of the Association for Computational Linguistics: EACL"
+  abbreviation: "Findings of EACL"
+  acronym: "EACL-Findings"
+  variants:
+    - "Findings of EACL"
+    - "EACL Findings"
+  patterns:
+    - '(?i)findings.*eacl'
+    - '(?i)eacl.*findings'
+- id: conll
+  type: "conference"
+  full: "Proceedings of the Conference on Computational Natural Language Learning"
+  abbreviation: "Proc. Conf. Comput. Nat. Lang. Learn."
+  acronym: "CoNLL"
+  variants:
+    - "Conference on Computational Natural Language Learning"
+  patterns:
+    - '(?i)conference on computational natural language learning(?!.*workshop)'
+- id: aacl
+  type: "conference"
+  full: "Proceedings of the Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics"
+  abbreviation: "Proc. Conf. Asia-Pacific Chapter Assoc. Comput. Linguist."
+  acronym: "AACL"
+  variants:
+    - "Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics"
+    - "Asia-Pacific Chapter of the Association for Computational Linguistics"
+    - "AACL-IJCNLP"
+    - "AACL Conference"
+  patterns:
+    - '(?i)^proceedings of.*asia[- ]pacific chapter of the association for computational linguistics(?!.*(workshop|findings))'
+    - '(?i)^conference of the asia[- ]pacific chapter of the association for computational linguistics(?!.*(workshop|findings))'
+    - '(?i)^aacl[- ]ijcnlp(?!.*(workshop|findings))'
+    - '(?i)^aacl \d{4}(?!.*(workshop|findings))'
+- id: aacl_findings
+  type: "conference"
+  full: "Findings of the Association for Computational Linguistics: AACL"
+  abbreviation: "Findings of AACL"
+  acronym: "AACL-Findings"
+  variants:
+    - "Findings of AACL"
+    - "AACL Findings"
+  patterns:
+    - '(?i)findings.*aacl'
+    - '(?i)aacl.*findings'
+- id: tacl
+  type: "journal"
+  full: "Transactions of the Association for Computational Linguistics"
+  abbreviation: "Trans. Assoc. Comput. Linguist."
+  acronym: "TACL"
+  variants:
+    - "Transactions of the Association for Computational Linguistics (TACL)"
+  patterns:
+    - '(?i)^transactions of the association for computational linguistics'
+- id: cl
+  type: "journal"
+  full: "Computational Linguistics"
+  abbreviation: "Comput. Linguist."
+  acronym: "CL"
+  variants:
+    - "Computational Linguistics Journal"
+  patterns:
+    - '(?i)^computational linguistics$'
+- id: taslp
+  type: "journal"
+  full: "IEEE/ACM Transactions on Audio, Speech, and Language Processing"
+  abbreviation: "IEEE/ACM Trans. Audio Speech Lang. Process."
+  acronym: "TASLP"
+  variants:
+    - "IEEE/ACM Transactions on Audio, Speech, and Language Processing (TASLP)"
+  patterns:
+    - '(?i)^ieee/acm transactions on audio, speech,? and language processing'
+- id: acl_w
+  type: "conference"
+  full: "Annual Meeting of the Association for Computational Linguistics Workshops"
+  abbreviation: "ACL Workshops"
+  acronym: "ACLW"
+  variants:
+    - "ACL Workshop"
+    - "ACL Workshops"
+  patterns:
+    - '(?i)acl.*workshop'
+    - '(?i)aclw'
+- id: emnlp_w
+  type: "conference"
+  full: "Conference on Empirical Methods in Natural Language Processing Workshops"
+  abbreviation: "EMNLP Workshops"
+  acronym: "EMNLPW"
+  variants:
+    - "EMNLP Workshop"
+    - "EMNLP Workshops"
+  patterns:
+    - '(?i)emnlp.*workshop'
+    - '(?i)emnlpw'
+- id: naacl_w
+  type: "conference"
+  full: "North American Chapter of the Association for Computational Linguistics Workshops"
+  abbreviation: "NAACL Workshops"
+  acronym: "NAACLW"
+  variants:
+    - "NAACL Workshop"
+    - "NAACL Workshops"
+  patterns:
+    - '(?i)naacl.*workshop'
+    - '(?i)naaclw'
+- id: coling_w
+  type: "conference"
+  full: "International Conference on Computational Linguistics Workshops"
+  abbreviation: "COLING Workshops"
+  acronym: "COLINGW"
+  variants:
+    - "COLING Workshop"
+    - "COLING Workshops"
+  patterns:
+    - '(?i)coling.*workshop'
+    - '(?i)colingw'
+
+# -- Robotics
+- id: icra
+  type: "conference"
+  full: "Proceedings of the IEEE International Conference on Robotics and Automation"
+  abbreviation: "Proc. IEEE Int. Conf. Robot. Autom."
+  acronym: "ICRA"
+  variants:
+    - "IEEE International Conference on Robotics and Automation"
+    - "IEEE/CVF International Conference on Robotics and Automation"
+  patterns:
+    - '(?i)international conference on robotics and automation(?!.*workshop)'
+    - '(?i)^\d{4} ieee (international )?conference on robotics and automation(?!.*workshop)'
+- id: iros
+  type: "conference"
+  full: "Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems"
+  abbreviation: "Proc. IEEE/RSJ Int. Conf. Intell. Robots Syst."
+  acronym: "IROS"
+  variants:
+    - "IEEE/RSJ International Conference on Intelligent Robots and Systems"
+    - "IEEE/RSJ Int. Conf. on Intelligent Robots and Systems"
+  patterns:
+    - '(?i)international conference on intelligent robots and systems(?!.*workshop)'
+    - '(?i)^\d{4} ieee/rsj international conference on intelligent robots and systems(?!.*workshop)'
+- id: rss
+  type: "conference"
+  full: "Proceedings of Robotics: Science and Systems"
+  abbreviation: "Proc. Robot. Sci. Syst."
+  acronym: "RSS"
+  variants:
+    - "Robotics: Science and Systems"
+    - "Robotics Science and Systems"
+  patterns:
+    - '(?i)robotics[:]? science and systems(?!.*workshop)'
+- id: humanoids
+  type: "conference"
+  full: "Proceedings of the IEEE-RAS International Conference on Humanoid Robots"
+  abbreviation: "Proc. IEEE-RAS Int. Conf. Humanoid Robots"
+  acronym: "Humanoids"
+  variants:
+    - "IEEE-RAS International Conference on Humanoid Robots"
+  patterns:
+    - '(?i)international conference on humanoid robots(?!.*workshop)'
+- id: corl
+  type: "conference"
+  full: "Proceedings of the Conference on Robot Learning"
+  abbreviation: "Proc. Conf. Robot Learn."
+  acronym: "CoRL"
+  variants:
+    - "Conference on Robot Learning"
+  patterns:
+    - '(?i)conference on robot learning(?!.*workshop)'
+- id: ijrr
+  type: "journal"
+  full: "The International Journal of Robotics Research"
+  abbreviation: "Int. J. Robot. Res."
+  acronym: "IJRR"
+  variants:
+    - "International Journal of Robotics Research (IJRR)"
+  patterns:
+    - '(?i)^(the )?international journal of robotics research'
+- id: tra
+  type: "journal"
+  full: "IEEE Transactions on Robotics"
+  abbreviation: "IEEE Trans. Robot."
+  acronym: "TRO"
+  variants:
+    - "IEEE Transactions on Robotics (TRO)"
+  patterns:
+    - '(?i)^ieee transactions on robotics'
+- id: auro
+  type: "journal"
+  full: "Autonomous Robots"
+  abbreviation: "Auton. Robots"
+  acronym: "AURO"
+  variants:
+    - "Autonomous Robots Journal"
+  patterns:
+    - '(?i)^autonomous robots$'
+- id: icra_w
+  type: "conference"
+  full: "IEEE International Conference on Robotics and Automation Workshops"
+  abbreviation: "ICRA Workshops"
+  acronym: "ICRAW"
+  variants:
+    - "ICRA Workshop"
+    - "ICRA Workshops"
+  patterns:
+    - '(?i)icra.*workshop'
+    - '(?i)icraw'
+- id: iros_w
+  type: "conference"
+  full: "IEEE/RSJ International Conference on Intelligent Robots and Systems Workshops"
+  abbreviation: "IROS Workshops"
+  acronym: "IROSW"
+  variants:
+    - "IROS Workshop"
+    - "IROS Workshops"
+  patterns:
+    - '(?i)iros.*workshop'
+    - '(?i)irosw'
+- id: rss_w
+  type: "conference"
+  full: "Robotics: Science and Systems Workshops"
+  abbreviation: "RSS Workshops"
+  acronym: "RSSW"
+  variants:
+    - "RSS Workshop"
+    - "RSS Workshops"
+  patterns:
+    - '(?i)rss.*workshop'
+    - '(?i)rssw'
+
+# -- Data Systems
+- id: sigmod
+  type: "conference"
+  full: "Proceedings of the ACM SIGMOD International Conference on Management of Data"
+  abbreviation: "Proc. ACM SIGMOD Int. Conf. Manag. Data"
+  acronym: "SIGMOD"
+  variants:
+    - "ACM SIGMOD International Conference on Management of Data"
+    - "ACM SIGMOD Conf. on Management of Data"
+  patterns:
+    - '(?i)acm sigmod (international )?conference on management of data(?!.*workshop)'
+    - '(?i)^proceedings of the \d{4} acm sigmod international conference on management of data(?!.*workshop)'
+- id: vldb
+  type: "conference"
+  full: "Proceedings of the International Conference on Very Large Data Bases"
+  abbreviation: "Proc. Int. Conf. Very Large Data Bases"
+  acronym: "VLDB"
+  variants:
+    - "International Conference on Very Large Data Bases"
+    - "Int. Conf. on Very Large Data Bases"
+    - "Proceedings of the VLDB Endowment"
+  patterns:
+    - '(?i)international conference on very large data bases(?!.*workshop)'
+    - '(?i)proceedings of the vldb endowment(?!.*workshop)'
+- id: icde
+  type: "conference"
+  full: "Proceedings of the IEEE International Conference on Data Engineering"
+  abbreviation: "Proc. IEEE Int. Conf. Data Eng."
+  acronym: "ICDE"
+  variants:
+    - "IEEE International Conference on Data Engineering"
+    - "IEEE Int. Conf. on Data Engineering"
+  patterns:
+    - '(?i)ieee international conference on data engineering(?!.*workshop)'
+    - '(?i)^\d{4} ieee \d+(st|nd|rd|th) international conference on data engineering(?!.*workshop)'
+- id: edbt
+  type: "conference"
+  full: "Proceedings of the International Conference on Extending Database Technology"
+  abbreviation: "Proc. Int. Conf. Extend. Database Technol."
+  acronym: "EDBT"
+  variants:
+    - "International Conference on Extending Database Technology"
+  patterns:
+    - '(?i)international conference on extending database technology(?!.*workshop)'
+- id: pods
+  type: "conference"
+  full: "Proceedings of the ACM SIGMOD-SIGACT-SIGAI Symposium on Principles of Database Systems"
+  abbreviation: "Proc. ACM PODS"
+  acronym: "PODS"
+  variants:
+    - "ACM Symposium on Principles of Database Systems"
+  patterns:
+    - '(?i)symposium on principles of database systems(?!.*workshop)'
+- id: vldbj
+  type: "journal"
+  full: "The VLDB Journal"
+  abbreviation: "VLDB J."
+  acronym: "VLDBJ"
+  variants:
+    - "VLDB Journal"
+    - "The International Journal on Very Large Data Bases"
+  patterns:
+    - '(?i)^(the )?vldb journal'
+- id: tods
+  type: "journal"
+  full: "ACM Transactions on Database Systems"
+  abbreviation: "ACM Trans. Database Syst."
+  acronym: "TODS"
+  variants:
+    - "ACM Transactions on Database Systems (TODS)"
+  patterns:
+    - '(?i)^acm transactions on database systems'
+
+# -- Networking & Systems
+- id: sigcomm
+  type: "conference"
+  full: "Proceedings of the ACM SIGCOMM Conference"
+  abbreviation: "Proc. ACM SIGCOMM"
+  acronym: "SIGCOMM"
+  variants:
+    - "ACM SIGCOMM Conference"
+  patterns:
+    - '(?i)acm sigcomm(?!.*workshop)'
+    - '(?i)^proceedings of the \d{4} acm sigcomm conference(?!.*workshop)'
+- id: infocom
+  type: "conference"
+  full: "Proceedings of the IEEE INFOCOM Conference"
+  abbreviation: "Proc. IEEE INFOCOM"
+  acronym: "INFOCOM"
+  variants:
+    - "IEEE INFOCOM"
+  patterns:
+    - '(?i)ieee infocom(?!.*workshop)'
+- id: nsdi
+  type: "conference"
+  full: "Proceedings of the USENIX Symposium on Networked Systems Design and Implementation"
+  abbreviation: "Proc. USENIX NSDI"
+  acronym: "NSDI"
+  variants:
+    - "USENIX Symposium on Networked Systems Design and Implementation"
+  patterns:
+    - '(?i)networked systems design and implementation(?!.*workshop)'
+- id: mobicom
+  type: "conference"
+  full: "Proceedings of the ACM International Conference on Mobile Computing and Networking"
+  abbreviation: "Proc. ACM MobiCom"
+  acronym: "MobiCom"
+  variants:
+    - "ACM International Conference on Mobile Computing and Networking"
+  patterns:
+    - '(?i)mobile computing and networking(?!.*workshop)'
+- id: mobisys
+  type: "conference"
+  full: "Proceedings of the ACM International Conference on Mobile Systems, Applications, and Services"
+  abbreviation: "Proc. ACM MobiSys"
+  acronym: "MobiSys"
+  variants:
+    - "ACM International Conference on Mobile Systems, Applications, and Services"
+  patterns:
+    - '(?i)mobile systems, applications, and services(?!.*workshop)'
+- id: sensys
+  type: "conference"
+  full: "Proceedings of the ACM Conference on Embedded Networked Sensor Systems"
+  abbreviation: "Proc. ACM SenSys"
+  acronym: "SenSys"
+  variants:
+    - "ACM Conference on Embedded Networked Sensor Systems"
+  patterns:
+    - '(?i)embedded networked sensor systems(?!.*workshop)'
+- id: imc
+  type: "conference"
+  full: "Proceedings of the ACM Internet Measurement Conference"
+  abbreviation: "Proc. ACM IMC"
+  acronym: "IMC"
+  variants:
+    - "ACM Internet Measurement Conference"
+    - "Internet Measurement Conference"
+  patterns:
+    - '(?i)internet measurement conference(?!.*workshop)'
+- id: sosp
+  type: "conference"
+  full: "Proceedings of the ACM Symposium on Operating Systems Principles"
+  abbreviation: "Proc. ACM Symp. Oper. Syst. Principles"
+  acronym: "SOSP"
+  variants:
+    - "ACM Symposium on Operating Systems Principles"
+  patterns:
+    - '(?i)symposium on operating systems principles(?!.*workshop)'
+    - '(?i)^proceedings of the \d+(st|nd|rd|th) acm symposium on operating systems principles(?!.*workshop)'
+- id: osdi
+  type: "conference"
+  full: "Proceedings of the USENIX Symposium on Operating Systems Design and Implementation"
+  abbreviation: "Proc. USENIX Symp. Oper. Syst. Des. Implementation"
+  acronym: "OSDI"
+  variants:
+    - "USENIX Symposium on Operating Systems Design and Implementation"
+    - "USENIX OSDI"
+  patterns:
+    - '(?i)operating systems design and implementation(?!.*workshop)'
+    - '(?i)^\d+(st|nd|rd|th) usenix symposium on operating systems design and implementation(?!.*workshop)'
+- id: eurosys
+  type: "conference"
+  full: "Proceedings of the European Conference on Computer Systems"
+  abbreviation: "Proc. Eur. Conf. Comput. Syst."
+  acronym: "EuroSys"
+  variants:
+    - "European Conference on Computer Systems"
+  patterns:
+    - '(?i)european conference on computer systems(?!.*workshop)'
+- id: atc
+  type: "conference"
+  full: "Proceedings of the USENIX Annual Technical Conference"
+  abbreviation: "Proc. USENIX Annu. Tech. Conf."
+  acronym: "USENIX ATC"
+  variants:
+    - "USENIX Annual Technical Conference"
+  patterns:
+    - '(?i)usenix annual technical conference(?!.*workshop)'
+- id: fast
+  type: "conference"
+  full: "Proceedings of the USENIX Conference on File and Storage Technologies"
+  abbreviation: "Proc. USENIX FAST"
+  acronym: "FAST"
+  variants:
+    - "USENIX Conference on File and Storage Technologies"
+  patterns:
+    - '(?i)file and storage technologies(?!.*workshop)'
+- id: ton
+  type: "journal"
+  full: "IEEE/ACM Transactions on Networking"
+  abbreviation: "IEEE/ACM Trans. Netw."
+  acronym: "ToN"
+  variants:
+    - "IEEE/ACM Transactions on Networking (ToN)"
+  patterns:
+    - '(?i)^ieee/acm transactions on networking'
+- id: tmc
+  type: "journal"
+  full: "IEEE Transactions on Mobile Computing"
+  abbreviation: "IEEE Trans. Mobile Comput."
+  acronym: "TMC"
+  variants:
+    - "IEEE Transactions on Mobile Computing (TMC)"
+  patterns:
+    - '(?i)^ieee transactions on mobile computing'
+- id: jsac
+  type: "journal"
+  full: "IEEE Journal on Selected Areas in Communications"
+  abbreviation: "IEEE J. Sel. Areas Commun."
+  acronym: "IEEE JSAC"
+  variants:
+    - "IEEE JSAC"
+    - "IEEE Journal on Selected Areas in Communications (JSAC)"
+  patterns:
+    - '(?i)^ieee journal on selected areas in communications'
+- id: internet_computing
+  type: "journal"
+  full: "IEEE Internet Computing"
+  abbreviation: "IEEE Internet Comput."
+  acronym: "IEEE Internet Computing"
+  variants:
+    - "IEEE Internet Computing Journal"
+  patterns:
+    - '(?i)^ieee internet computing'
+- id: tocs
+  type: "journal"
+  full: "ACM Transactions on Computer Systems"
+  abbreviation: "ACM Trans. Comput. Syst."
+  acronym: "TOCS"
+  variants:
+    - "ACM Transactions on Computer Systems (TOCS)"
+  patterns:
+    - '(?i)^acm transactions on computer systems'
+- id: tos
+  type: "journal"
+  full: "ACM Transactions on Storage"
+  abbreviation: "ACM Trans. Storage"
+  acronym: "TOS"
+  variants:
+    - "ACM Transactions on Storage (TOS)"
+  patterns:
+    - '(?i)^acm transactions on storage'
+- id: sigcomm_w
+  type: "conference"
+  full: "ACM SIGCOMM Conference Workshops"
+  abbreviation: "SIGCOMM Workshops"
+  acronym: "SIGCOMMW"
+  variants:
+    - "SIGCOMM Workshop"
+    - "SIGCOMM Workshops"
+  patterns:
+    - '(?i)sigcomm.*workshop'
+    - '(?i)sigcommw'
+- id: nsdi_w
+  type: "conference"
+  full: "USENIX Symposium on Networked Systems Design and Implementation Workshops"
+  abbreviation: "NSDI Workshops"
+  acronym: "NSDIW"
+  variants:
+    - "NSDI Workshop"
+    - "NSDI Workshops"
+  patterns:
+    - '(?i)nsdi.*workshop'
+    - '(?i)nsdiw'
+- id: mobicom_w
+  type: "conference"
+  full: "ACM International Conference on Mobile Computing and Networking Workshops"
+  abbreviation: "MobiCom Workshops"
+  acronym: "MobiComW"
+  variants:
+    - "MobiCom Workshop"
+    - "MobiCom Workshops"
+  patterns:
+    - '(?i)mobicom.*workshop'
+    - '(?i)mobicomw'
+- id: osdi_w
+  type: "conference"
+  full: "USENIX Symposium on Operating Systems Design and Implementation Workshops"
+  abbreviation: "OSDI Workshops"
+  acronym: "OSDIW"
+  variants:
+    - "OSDI Workshop"
+    - "OSDI Workshops"
+  patterns:
+    - '(?i)osdi.*workshop'
+    - '(?i)osdiw'
+- id: sosp_w
+  type: "conference"
+  full: "ACM Symposium on Operating Systems Principles Workshops"
+  abbreviation: "SOSP Workshops"
+  acronym: "SOSPW"
+  variants:
+    - "SOSP Workshop"
+    - "SOSP Workshops"
+  patterns:
+    - '(?i)sosp.*workshop'
+    - '(?i)sospw'
+- id: imc_w
+  type: "conference"
+  full: "ACM Internet Measurement Conference Workshops"
+  abbreviation: "IMC Workshops"
+  acronym: "IMCW"
+  variants:
+    - "IMC Workshop"
+    - "IMC Workshops"
+  patterns:
+    - '(?i)imc.*workshop'
+    - '(?i)imcw'
+
+# -- Security & Privacy
+- id: sp
+  type: "conference"
+  full: "Proceedings of the IEEE Symposium on Security and Privacy"
+  abbreviation: "Proc. IEEE Symp. Secur. Privacy"
+  acronym: "IEEE S&P"
+  variants:
+    - "IEEE Symposium on Security and Privacy"
+    - "Oakland Conference"
+  patterns:
+    - '(?i)ieee symposium on security and privacy(?!.*workshop)'
+    - '(?i)^\d{4} ieee symposium on security and privacy(?!.*workshop)'
+- id: ccs
+  type: "conference"
+  full: "Proceedings of the ACM Conference on Computer and Communications Security"
+  abbreviation: "Proc. ACM Conf. Comput. Commun. Secur."
+  acronym: "CCS"
+  variants:
+    - "ACM Conference on Computer and Communications Security"
+  patterns:
+    - '(?i)acm conference on computer and communications security(?!.*workshop)'
+    - '(?i)^proceedings of the \d+(st|nd|rd|th) acm conference on computer and communications security(?!.*workshop)'
+- id: usenixsec
+  type: "conference"
+  full: "Proceedings of the USENIX Security Symposium"
+  abbreviation: "Proc. USENIX Secur. Symp."
+  acronym: "USENIX Security"
+  variants:
+    - "USENIX Security Symposium"
+  patterns:
+    - '(?i)usenix security symposium(?!.*workshop)'
+    - '(?i)^\d+(st|nd|rd|th) usenix security symposium(?!.*workshop)'
+- id: ndss
+  type: "conference"
+  full: "Proceedings of the Network and Distributed System Security Symposium"
+  abbreviation: "Proc. Netw. Distrib. Syst. Secur. Symp."
+  acronym: "NDSS"
+  variants:
+    - "Network and Distributed System Security Symposium"
+  patterns:
+    - '(?i)network and distributed system security symposium(?!.*workshop)'
+- id: crypto
+  type: "conference"
+  full: "Proceedings of the International Cryptology Conference"
+  abbreviation: "Proc. Int. Cryptol. Conf."
+  acronym: "CRYPTO"
+  variants:
+    - "International Cryptology Conference"
+    - "Advances in Cryptology - CRYPTO"
+  patterns:
+    - '(?i)advances in cryptology[- ]crypto(?!.*workshop)'
+    - '(?i)international cryptology conference(?!.*workshop)'
+- id: eurocrypt
+  type: "conference"
+  full: "Proceedings of the International Conference on the Theory and Applications of Cryptographic Techniques"
+  abbreviation: "Proc. Int. Conf. Theory Appl. Cryptogr. Tech."
+  acronym: "EUROCRYPT"
+  variants:
+    - "International Conference on the Theory and Applications of Cryptographic Techniques"
+    - "Advances in Cryptology - EUROCRYPT"
+  patterns:
+    - '(?i)advances in cryptology[- ]eurocrypt(?!.*workshop)'
+- id: asiacrypt
+  type: "conference"
+  full: "Proceedings of the International Conference on the Theory and Application of Cryptology and Information Security"
+  abbreviation: "Proc. Int. Conf. Theory Appl. Cryptol. Inf. Secur."
+  acronym: "ASIACRYPT"
+  variants:
+    - "International Conference on the Theory and Application of Cryptology and Information Security"
+    - "Advances in Cryptology - ASIACRYPT"
+  patterns:
+    - '(?i)advances in cryptology[- ]asiacrypt(?!.*workshop)'
+- id: esorics
+  type: "conference"
+  full: "Proceedings of the European Symposium on Research in Computer Security"
+  abbreviation: "Proc. Eur. Symp. Res. Comput. Secur."
+  acronym: "ESORICS"
+  variants:
+    - "European Symposium on Research in Computer Security"
+  patterns:
+    - '(?i)european symposium on research in computer security(?!.*workshop)'
+- id: raid
+  type: "conference"
+  full: "Proceedings of the International Symposium on Research in Attacks, Intrusions and Defenses"
+  abbreviation: "Proc. Int. Symp. Res. Attacks Intrusions Defenses"
+  acronym: "RAID"
+  variants:
+    - "International Symposium on Research in Attacks, Intrusions and Defenses"
+  patterns:
+    - '(?i)research in attacks, intrusions and defenses(?!.*workshop)'
+- id: pets
+  type: "conference"
+  full: "Proceedings on Privacy Enhancing Technologies"
+  abbreviation: "Proc. Priv. Enhancing Technol."
+  acronym: "PETS"
+  variants:
+    - "Privacy Enhancing Technologies Symposium"
+  patterns:
+    - '(?i)privacy enhancing technologies(?!.*workshop)'
+- id: tdsc
+  type: "journal"
+  full: "IEEE Transactions on Dependable and Secure Computing"
+  abbreviation: "IEEE Trans. Dependable Secure Comput."
+  acronym: "TDSC"
+  variants:
+    - "IEEE Transactions on Dependable and Secure Computing (TDSC)"
+  patterns:
+    - '(?i)^ieee transactions on dependable and secure computing'
+- id: tifs
+  type: "journal"
+  full: "IEEE Transactions on Information Forensics and Security"
+  abbreviation: "IEEE Trans. Inf. Forensics Secur."
+  acronym: "TIFS"
+  variants:
+    - "IEEE Transactions on Information Forensics and Security (TIFS)"
+  patterns:
+    - '(?i)^ieee transactions on information forensics and security'
+- id: jcs
+  type: "journal"
+  full: "Journal of Computer Security"
+  abbreviation: "J. Comput. Secur."
+  acronym: "JCS"
+  variants:
+    - "Journal of Computer Security (JCS)"
+  patterns:
+    - '(?i)^journal of computer security'
+- id: computers_security
+  type: "journal"
+  full: "Computers & Security"
+  abbreviation: "Comput. Secur."
+  acronym: "ComputersSec"
+  variants:
+    - "Computers and Security Journal"
+  patterns:
+    - '(?i)^computers.*security$'
+- id: sp_w
+  type: "conference"
+  full: "IEEE Symposium on Security and Privacy Workshops"
+  abbreviation: "IEEE S&P Workshops"
+  acronym: "S&PW"
+  variants:
+    - "S&P Workshop"
+    - "S&P Workshops"
+    - "IEEE S&P Workshop"
+    - "IEEE S&P Workshops"
+  patterns:
+    - '(?i)s&p.*workshop'
+    - '(?i)s&pw'
+    - '(?i)ieee.*security.*privacy.*workshop'
+- id: ccs_w
+  type: "conference"
+  full: "ACM Conference on Computer and Communications Security Workshops"
+  abbreviation: "CCS Workshops"
+  acronym: "CCSW"
+  variants:
+    - "CCS Workshop"
+    - "CCS Workshops"
+  patterns:
+    - '(?i)ccs.*workshop'
+    - '(?i)ccsw'
+- id: usenixsec_w
+  type: "conference"
+  full: "USENIX Security Symposium Workshops"
+  abbreviation: "USENIX Security Workshops"
+  acronym: "USENIX SecW"
+  variants:
+    - "USENIX Security Workshop"
+    - "USENIX Security Workshops"
+  patterns:
+    - '(?i)usenix.*security.*workshop'
+    - '(?i)usenix.*secw'
+- id: ndss_w
+  type: "conference"
+  full: "Network and Distributed System Security Symposium Workshops"
+  abbreviation: "NDSS Workshops"
+  acronym: "NDSSW"
+  variants:
+    - "NDSS Workshop"
+    - "NDSS Workshops"
+  patterns:
+    - '(?i)ndss.*workshop'
+    - '(?i)ndssw'
+
+# -- Architecture & HPC
+- id: hpca
+  type: "conference"
+  full: "Proceedings of the IEEE International Symposium on High-Performance Computer Architecture"
+  abbreviation: "Proc. IEEE Int. Symp. High-Perform. Comput. Archit."
+  acronym: "HPCA"
+  variants:
+    - "IEEE International Symposium on High-Performance Computer Architecture"
+  patterns:
+    - '(?i)high[- ]performance computer architecture(?!.*workshop)'
+    - '(?i)^\d{4} ieee international symposium on high[- ]performance computer architecture(?!.*workshop)'
+- id: isca
+  type: "conference"
+  full: "Proceedings of the ACM/IEEE International Symposium on Computer Architecture"
+  abbreviation: "Proc. ACM/IEEE Int. Symp. Comput. Archit."
+  acronym: "ISCA"
+  variants:
+    - "ACM/IEEE International Symposium on Computer Architecture"
+  patterns:
+    - '(?i)international symposium on computer architecture(?!.*workshop)'
+    - '(?i)^proceedings of the \d+(st|nd|rd|th) (annual )?(acm/)?ieee international symposium on computer architecture(?!.*workshop)'
+- id: micro
+  type: "conference"
+  full: "Proceedings of the IEEE/ACM International Symposium on Microarchitecture"
+  abbreviation: "Proc. IEEE/ACM Int. Symp. Microarchitecture"
+  acronym: "MICRO"
+  variants:
+    - "IEEE/ACM International Symposium on Microarchitecture"
+  patterns:
+    - '(?i)international symposium on microarchitecture(?!.*workshop)'
+    - '(?i)^\d+(st|nd|rd|th) (annual )?ieee/acm international symposium on microarchitecture(?!.*workshop)'
+- id: asplos
+  type: "conference"
+  full: "Proceedings of the International Conference on Architectural Support for Programming Languages and Operating Systems"
+  abbreviation: "Proc. Int. Conf. Archit. Support Program. Lang. Oper. Syst."
+  acronym: "ASPLOS"
+  variants:
+    - "International Conference on Architectural Support for Programming Languages and Operating Systems"
+  patterns:
+    - '(?i)architectural support for programming languages and operating systems(?!.*workshop)'
+- id: sc
+  type: "conference"
+  full: "Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis"
+  abbreviation: "Proc. Int. Conf. High Perform. Comput. Netw. Storage Anal."
+  acronym: "SC"
+  variants:
+    - "Supercomputing Conference"
+    - "International Conference for High Performance Computing, Networking, Storage and Analysis"
+  patterns:
+    - '(?i)international conference for high performance computing, networking, storage and analysis(?!.*workshop)'
+    - '(?i)^sc\d{2}[:]? proceedings(?!.*workshop)'
+- id: ppopp
+  type: "conference"
+  full: "Proceedings of the ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming"
+  abbreviation: "Proc. ACM SIGPLAN PPoPP"
+  acronym: "PPoPP"
+  variants:
+    - "ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming"
+  patterns:
+    - '(?i)principles and practice of parallel programming(?!.*workshop)'
+- id: ics
+  type: "conference"
+  full: "Proceedings of the ACM International Conference on Supercomputing"
+  abbreviation: "Proc. ACM ICS"
+  acronym: "ICS"
+  variants:
+    - "ACM International Conference on Supercomputing"
+  patterns:
+    - '(?i)acm international conference on supercomputing(?!.*workshop)'
+- id: ipdps
+  type: "conference"
+  full: "Proceedings of the IEEE International Parallel and Distributed Processing Symposium"
+  abbreviation: "Proc. IEEE IPDPS"
+  acronym: "IPDPS"
+  variants:
+    - "IEEE International Parallel and Distributed Processing Symposium"
+  patterns:
+    - '(?i)international parallel and distributed processing symposium(?!.*workshop)'
+- id: hpca_w
+  type: "conference"
+  full: "IEEE International Symposium on High-Performance Computer Architecture Workshops"
+  abbreviation: "HPCA Workshops"
+  acronym: "HPCAW"
+  variants:
+    - "HPCA Workshop"
+    - "HPCA Workshops"
+  patterns:
+    - '(?i)hpca.*workshop'
+    - '(?i)hpcaw'
+- id: isca_w
+  type: "conference"
+  full: "International Symposium on Computer Architecture Workshops"
+  abbreviation: "ISCA Workshops"
+  acronym: "ISCAW"
+  variants:
+    - "ISCA Workshop"
+    - "ISCA Workshops"
+  patterns:
+    - '(?i)isca.*workshop'
+    - '(?i)iscaw'
+- id: micro_w
+  type: "conference"
+  full: "IEEE/ACM International Symposium on Microarchitecture Workshops"
+  abbreviation: "MICRO Workshops"
+  acronym: "MICROW"
+  variants:
+    - "MICRO Workshop"
+    - "MICRO Workshops"
+  patterns:
+    - '(?i)micro.*workshop'
+    - '(?i)microw'
+- id: asplos_w
+  type: "conference"
+  full: "International Conference on Architectural Support for Programming Languages and Operating Systems Workshops"
+  abbreviation: "ASPLOS Workshops"
+  acronym: "ASPLOSW"
+  variants:
+    - "ASPLOS Workshop"
+    - "ASPLOS Workshops"
+  patterns:
+    - '(?i)asplos.*workshop'
+    - '(?i)asplosw'
+- id: tc
+  type: "journal"
+  full: "IEEE Transactions on Computers"
+  abbreviation: "IEEE Trans. Comput."
+  acronym: "TC"
+  variants:
+    - "IEEE Transactions on Computers (TC)"
+  patterns:
+    - '(?i)^ieee transactions on computers$'
+- id: tpds
+  type: "journal"
+  full: "IEEE Transactions on Parallel and Distributed Systems"
+  abbreviation: "IEEE Trans. Parallel Distrib. Syst."
+  acronym: "TPDS"
+  variants:
+    - "IEEE Transactions on Parallel and Distributed Systems (TPDS)"
+  patterns:
+    - '(?i)^ieee transactions on parallel and distributed systems'
+- id: tcad
+  type: "journal"
+  full: "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems"
+  abbreviation: "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst."
+  acronym: "TCAD"
+  variants:
+    - "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)"
+  patterns:
+    - '(?i)^ieee transactions on computer[- ]aided design'
+- id: tpds2
+  type: "journal"
+  full: "Parallel Computing"
+  abbreviation: "Parallel Comput."
+  acronym: "ParCo"
+  variants:
+    - "Parallel Computing Journal"
+  patterns:
+    - '(?i)^parallel computing$'
+- id: europar
+  type: "conference"
+  full: "Proceedings of the European Conference on Parallel and Distributed Computing"
+  abbreviation: "Proc. Eur. Conf. Parallel Distrib. Comput."
+  acronym: "Euro-Par"
+  variants:
+    - "European Conference on Parallel and Distributed Computing"
+  patterns:
+    - '(?i)european conference on parallel and distributed computing(?!.*workshop)'
+- id: middleware
+  type: "conference"
+  full: "Proceedings of the ACM/IFIP/USENIX International Middleware Conference"
+  abbreviation: "Proc. Int. Middleware Conf."
+  acronym: "Middleware"
+  variants:
+    - "ACM/IFIP/USENIX International Middleware Conference"
+  patterns:
+    - '(?i)middleware conference(?!.*workshop)'
+- id: icac
+  type: "conference"
+  full: "Proceedings of the IEEE International Conference on Autonomic Computing"
+  abbreviation: "Proc. IEEE Int. Conf. Auton. Comput."
+  acronym: "ICAC"
+  variants:
+    - "IEEE International Conference on Autonomic Computing"
+  patterns:
+    - '(?i)international conference on autonomic computing(?!.*workshop)'
+
+# -- Software Engineering & PL
+- id: icse
+  type: "conference"
+  full: "Proceedings of the IEEE/ACM International Conference on Software Engineering"
+  abbreviation: "Proc. IEEE/ACM Int. Conf. Softw. Eng."
+  acronym: "ICSE"
+  variants:
+    - "IEEE/ACM International Conference on Software Engineering"
+  patterns:
+    - '(?i)international conference on software engineering(?!.*workshop)'
+    - '(?i)^proceedings of the \d+(st|nd|rd|th) ieee/acm international conference on software engineering(?!.*workshop)'
+- id: fse
+  type: "conference"
+  full: "Proceedings of the ACM SIGSOFT Symposium on the Foundations of Software Engineering"
+  abbreviation: "Proc. ACM SIGSOFT FSE"
+  acronym: "FSE"
+  variants:
+    - "ACM SIGSOFT Symposium on the Foundations of Software Engineering"
+    - "Foundations of Software Engineering"
+  patterns:
+    - '(?i)foundations of software engineering(?!.*workshop)'
+- id: ase
+  type: "conference"
+  full: "Proceedings of the IEEE/ACM International Conference on Automated Software Engineering"
+  abbreviation: "Proc. IEEE/ACM ASE"
+  acronym: "ASE"
+  variants:
+    - "IEEE/ACM International Conference on Automated Software Engineering"
+  patterns:
+    - '(?i)automated software engineering(?!.*workshop)'
+- id: pldi
+  type: "conference"
+  full: "Proceedings of the ACM SIGPLAN Conference on Programming Language Design and Implementation"
+  abbreviation: "Proc. ACM SIGPLAN PLDI"
+  acronym: "PLDI"
+  variants:
+    - "ACM SIGPLAN Conference on Programming Language Design and Implementation"
+  patterns:
+    - '(?i)programming language design and implementation(?!.*workshop)'
+- id: popl
+  type: "conference"
+  full: "Proceedings of the ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages"
+  abbreviation: "Proc. ACM SIGPLAN POPL"
+  acronym: "POPL"
+  variants:
+    - "ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages"
+  patterns:
+    - '(?i)principles of programming languages(?!.*workshop)'
+- id: oopsla
+  type: "conference"
+  full: "Proceedings of the ACM SIGPLAN International Conference on Object-Oriented Programming, Systems, Languages, and Applications"
+  abbreviation: "Proc. ACM SIGPLAN OOPSLA"
+  acronym: "OOPSLA"
+  variants:
+    - "ACM SIGPLAN International Conference on Object-Oriented Programming, Systems, Languages, and Applications"
+  patterns:
+    - '(?i)object[- ]oriented programming, systems, languages, and applications(?!.*workshop)'
+- id: icse_w
+  type: "conference"
+  full: "International Conference on Software Engineering Workshops"
+  abbreviation: "ICSE Workshops"
+  acronym: "ICSEW"
+  variants:
+    - "ICSE Workshop"
+    - "ICSE Workshops"
+  patterns:
+    - '(?i)icse.*workshop'
+    - '(?i)icsew'
+- id: fse_w
+  type: "conference"
+  full: "ACM International Conference on the Foundations of Software Engineering Workshops"
+  abbreviation: "FSE Workshops"
+  acronym: "FSEW"
+  variants:
+    - "FSE Workshop"
+    - "FSE Workshops"
+    - "ESEC/FSE Workshop"
+    - "ESEC/FSE Workshops"
+  patterns:
+    - '(?i)fse.*workshop'
+    - '(?i)fsew'
+    - '(?i)esec/fse.*workshop'
+- id: ase_w
+  type: "conference"
+  full: "IEEE/ACM International Conference on Automated Software Engineering Workshops"
+  abbreviation: "ASE Workshops"
+  acronym: "ASEW"
+  variants:
+    - "ASE Workshop"
+    - "ASE Workshops"
+  patterns:
+    - '(?i)ase.*workshop'
+    - '(?i)asew'
+- id: pldi_w
+  type: "conference"
+  full: "ACM SIGPLAN Conference on Programming Language Design and Implementation Workshops"
+  abbreviation: "PLDI Workshops"
+  acronym: "PLDIW"
+  variants:
+    - "PLDI Workshop"
+    - "PLDI Workshops"
+  patterns:
+    - '(?i)pldi.*workshop'
+    - '(?i)pldiw'
+- id: oopsla_w
+  type: "conference"
+  full: "ACM SIGPLAN Conference on Object-Oriented Programming, Systems, Languages, and Applications Workshops"
+  abbreviation: "OOPSLA Workshops"
+  acronym: "OOPLAW"
+  variants:
+    - "OOPSLA Workshop"
+    - "OOPSLA Workshops"
+  patterns:
+    - '(?i)oopsla.*workshop'
+    - '(?i)ooplaw'
+- id: popl_w
+  type: "conference"
+  full: "ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages Workshops"
+  abbreviation: "POPL Workshops"
+  acronym: "POPLW"
+  variants:
+    - "POPL Workshop"
+    - "POPL Workshops"
+  patterns:
+    - '(?i)popl.*workshop'
+    - '(?i)poplw'
+- id: tse
+  type: "journal"
+  full: "IEEE Transactions on Software Engineering"
+  abbreviation: "IEEE Trans. Softw. Eng."
+  acronym: "TSE"
+  variants:
+    - "IEEE Transactions on Software Engineering (TSE)"
+  patterns:
+    - '(?i)^ieee transactions on software engineering'
+- id: tosem
+  type: "journal"
+  full: "ACM Transactions on Software Engineering and Methodology"
+  abbreviation: "ACM Trans. Softw. Eng. Methodol."
+  acronym: "TOSEM"
+  variants:
+    - "ACM Transactions on Software Engineering and Methodology (TOSEM)"
+  patterns:
+    - '(?i)^acm transactions on software engineering and methodology'
+- id: jss
+  type: "journal"
+  full: "Journal of Systems and Software"
+  abbreviation: "J. Syst. Softw."
+  acronym: "JSS"
+  variants:
+    - "Journal of Systems and Software (JSS)"
+  patterns:
+    - '(?i)^journal of systems and software'
+
+# -- HCI & Interaction
+- id: chi
+  type: "conference"
+  full: "Proceedings of the ACM CHI Conference on Human Factors in Computing Systems"
+  abbreviation: "Proc. ACM CHI"
+  acronym: "CHI"
+  variants:
+    - "ACM CHI Conference on Human Factors in Computing Systems"
+  patterns:
+    - '(?i)chi conference on human factors in computing systems(?!.*workshop)'
+    - '(?i)^proceedings of the \d{4} chi conference on human factors in computing systems(?!.*workshop)'
+- id: uist
+  type: "conference"
+  full: "Proceedings of the ACM Symposium on User Interface Software and Technology"
+  abbreviation: "Proc. ACM UIST"
+  acronym: "UIST"
+  variants:
+    - "ACM Symposium on User Interface Software and Technology"
+  patterns:
+    - '(?i)user interface software and technology(?!.*workshop)'
+- id: ubicomp
+  type: "conference"
+  full: "Proceedings of the ACM International Joint Conference on Pervasive and Ubiquitous Computing"
+  abbreviation: "Proc. ACM UbiComp"
+  acronym: "UbiComp"
+  variants:
+    - "ACM International Joint Conference on Pervasive and Ubiquitous Computing"
+  patterns:
+    - '(?i)pervasive and ubiquitous computing(?!.*workshop)'
+- id: iui
+  type: "conference"
+  full: "Proceedings of the ACM International Conference on Intelligent User Interfaces"
+  abbreviation: "Proc. ACM IUI"
+  acronym: "IUI"
+  variants:
+    - "ACM International Conference on Intelligent User Interfaces"
+  patterns:
+    - '(?i)intelligent user interfaces(?!.*workshop)'
+- id: cscw
+  type: "conference"
+  full: "Proceedings of the ACM Conference on Computer Supported Cooperative Work"
+  abbreviation: "Proc. ACM CSCW Conf."
+  acronym: "CSCW"
+  variants:
+    - "ACM Conference on Computer Supported Cooperative Work"
+  patterns:
+    - '(?i)computer supported cooperative work(?!.*workshop)'
+- id: mobilehci
+  type: "conference"
+  full: "Proceedings of the International Conference on Mobile Human-Computer Interaction"
+  abbreviation: "Proc. Int. Conf. Mobile Hum.-Comput. Interact."
+  acronym: "MobileHCI"
+  variants:
+    - "International Conference on Mobile Human-Computer Interaction"
+  patterns:
+    - '(?i)mobile human[- ]computer interaction(?!.*workshop)'
+- id: tochi
+  type: "journal"
+  full: "ACM Transactions on Computer-Human Interaction"
+  abbreviation: "ACM Trans. Comput.-Hum. Interact."
+  acronym: "TOCHI"
+  variants:
+    - "ACM Transactions on Computer-Human Interaction (TOCHI)"
+  patterns:
+    - '(?i)^acm transactions on computer-human interaction'
+- id: ijhcs
+  type: "journal"
+  full: "International Journal of Human-Computer Studies"
+  abbreviation: "Int. J. Hum.-Comput. Stud."
+  acronym: "IJHCS"
+  variants:
+    - "International Journal of Human-Computer Studies (IJHCS)"
+  patterns:
+    - '(?i)^international journal of human-computer studies'
+- id: chi_w
+  type: "conference"
+  full: "ACM CHI Conference on Human Factors in Computing Systems Workshops"
+  abbreviation: "CHI Workshops"
+  acronym: "CHIW"
+  variants:
+    - "CHI Workshop"
+    - "CHI Workshops"
+  patterns:
+    - '(?i)chi.*workshop'
+    - '(?i)chiw'
+- id: uist_w
+  type: "conference"
+  full: "ACM Symposium on User Interface Software and Technology Workshops"
+  abbreviation: "UIST Workshops"
+  acronym: "UISTW"
+  variants:
+    - "UIST Workshop"
+    - "UIST Workshops"
+  patterns:
+    - '(?i)uist.*workshop'
+    - '(?i)uistw'
+- id: ubicomp_w
+  type: "conference"
+  full: "ACM International Joint Conference on Pervasive and Ubiquitous Computing Workshops"
+  abbreviation: "UbiComp Workshops"
+  acronym: "UbiCompW"
+  variants:
+    - "UbiComp Workshop"
+    - "UbiComp Workshops"
+  patterns:
+    - '(?i)ubicomp.*workshop'
+    - '(?i)ubicompw'
+- id: sigcse
+  type: "conference"
+  full: "Proceedings of the ACM Technical Symposium on Computer Science Education"
+  abbreviation: "Proc. ACM SIGCSE Tech. Symp. Comput. Sci. Educ."
+  acronym: "SIGCSE"
+  variants:
+    - "ACM Technical Symposium on Computer Science Education"
+  patterns:
+    - '(?i)computer science education(?!.*workshop)'
+- id: laK
+  type: "conference"
+  full: "Proceedings of the International Conference on Learning Analytics and Knowledge"
+  abbreviation: "Proc. Int. Conf. Learn. Anal. Knowl."
+  acronym: "LAK"
+  variants:
+    - "Learning Analytics and Knowledge Conference"
+  patterns:
+    - '(?i)learning analytics and knowledge(?!.*workshop)'
+- id: edmedia
+  type: "conference"
+  full: "Proceedings of the World Conference on Educational Media and Technology"
+  abbreviation: "Proc. World Conf. Educ. Media Technol."
+  acronym: "EdMedia"
+  variants:
+    - "World Conference on Educational Media and Technology"
+  patterns:
+    - '(?i)educational media and technology(?!.*workshop)'
+- id: computers_education
+  type: "journal"
+  full: "Computers & Education"
+  abbreviation: "Comput. Educ."
+  acronym: "CompEduc"
+  variants:
+    - "Computers and Education Journal"
+  patterns:
+    - '(?i)^computers.*education'
+- id: computers_human_behavior
+  type: "journal"
+  full: "Computers in Human Behavior"
+  abbreviation: "Comput. Hum. Behav."
+  acronym: "CHB"
+  variants:
+    - "Computers in Human Behavior Journal"
+  patterns:
+    - '(?i)^computers in human behavior'
+- id: education_researcher
+  type: "journal"
+  full: "Educational Researcher"
+  abbreviation: "Educ. Res."
+  acronym: "ER"
+  variants:
+    - "Educational Researcher Journal"
+  patterns:
+    - '(?i)^educational researcher'
+- id: brit_j_psych
+  type: "journal"
+  full: "British Journal of Psychology"
+  abbreviation: "Br. J. Psychol."
+  acronym: "Brit. J. Psychology"
+  variants:
+    - "British Journal of Psychology (BJP)"
+  patterns:
+    - '(?i)^british journal of psychology'
+- id: psych_bulletin
+  type: "journal"
+  full: "Psychological Bulletin"
+  abbreviation: "Psychol. Bull."
+  acronym: "Psychol Bulletin"
+  variants:
+    - "Psychological Bulletin Journal"
+  patterns:
+    - '(?i)^psychological bulletin$'
+- id: cybersecurity
+  type: "journal"
+  full: "Cybersecurity"
+  abbreviation: "Cybersecurity"
+  acronym: "Cybersecurity"
+  variants:
+    - "Cybersecurity Journal"
+  patterns:
+    - '(?i)^cybersecurity$'
+- id: wifs
+  type: "conference"
+  full: "IEEE International Workshop on Information Forensics and Security"
+  abbreviation: "IEEE WIFS"
+  acronym: "WIFS"
+  variants:
+    - "International Workshop on Information Forensics and Security"
+    - "IEEE WIFS"
+    - "WIFS"
+    - "Information Forensics and Security Workshop"
+  patterns:
+    - '(?i)^\d{4}\s*ieee\s+international\s+workshop\s+on\s+information\s+forensics\s+and\s+security'
+    - '(?i)^ieee\s+international\s+workshop\s+on\s+information\s+forensics\s+and\s+security'
+    - '(?i)\binformation\s+forensics\s+and\s+security\s+workshop\b'
+    - '(?i)\bwifs\b'
+- id: icais
+  type: "conference"
+  full: "Proceedings of the International Conference on Artificial Intelligence and Security"
+  abbreviation: "Proc. Int. Conf. Artif. Intell. Secur."
+  acronym: "ICAIS"
+  variants:
+    - "International Conference on Artificial Intelligence and Security"
+    - "Artificial Intelligence and Security Conference"
+  patterns:
+    - '(?i)^\d{4}\s*international conference on artificial intelligence and security(?!.*workshop)'
+    - '(?i)^international conference on artificial intelligence and security(?!.*workshop)'
+- id: apa
+  type: "conference"
+  full: "Proceedings of the American Psychological Association Annual Convention"
+  abbreviation: "Proc. APA Annu. Conv."
+  acronym: "APA"
+  variants:
+    - "American Psychological Association Annual Convention"
+  patterns:
+    - '(?i)american psychological association(?!.*workshop)'
+- id: icwsm
+  type: "conference"
+  full: "Proceedings of the International Conference on Web and Social Media"
+  abbreviation: "Proc. Int. Conf. Web Soc. Media"
+  acronym: "ICWSM"
+  variants:
+    - "International Conference on Web and Social Media"
+  patterns:
+    - '(?i)international conference on web and social media(?!.*workshop)'
+- id: webscience
+  type: "conference"
+  full: "Proceedings of the ACM Web Science Conference"
+  abbreviation: "Proc. ACM WebSci Conf."
+  acronym: "WebSci"
+  variants:
+    - "ACM Web Science Conference"
+  patterns:
+    - '(?i)web science conference(?!.*workshop)'
+- id: epjds
+  type: "journal"
+  full: "EPJ Data Science"
+  abbreviation: "EPJ Data Sci."
+  acronym: "EPJDS"
+  variants:
+    - "EPJ Data Science Journal"
+  patterns:
+    - '(?i)^epj data science'
+- id: csn
+  type: "journal"
+  full: "Computational Social Networks"
+  abbreviation: "Comput. Soc. Netw."
+  acronym: "CSN"
+  variants:
+    - "Computational Social Networks Journal"
+  patterns:
+    - '(?i)^computational social networks'
+- id: tcss
+  type: "journal"
+  full: "IEEE Transactions on Computational Social Systems"
+  abbreviation: "IEEE Trans. Comput. Soc. Syst."
+  acronym: "TCSS"
+  variants:
+    - "IEEE Transactions on Computational Social Systems (TCSS)"
+  patterns:
+    - '(?i)^ieee transactions on computational social systems'
+
+# -- Responsible AI & Society
+- id: facct
+  type: "conference"
+  full: "Proceedings of the ACM Conference on Fairness, Accountability, and Transparency"
+  abbreviation: "Proc. ACM Conf. Fairness Accountab. Transpar."
+  acronym: "FAccT"
+  variants:
+    - "ACM Conference on Fairness, Accountability, and Transparency"
+    - "Conference on Fairness, Accountability, and Transparency"
+  patterns:
+    - '(?i)fairness, accountability, and transparency(?!.*workshop)'
+    - '(?i)facct(?!.*workshop)'
+- id: aies
+  type: "conference"
+  full: "Proceedings of the AAAI/ACM Conference on Artificial Intelligence, Ethics, and Society"
+  abbreviation: "Proc. AAAI/ACM Conf. Artif. Intell. Ethics Soc."
+  acronym: "AIES"
+  variants:
+    - "AAAI/ACM Conference on Artificial Intelligence, Ethics, and Society"
+    - "AIES Conference"
+  patterns:
+    - '(?i)artificial intelligence, ethics, and society(?!.*workshop)'
+    - '(?i)aies(?!.*workshop)'
+- id: ai_ethics
+  type: "journal"
+  full: "AI and Ethics"
+  abbreviation: "AI Ethics"
+  acronym: "AI Ethics"
+  variants:
+    - "AI & Ethics Journal"
+  patterns:
+    - '(?i)^ai and ethics$'
+- id: force11
+  type: "conference"
+  full: "Proceedings of the FORCE11 Conference on Research Communication and e-Scholarship"
+  abbreviation: "Proc. FORCE11 Conf."
+  acronym: "FORCE11"
+  variants:
+    - "FORCE11 Conference on Research Communication and e-Scholarship"
+  patterns:
+    - '(?i)force11(?!.*workshop)'
+- id: open_science
+  type: "journal"
+  full: "Royal Society Open Science"
+  abbreviation: "R. Soc. Open Sci."
+  acronym: "RSOS"
+  variants:
+    - "Royal Society Open Science Journal"
+  patterns:
+    - '(?i)^royal society open science'
+- id: dh
+  type: "conference"
+  full: "Proceedings of the International Conference on Digital Humanities"
+  abbreviation: "Proc. Int. Conf. Digit. Humanit."
+  acronym: "DH"
+  variants:
+    - "International Conference on Digital Humanities"
+  patterns:
+    - '(?i)digital humanities(?!.*workshop)'
+- id: adho
+  type: "organization"
+  full: "Alliance of Digital Humanities Organizations Conference"
+  abbreviation: "ADHO Conf."
+  acronym: "ADHO"
+  variants:
+    - "Alliance of Digital Humanities Organizations Conference"
+  patterns:
+    - '(?i)alliance of digital humanities organizations'
+- id: digital_scholarship
+  type: "journal"
+  full: "Digital Scholarship in the Humanities"
+  abbreviation: "Digit. Scholarsh. Humanit."
+  acronym: "DSH"
+  variants:
+    - "Digital Scholarship in the Humanities Journal"
+  patterns:
+    - '(?i)^digital scholarship in the humanities'
+- id: jch
+  type: "journal"
+  full: "Journal on Computing and Cultural Heritage"
+  abbreviation: "J. Comput. Cult. Herit."
+  acronym: "JOCCH"
+  variants:
+    - "ACM Journal on Computing and Cultural Heritage"
+  patterns:
+    - '(?i)^journal on computing and cultural heritage'
+
+# -- Applied AI & Soft Computing
+- id: ijcnn
+  type: "conference"
+  full: "Proceedings of the International Joint Conference on Neural Networks"
+  abbreviation: "Proc. Int. Joint Conf. Neural Netw."
+  acronym: "IJCNN"
+  variants:
+    - "International Joint Conference on Neural Networks"
+    - "IEEE World Congress on Computational Intelligence - IJCNN"
+  patterns:
+    - '(?i)international joint conference on neural networks(?!.*workshop)'
+    - '(?i)^proceedings of the international joint conference on neural networks(?!.*workshop)'
+- id: icisa
+  type: "conference"
+  full: "Proceedings of the International Conference on Information Science and Applications"
+  abbreviation: "Proc. Int. Conf. Inf. Sci. Appl."
+  acronym: "ICISA"
+  variants:
+    - "International Conference on Information Science and Applications"
+  patterns:
+    - '(?i)international conference on information science and applications(?!.*workshop)'
+    - '(?i)^proceedings of the international conference on information science and applications'
+- id: cmc
+  type: "journal"
+  full: "Computers, Materials & Continua"
+  abbreviation: "Comput. Mater. Continua"
+  acronym: "CMC"
+  variants:
+    - "Computers, Materials and Continua"
+    - "Computers Materials & Continua"
+    - "Computers Materials and Continua"
+  patterns:
+    - '(?i)^computers[,\s]+materials\s*(and|&)\s*continua$'
+- id: ins
+  type: "journal"
+  full: "Information Sciences"
+  abbreviation: "Inf. Sci."
+  acronym: "INS"
+  variants:
+    - "Information Sciences (Elsevier)"
+    - "Inf. Sci."
+  patterns:
+    - '(?i)^information sciences$'
+    - '(?i)^inf\. sci\.?$'
+    - '(?i)^elsevier information sciences$'
+- id: eswa
+  type: "journal"
+  full: "Expert Systems with Applications"
+  abbreviation: "Expert Syst. Appl."
+  acronym: "ESWA"
+  variants:
+    - "Expert Systems with Applications (Elsevier)"
+    - "Expert Syst. Appl."
+  patterns:
+    - '(?i)^expert systems with applications$'
+    - '(?i)^expert syst\.? appl\.?$'
+    - '(?i)^elsevier expert systems with applications$'
+- id: neurocomputing
+  type: "journal"
+  full: "Neurocomputing"
+  abbreviation: "Neurocomputing"
+  acronym: "Neurocomputing"
+  variants:
+    - "Neurocomputing Journal"
+    - "Elsevier Neurocomputing"
+  patterns:
+    - '(?i)^neurocomputing$'
+    - '(?i)^elsevier neurocomputing$'
+- id: aplsci
+  type: "journal"
+  full: "Applied Sciences"
+  abbreviation: "Appl. Sci."
+  acronym: "ApplSci"
+  variants:
+    - "Applied Sciences (MDPI)"
+    - "Appl. Sci."
+  patterns:
+    - '(?i)^applied sciences$'
+    - '(?i)^appl\. sci\.?$'
+    - '(?i)^mdpi applied sciences$'
+- id: is
+  type: "journal"
+  full: "Information Systems"
+  abbreviation: "Inf. Syst."
+  acronym: "IS"
+  variants:
+    - "Information Systems (Elsevier)"
+    - "Inf. Syst."
+  patterns:
+    - '(?i)^information systems$'
+    - '(?i)^inf\. syst\.?$'
+    - '(?i)^elsevier information systems$'
+- id: knosys
+  type: "journal"
+  full: "Knowledge Systems"
+  abbreviation: "Knowl. Syst."
+  acronym: "KS"
+  variants:
+    - "Knowledge Systems Journal"
+    - "Knowl. Syst."
+  patterns:
+    - '(?i)^knowledge systems$'
+    - '(?i)^knowl\. syst\.?$'
+- id: inffus
+  type: "journal"
+  full: "Information Fusion"
+  abbreviation: "Inf. Fusion"
+  acronym: "InfFusion"
+  variants:
+    - "Information Fusion (Elsevier)"
+    - "Inf. Fusion"
+  patterns:
+    - '(?i)^information fusion$'
+    - '(?i)^inf\. fusion$'
+    - '(?i)^elsevier information fusion$'
+- id: insci
+  type: "journal"
+  full: "Information Sciences Letters"
+  abbreviation: "Inf. Sci. Lett."
+  acronym: "ISL"
+  variants:
+    - "Information Sciences Letters Journal"
+    - "Inf. Sci. Lett."
+  patterns:
+    - '(?i)^information sciences letters$'
+    - '(?i)^inf\. sci\. lett\.?$'
+- id: dsj
+  type: "journal"
+  full: "Decision Support Systems"
+  abbreviation: "Decis. Support Syst."
+  acronym: "DSS"
+  variants:
+    - "Decision Support Systems (Elsevier)"
+    - "Decis. Support Syst."
+  patterns:
+    - '(?i)^decision support systems$'
+    - '(?i)^decis\. support syst\.?$'
+    - '(?i)^elsevier decision support systems$'
+- id: adcm
+  type: "journal"
+  full: "Applied Computing and Informatics"
+  abbreviation: "Appl. Comput. Inform."
+  acronym: "ACI"
+  variants:
+    - "Applied Computing and Informatics (Elsevier)"
+    - "Appl. Comput. Inform."
+  patterns:
+    - '(?i)^applied computing( and)? informatics$'
+    - '(?i)^appl\. comput\. inform\.?$'
+    - '(?i)^elsevier applied computing and informatics$'
+- id: compind
+  type: "journal"
+  full: "Computers in Industry"
+  abbreviation: "Comput. Ind."
+  acronym: "CI"
+  variants:
+    - "Computers in Industry (Elsevier)"
+    - "Comput. Ind."
+  patterns:
+    - '(?i)^computers in industry$'
+    - '(?i)^comput\. ind\.?$'
+    - '(?i)^elsevier computers in industry$'
+- id: omega
+  type: "journal"
+  full: "Omega: The International Journal of Management Science"
+  abbreviation: "Omega"
+  acronym: "Omega"
+  variants:
+    - "Omega Journal"
+    - "Omega (Elsevier)"
+  patterns:
+    - '(?i)^omega(:( the)? international journal of management science)?$'
+    - '(?i)^elsevier omega$'
+- id: jocs
+  type: "journal"
+  full: "Journal of Computational Science"
+  abbreviation: "J. Comput. Sci."
+  acronym: "JoCS"
+  variants:
+    - "Journal of Computational Science (Elsevier)"
+    - "J. Comput. Sci."
+  patterns:
+    - '(?i)^journal of computational science$'
+    - '(?i)^j\. comput\. sci\.?$'
+    - '(?i)^elsevier journal of computational science$'
+- id: ijis
+  type: "journal"
+  full: "International Journal of Intelligent Systems"
+  abbreviation: "Int. J. Intell. Syst."
+  acronym: "IJIS"
+  variants:
+    - "International Journal of Intelligent Systems (IJIS)"
+    - "Int. J. Intell. Syst."
+    - "Wiley International Journal of Intelligent Systems"
+  patterns:
+    - '(?i)^international journal of intelligent systems$'
+    - '(?i)^int\. j\. intell\. syst\.?$'
+    - '(?i)^wiley international journal of intelligent systems$'
+- id: tfs
+  type: "journal"
+  full: "IEEE Transactions on Fuzzy Systems"
+  abbreviation: "IEEE Trans. Fuzzy Syst."
+  acronym: "TFS"
+  variants:
+    - "IEEE Transactions on Fuzzy Systems (TFS)"
+    - "IEEE Trans. Fuzzy Syst."
+  patterns:
+    - '(?i)^ieee transactions on fuzzy systems$'
+    - '(?i)^ieee trans\. fuzzy syst\.?$'
+- id: softcomputing
+  type: "journal"
+  full: "Soft Computing"
+  abbreviation: "Soft Comput."
+  acronym: "SoftComputing"
+  variants:
+    - "Soft Computing (Springer)"
+    - "Soft Comput."
+  patterns:
+    - '(?i)^soft computing$'
+    - '(?i)^soft comput\.?$'
+    - '(?i)^springer soft computing$'
+- id: cognitive_computation
+  type: "journal"
+  full: "Cognitive Computation"
+  abbreviation: "Cogn. Comput."
+  acronym: "CognitiveComputation"
+  variants:
+    - "Cognitive Computation Journal"
+    - "Cogn. Comput."
+    - "Springer Cognitive Computation"
+  patterns:
+    - '(?i)^cognitive computation$'
+    - '(?i)^cogn\. comput\.?$'
+    - '(?i)^springer cognitive computation$'
+- id: cais
+  type: "journal"
+  full: "Complex & Intelligent Systems"
+  abbreviation: "Complex Intell. Syst."
+  acronym: "CAIS"
+  variants:
+    - "Complex and Intelligent Systems"
+    - "Complex & Intelligent Systems (Springer)"
+    - "Complex Intell. Syst."
+  patterns:
+    - '(?i)^complex( and| &) intelligent systems$'
+    - '(?i)^complex intell\. syst\.?$'
+    - '(?i)^springer complex( and| &) intelligent systems$'
+- id: nca
+  type: "journal"
+  full: "Neural Computing and Applications"
+  abbreviation: "Neural Comput. Appl."
+  acronym: "NCA"
+  variants:
+    - "Neural Computing & Applications"
+    - "Neural Computing and Applications (Springer)"
+    - "Neural Comput. Appl."
+  patterns:
+    - '(?i)^neural computing( and| &) applications$'
+    - '(?i)^neural comput\. appl\.?$'
+    - '(?i)^springer neural computing( and| &) applications$'
+- id: fss
+  type: "journal"
+  full: "Fuzzy Sets and Systems"
+  abbreviation: "Fuzzy Sets Syst."
+  acronym: "FSS"
+  variants:
+    - "Fuzzy Sets and Systems (Elsevier)"
+    - "Fuzzy Sets Syst."
+  patterns:
+    - '(?i)^fuzzy sets( and)? systems$'
+    - '(?i)^fuzzy sets syst\.?$'
+    - '(?i)^elsevier fuzzy sets and systems$'
+- id: ijar
+  type: "journal"
+  full: "International Journal of Approximate Reasoning"
+  abbreviation: "Int. J. Approx. Reason."
+  acronym: "IJAR"
+  variants:
+    - "International Journal of Approximate Reasoning (Elsevier)"
+    - "Int. J. Approx. Reason."
+  patterns:
+    - '(?i)^international journal of approximate reasoning$'
+    - '(?i)^int\. j\. approx\. reason\.?$'
+    - '(?i)^elsevier international journal of approximate reasoning$'
+- id: eaaint
+  type: "journal"
+  full: "Engineering Applications of Artificial Intelligence"
+  abbreviation: "Eng. Appl. Artif. Intell."
+  acronym: "EAAI"
+  variants:
+    - "Engineering Applications of Artificial Intelligence (Elsevier)"
+    - "Eng. Appl. Artif. Intell."
+  patterns:
+    - '(?i)^engineering applications of artificial intelligence$'
+    - '(?i)^eng\. appl\. artif\. intell\.?$'
+    - '(?i)^elsevier engineering applications of artificial intelligence$'
+- id: asoc
+  type: "journal"
+  full: "Applied Soft Computing"
+  abbreviation: "Appl. Soft Comput."
+  acronym: "ASOC"
+  variants:
+    - "Applied Soft Computing (Elsevier)"
+    - "Appl. Soft Comput."
+  patterns:
+    - '(?i)^applied soft computing$'
+    - '(?i)^appl\. soft comput\.?$'
+    - '(?i)^elsevier applied soft computing$'
+- id: gpem
+  type: "journal"
+  full: "Genetic Programming and Evolvable Machines"
+  abbreviation: "Genet. Program. Evol. Mach."
+  acronym: "GPEM"
+  variants:
+    - "Genetic Programming & Evolvable Machines"
+  patterns:
+    - '(?i)^genetic programming (and|&) evolvable machines$'
+- id: kbs
+  type: "journal"
+  full: "Knowledge-Based Systems"
+  abbreviation: "Knowl.-Based Syst."
+  acronym: "KBS"
+  variants:
+    - "Knowledge Based Systems"
+    - "Knowledge-Based Systems (Elsevier)"
+    - "Knowl. Based Syst."
+  patterns:
+    - '(?i)^knowledge[- ]based systems$'
+    - '(?i)^knowl[- ]?based syst\.?$'
+    - '(?i)^elsevier knowledge[- ]based systems$'

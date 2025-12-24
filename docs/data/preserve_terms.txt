@@ -1,0 +1,6 @@
+# Terms whose casing should be preserved verbatim.
+arXiv preprint
+arXiv
+bioRxiv
+medRxiv
+ChemRxiv

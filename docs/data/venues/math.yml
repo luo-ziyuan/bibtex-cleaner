@@ -1,0 +1,92 @@
+# How to extend this file
+# - Keep entries as a YAML list (each starts with "- id: ...").
+# - Fields: id (unique across all files, lowercase, no spaces), type (conference|journal|organization), full, abbreviation, acronym, variants[], patterns[].
+# - Quote all strings; patterns are Python regex; avoid adding workshop patterns unless that is the intent.
+# - Add new items under the closest "# -- ..." subgroup; create a new subgroup comment if needed.
+# - Prefer ASCII text; keep consistent abbreviations/variants to improve matching.
+# arXiv top-level: math - Mathematics
+# Sub-groups are lightweight clusters for readability.
+
+# -- Theory & Formal Methods
+- id: stoc
+  type: "conference"
+  full: "Proceedings of the ACM Symposium on Theory of Computing"
+  abbreviation: "Proc. ACM STOC"
+  acronym: "STOC"
+  variants:
+    - "ACM Symposium on Theory of Computing"
+  patterns:
+    - '(?i)symposium on theory of computing(?!.*workshop)'
+    - '(?i)^proceedings of the \d+(st|nd|rd|th) (annual )?acm symposium on theory of computing(?!.*workshop)'
+- id: focs
+  type: "conference"
+  full: "Proceedings of the IEEE Annual Symposium on Foundations of Computer Science"
+  abbreviation: "Proc. IEEE FOCS"
+  acronym: "FOCS"
+  variants:
+    - "IEEE Annual Symposium on Foundations of Computer Science"
+  patterns:
+    - '(?i)foundations of computer science(?!.*workshop)'
+- id: soda
+  type: "conference"
+  full: "Proceedings of the ACM-SIAM Symposium on Discrete Algorithms"
+  abbreviation: "Proc. ACM-SIAM SODA"
+  acronym: "SODA"
+  variants:
+    - "ACM-SIAM Symposium on Discrete Algorithms"
+  patterns:
+    - '(?i)symposium on discrete algorithms(?!.*workshop)'
+- id: jacm
+  type: "journal"
+  full: "Journal of the ACM"
+  abbreviation: "J. ACM"
+  acronym: "JACM"
+  variants:
+    - "Journal of the ACM (JACM)"
+  patterns:
+    - '(?i)^journal of the acm'
+- id: sicomp
+  type: "journal"
+  full: "SIAM Journal on Computing"
+  abbreviation: "SIAM J. Comput."
+  acronym: "SICOMP"
+  variants:
+    - "SIAM Journal on Computing (SICOMP)"
+  patterns:
+    - '(?i)^siam journal on computing'
+- id: cavat
+  type: "conference"
+  full: "Proceedings of the International Conference on Computer Aided Verification"
+  abbreviation: "Proc. Int. Conf. Comput. Aided Verif."
+  acronym: "CAV"
+  variants:
+    - "International Conference on Computer Aided Verification"
+  patterns:
+    - '(?i)computer aided verification(?!.*workshop)'
+- id: fm
+  type: "conference"
+  full: "Proceedings of the International Symposium on Formal Methods"
+  abbreviation: "Proc. Int. Symp. Formal Methods"
+  acronym: "FM"
+  variants:
+    - "International Symposium on Formal Methods"
+  patterns:
+    - '(?i)formal methods(?!.*workshop)'
+- id: spinv
+  type: "conference"
+  full: "Proceedings of the International SPIN Symposium on Model Checking of Software"
+  abbreviation: "Proc. Int. SPIN Symp. Model Check. Softw."
+  acronym: "SPIN"
+  variants:
+    - "SPIN Symposium on Model Checking of Software"
+  patterns:
+    - '(?i)spin.*model checking(?!.*workshop)'
+- id: sttt
+  type: "journal"
+  full: "International Journal on Software Tools for Technology Transfer"
+  abbreviation: "Softw. Tools Technol. Transf."
+  acronym: "STTT"
+  variants:
+    - "Software Tools for Technology Transfer"
+  patterns:
+    - '(?i)^software tools for technology transfer'

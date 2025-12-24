@@ -1,0 +1,480 @@
+# How to extend this file
+# - Keep entries as a YAML list (each starts with "- id: ...").
+# - Fields: id (unique across all files, lowercase, no spaces), type (conference|journal|organization), full, abbreviation, acronym, variants[], patterns[].
+# - Quote all strings; patterns are Python regex; avoid adding workshop patterns unless that is the intent.
+# - Add new items under the closest "# -- ..." subgroup; create a new subgroup comment if needed.
+# - Prefer ASCII text; keep consistent abbreviations/variants to improve matching.
+# arXiv top-level: eess - Electrical Engineering and Systems Science
+# Sub-groups are lightweight clusters for readability.
+
+# -- Signal Processing & Imaging
+- id: icassp
+  type: "conference"
+  full: "Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing"
+  abbreviation: "Proc. IEEE Int. Conf. Acoust. Speech Signal Process."
+  acronym: "ICASSP"
+  variants:
+    - "IEEE International Conference on Acoustics, Speech and Signal Processing"
+    - "IEEE Int. Conf. on Acoustics, Speech and Signal Processing"
+  patterns:
+    - '(?i)international conference on acoustics, speech and signal processing(?!.*workshop)'
+    - '(?i)^\d{4} ieee international conference on acoustics, speech and signal processing(?!.*workshop)'
+- id: interspeech
+  type: "conference"
+  full: "Proceedings of Interspeech"
+  abbreviation: "Proc. Interspeech"
+  acronym: "INTERSPEECH"
+  variants:
+    - "Interspeech"
+    - "Annual Conference of the International Speech Communication Association"
+  patterns:
+    - '(?i)^interspeech \d{4}(?!.*workshop)'
+    - '(?i)annual conference of the international speech communication association(?!.*workshop)'
+- id: slt
+  type: "conference"
+  full: "IEEE Spoken Language Technology Workshop"
+  abbreviation: "IEEE Spoken Lang. Technol. Workshop"
+  acronym: "SLT"
+  variants:
+    - "Spoken Language Technology Workshop"
+    - "IEEE SLT"
+  patterns:
+    - '(?i)ieee spoken language technology workshop'
+    - '(?i)spoken language technology workshop'
+- id: asru
+  type: "conference"
+  full: "IEEE Automatic Speech Recognition and Understanding Workshop"
+  abbreviation: "IEEE Autom. Speech Recognit. Underst. Workshop"
+  acronym: "ASRU"
+  variants:
+    - "Automatic Speech Recognition and Understanding Workshop"
+  patterns:
+    - '(?i)ieee automatic speech recognition and understanding workshop'
+- id: mmsp
+  type: "conference"
+  full: "IEEE International Workshop on Multimedia Signal Processing"
+  abbreviation: "IEEE Int. Workshop Multimedia Signal Process."
+  acronym: "MMSP"
+  variants:
+    - "International Workshop on Multimedia Signal Processing"
+  patterns:
+    - '(?i)multimedia signal processing(.*workshop)?'
+- id: icme
+  type: "conference"
+  full: "Proceedings of the IEEE International Conference on Multimedia and Expo"
+  abbreviation: "Proc. IEEE Int. Conf. Multimedia Expo"
+  acronym: "ICME"
+  variants:
+    - "IEEE International Conference on Multimedia and Expo"
+  patterns:
+    - '(?i)ieee international conference on multimedia and expo(?!.*workshop)'
+- id: icip
+  type: "conference"
+  full: "Proceedings of the IEEE International Conference on Image Processing"
+  abbreviation: "Proc. IEEE Int. Conf. Image Process."
+  acronym: "ICIP"
+  variants:
+    - "IEEE International Conference on Image Processing"
+  patterns:
+    - '(?i)ieee international conference on image processing(?!.*workshop)'
+    - '(?i)^proceedings\s*\d{4}\s+(?:ieee\s+)?international conference on image processing(?!.*workshop)'
+    - '(?i)^proceedings\s+of\s+the\s+\d{4}\s+(?:ieee\s+)?international conference on image processing(?!.*workshop)'
+- id: iet_ip
+  type: "journal"
+  full: "IET Image Processing"
+  abbreviation: "IET Image Process."
+  acronym: "IET IP"
+  variants:
+    - "IET Image Processing Journal"
+  patterns:
+    - '(?i)^iet image processing$'
+- id: awpl
+  type: "journal"
+  full: "IEEE Antennas and Wireless Propagation Letters"
+  abbreviation: "IEEE Antennas Wirel. Propag. Lett."
+  acronym: "IEEE AWPL"
+  variants:
+    - "IEEE Antennas & Wireless Propagation Letters"
+    - "IEEE Antennas and Wireless Propagation Letters (AWPL)"
+  patterns:
+    - '(?i)^ieee antennas (and|&) wireless propagation letters'
+- id: tci
+  type: "journal"
+  full: "IEEE Transactions on Computational Imaging"
+  abbreviation: "IEEE Trans. Comput. Imaging"
+  acronym: "TCI"
+  variants:
+    - "IEEE Transactions on Computational Imaging (TCI)"
+  patterns:
+    - '(?i)^ieee transactions on computational imaging'
+- id: tap
+  type: "journal"
+  full: "IEEE Transactions on Antennas and Propagation"
+  abbreviation: "IEEE Trans. Antennas Propag."
+  acronym: "TAP"
+  variants:
+    - "IEEE Trans. on Antennas and Propagation"
+    - "IEEE Transactions on Antennas & Propagation"
+    - "IEEE Transactions on Antennas and Propagation (TAP)"
+  patterns:
+    - '(?i)^ieee transactions on antennas (and|&) propagation'
+- id: pier
+  type: "journal"
+  full: "Progress in Electromagnetics Research"
+  abbreviation: "Prog. Electromagn. Res."
+  acronym: "PIER"
+  variants:
+    - "Progress in Electromagnetics Research (PIER)"
+  patterns:
+    - '(?i)^progress in electromagnetics research$'
+- id: pier_symp
+  type: "conference"
+  full: "Proceedings of the Progress in Electromagnetics Research Symposium"
+  abbreviation: "Proc. PIER Symp."
+  acronym: "PIERS"
+  variants:
+    - "Progress in Electromagnetics Research Symposium"
+    - "PIERS"
+    - "PIERS Proceedings"
+  patterns:
+    - '(?i)progress in electromagnetics research symposium'
+    - '(?i)^piers$'
+- id: spm
+  type: "journal"
+  full: "IEEE Signal Processing Magazine"
+  abbreviation: "IEEE Signal Process. Mag."
+  acronym: "IEEE SPM"
+  variants:
+    - "IEEE Signal Proc. Magazine"
+    - "IEEE Signal Processing Magazine (SPM)"
+  patterns:
+    - '(?i)^ieee signal processing magazine'
+    - '(?i)^ieee signal process\. mag\.?$'
+- id: apsipa_tsip
+  type: "journal"
+  full: "APSIPA Transactions on Signal and Information Processing"
+  abbreviation: "APSIPA Trans. Signal Inf. Process."
+  acronym: "APSIPA TSIP"
+  variants:
+    - "APSIPA Trans. on Signal and Information Processing"
+    - "APSIPA Transactions on Signal and Information Processing (TSIP)"
+  patterns:
+    - '(?i)^apsipa transactions on signal and information processing'
+    - '(?i)^apsipa trans\. signal (and )?information processing'
+- id: rs
+  type: "journal"
+  full: "Radio Science"
+  abbreviation: "Radio Sci."
+  acronym: "Radio Science"
+  variants:
+    - "Radio Sci."
+    - "Radio Science Journal"
+  patterns:
+    - '(?i)^radio science$'
+- id: tcsvt
+  type: "journal"
+  full: "IEEE Transactions on Circuits and Systems for Video Technology"
+  abbreviation: "IEEE Trans. Circuits Syst. Video Technol."
+  acronym: "TCSVT"
+  variants:
+    - "IEEE Trans. on Circuits and Systems for Video Technology"
+    - "IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)"
+  patterns:
+    - '(?i)^ieee transactions on circuits and systems for video technology'
+- id: tsp
+  type: "journal"
+  full: "IEEE Transactions on Signal Processing"
+  abbreviation: "IEEE Trans. Signal Process."
+  acronym: "TSP"
+  variants:
+    - "IEEE Transactions on Signal Processing (TSP)"
+  patterns:
+    - '(?i)^ieee transactions on signal processing'
+- id: tit
+  type: "journal"
+  full: "IEEE Transactions on Information Theory"
+  abbreviation: "IEEE Trans. Inf. Theory"
+  acronym: "TIT"
+  variants:
+    - "IEEE Transactions on Information Theory (TIT)"
+  patterns:
+    - '(?i)^ieee transactions on information theory'
+- id: sigpro
+  type: "journal"
+  full: "Signal Processing"
+  abbreviation: "Signal Process."
+  acronym: "SP"
+  variants:
+    - "Signal Processing Journal"
+    - "Signal Process."
+    - "Elsevier Signal Processing"
+  patterns:
+    - '(?i)^signal processing$'
+    - '(?i)^signal process\.?$'
+    - '(?i)^elsevier signal processing$'
+- id: dsp
+  type: "journal"
+  full: "Digital Signal Processing"
+  abbreviation: "Digit. Signal Process."
+  acronym: "DSP"
+  variants:
+    - "Digital Signal Processing Journal"
+    - "Digital Signal Process."
+    - "Elsevier Digital Signal Processing"
+  patterns:
+    - '(?i)^digital signal processing$'
+    - '(?i)^digit\. signal process\.?$'
+    - '(?i)^elsevier digital signal processing$'
+- id: igarss
+  type: "conference"
+  full: "Proceedings of the IEEE International Geoscience and Remote Sensing Symposium"
+  abbreviation: "Proc. IEEE IGARSS"
+  acronym: "IGARSS"
+  variants:
+    - "IEEE International Geoscience and Remote Sensing Symposium"
+  patterns:
+    - '(?i)geoscience and remote sensing(?!.*workshop)'
+- id: jstars
+  type: "journal"
+  full: "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing"
+  abbreviation: "IEEE J. Sel. Top. Appl. Earth Obs. Remote Sens."
+  acronym: "IEEE JSTARS"
+  variants:
+    - "IEEE J. Sel. Top. Appl. Earth Observ. Remote Sens."
+    - "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (JSTARS)"
+  patterns:
+    - '(?i)^ieee journal of selected topics in applied earth observations and remote sensing'
+    - '(?i)^ieee j\. sel\. top\. appl\. earth obs\.? remote sens\.?'
+- id: itw
+  type: "conference"
+  full: "IEEE Information Theory Workshop"
+  abbreviation: "IEEE Inf. Theory Workshop"
+  acronym: "ITW"
+  variants:
+    - "Information Theory Workshop"
+  patterns:
+    - '(?i)information theory workshop'
+- id: isit
+  type: "conference"
+  full: "Proceedings of the IEEE International Symposium on Information Theory"
+  abbreviation: "Proc. IEEE ISIT"
+  acronym: "ISIT"
+  variants:
+    - "IEEE International Symposium on Information Theory"
+  patterns:
+    - '(?i)international symposium on information theory(?!.*workshop)'
+- id: spic
+  type: "journal"
+  full: "Signal Processing: Image Communication"
+  abbreviation: "Signal Process. Image Commun."
+  acronym: "SPIC"
+  variants:
+    - "Signal Processing: Image Communication (SPIC)"
+    - "Signal Processing - Image Communication"
+    - "Elsevier Signal Processing: Image Communication"
+  patterns:
+    - '(?i)^signal processing[:\-] image communication$'
+    - '(?i)^signal process\. image commun\.?$'
+    - '(?i)^elsevier signal processing[:\-] image communication$'
+
+# -- Circuits, EDA & Mechatronics
+- id: iscas
+  type: "conference"
+  full: "Proceedings of the IEEE International Symposium on Circuits and Systems"
+  abbreviation: "Proc. IEEE Int. Symp. Circuits Syst."
+  acronym: "ISCAS"
+  variants:
+    - "IEEE International Symposium on Circuits and Systems"
+  patterns:
+    - '(?i)international symposium on circuits and systems(?!.*workshop)'
+- id: dac
+  type: "conference"
+  full: "Proceedings of the Design Automation Conference"
+  abbreviation: "Proc. Des. Autom. Conf."
+  acronym: "DAC"
+  variants:
+    - "Design Automation Conference"
+  patterns:
+    - '(?i)^\d+(st|nd|rd|th) design automation conference(?!.*workshop)'
+- id: iccad
+  type: "conference"
+  full: "Proceedings of the IEEE/ACM International Conference on Computer-Aided Design"
+  abbreviation: "Proc. IEEE/ACM ICCAD"
+  acronym: "ICCAD"
+  variants:
+    - "IEEE/ACM International Conference on Computer-Aided Design"
+  patterns:
+    - '(?i)computer[- ]aided design(?!.*workshop)'
+- id: date
+  type: "conference"
+  full: "Proceedings of the Design, Automation & Test in Europe Conference"
+  abbreviation: "Proc. DATE Conf."
+  acronym: "DATE"
+  variants:
+    - "Design, Automation & Test in Europe Conference"
+  patterns:
+    - '(?i)design, automation & test in europe(?!.*workshop)'
+- id: computer_eng_design
+  type: "journal"
+  full: "Computer Engineering and Design"
+  abbreviation: "Comput. Eng. Des."
+  acronym: "Computer Eng. Des."
+  variants:
+    - "Computer Engineering & Design"
+    - "Computer Engineering and Design Journal"
+  patterns:
+    - '(?i)^computer engineering (and|&) design$'
+- id: rs
+  type: "journal"
+  full: "Radio Science"
+  abbreviation: "Radio Sci."
+  acronym: "Radio Science"
+  variants:
+    - "Radio Sci."
+    - "Radio Science Journal"
+  patterns:
+    - '(?i)^radio science$'
+- id: sensors_j
+  type: "journal"
+  full: "IEEE Sensors Journal"
+  abbreviation: "IEEE Sens. J."
+  acronym: "IEEE Sensors J."
+  variants:
+    - "IEEE Sensors Journal"
+    - "IEEE Sensors J."
+  patterns:
+    - '(?i)^ieee sensors journal'
+- id: tim
+  type: "journal"
+  full: "IEEE Transactions on Instrumentation and Measurement"
+  abbreviation: "IEEE Trans. Instrum. Meas."
+  acronym: "TIM"
+  variants:
+    - "IEEE Transactions on Instrumentation and Measurement (TIM)"
+  patterns:
+    - '(?i)^ieee transactions on instrumentation and measurement'
+- id: iemcon
+  type: "conference"
+  full: "Proceedings of the IEEE Annual Information Technology, Electronics and Mobile Communication Conference"
+  abbreviation: "Proc. IEEE IEMCON"
+  acronym: "IEMCON"
+  variants:
+    - "IEEE Information Technology, Electronics and Mobile Communication Conference"
+  patterns:
+    - '(?i)information technology, electronics and mobile communication(?!.*workshop)'
+- id: icmre
+  type: "conference"
+  full: "Proceedings of the International Conference on Mechatronics and Robotics Engineering"
+  abbreviation: "Proc. Int. Conf. Mechatron. Robot. Eng."
+  acronym: "ICMRE"
+  variants:
+    - "International Conference on Mechatronics and Robotics Engineering"
+  patterns:
+    - '(?i)mechatronics and robotics engineering(?!.*workshop)'
+- id: aim
+  type: "journal"
+  full: "IEEE/ASME Transactions on Mechatronics"
+  abbreviation: "IEEE/ASME Trans. Mechatronics"
+  acronym: "TMECH"
+  variants:
+    - "IEEE/ASME Transactions on Mechatronics (TMECH)"
+  patterns:
+    - '(?i)^ieee/asme transactions on mechatronics'
+- id: am
+  type: "journal"
+  full: "Additive Manufacturing"
+  abbreviation: "Addit. Manuf."
+  acronym: "AM"
+  variants:
+    - "Additive Manufacturing Journal"
+  patterns:
+    - '(?i)^additive manufacturing$'
+
+# -- Control & Robotics Systems
+- id: l4dc
+  type: "conference"
+  full: "Proceedings of the Learning for Dynamics and Control Conference"
+  abbreviation: "Proc. Learn. Dyn. Control Conf."
+  acronym: "L4DC"
+  variants:
+    - "Learning for Dynamics and Control Conference"
+  patterns:
+    - '(?i)learning for dynamics and control(?!.*workshop)'
+- id: cdc
+  type: "conference"
+  full: "Proceedings of the IEEE Conference on Decision and Control"
+  abbreviation: "Proc. IEEE Conf. Decis. Control"
+  acronym: "CDC"
+  variants:
+    - "IEEE Conference on Decision and Control"
+  patterns:
+    - '(?i)conference on decision and control(?!.*workshop)'
+- id: tac
+  type: "journal"
+  full: "IEEE Transactions on Automatic Control"
+  abbreviation: "IEEE Trans. Autom. Control"
+  acronym: "TAC"
+  variants:
+    - "IEEE Transactions on Automatic Control (TAC)"
+  patterns:
+    - '(?i)^ieee transactions on automatic control'
+- id: automatica
+  type: "journal"
+  full: "Automatica"
+  abbreviation: "Automatica"
+  acronym: "Automatica"
+  variants:
+    - "Automatica Journal"
+  patterns:
+    - '(?i)^automatica$'
+
+# -- Energy & Infrastructure
+- id: buildsys
+  type: "conference"
+  full: "Proceedings of the ACM International Conference on Systems for Energy-Efficient Built Environments"
+  abbreviation: "Proc. ACM BuildSys"
+  acronym: "BuildSys"
+  variants:
+    - "ACM BuildSys"
+    - "Systems for Energy-Efficient Built Environments"
+  patterns:
+    - '(?i)energy[- ]efficient built environments(?!.*workshop)'
+- id: tsg
+  type: "journal"
+  full: "IEEE Transactions on Smart Grid"
+  abbreviation: "IEEE Trans. Smart Grid"
+  acronym: "TSG"
+  variants:
+    - "IEEE Transactions on Smart Grid (TSG)"
+  patterns:
+    - '(?i)^ieee transactions on smart grid'
+- id: esd
+  type: "journal"
+  full: "Energy and Sustainable Development"
+  abbreviation: "Energy Sustain. Dev."
+  acronym: "ESD"
+  variants:
+    - "Energy and Sustainable Development Journal"
+  patterns:
+    - '(?i)^energy and sustainable development'
+
+# -- Quantum Engineering
+- id: qce
+  type: "conference"
+  full: "Proceedings of the IEEE International Conference on Quantum Computing and Engineering"
+  abbreviation: "Proc. IEEE Int. Conf. Quantum Comput. Eng."
+  acronym: "QCE"
+  variants:
+    - "IEEE International Conference on Quantum Computing and Engineering"
+    - "Quantum Computing and Engineering Conference"
+  patterns:
+    - '(?i)quantum computing and engineering(?!.*workshop)'
+- id: tqe
+  type: "journal"
+  full: "IEEE Transactions on Quantum Engineering"
+  abbreviation: "IEEE Trans. Quantum Eng."
+  acronym: "TQE"
+  variants:
+    - "IEEE Transactions on Quantum Engineering (TQE)"
+  patterns:
+    - '(?i)^ieee transactions on quantum engineering'

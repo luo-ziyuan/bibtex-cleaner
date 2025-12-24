@@ -1,0 +1,278 @@
+# Terms that should never be lowercased. Organized by topic for easier editing.
+
+# Dimensions & Spatial
+1D
+2D
+3D
+4D
+5D
+6D
+
+# Deep Learning Models & Architectures
+ResNet
+VGG
+UNet
+YOLO
+ViT
+Transformer
+GAN
+VAE
+LSTM
+CNN
+RNN
+GNN
+BiLSTM
+GRU
+DNN
+BERT
+GPT
+CLIP
+
+# Computer Vision & Graphics Methods
+NeRF
+3DGS
+SLAM
+SIFT
+SURF
+ORB
+HOG
+DPM
+RCNN
+FRCNN
+SSD
+RANSAC
+ICP
+FLANN
+
+# Conferences & Journals
+CVPR
+ICCV
+ECCV
+NeurIPS
+ICML
+ICLR
+AAAI
+IJCAI
+SIGGRAPH
+ACM
+IEEE
+ToG
+TPAMI
+IJCV
+PAMI
+TIP
+CVIU
+
+# Machine Learning Algorithms & Optimization
+SVM
+KNN
+SGD
+Adam
+PCA
+ICA
+LDA
+GMM
+HMM
+
+# Natural Language Processing & Metrics
+NLP
+Seq2Seq
+BLEU
+ROUGE
+METEOR
+CIDEr
+SPICE
+
+# Datasets
+ImageNet
+COCO
+VOC
+KITTI
+nuScenes
+
+# Deep Learning Frameworks & Libraries
+PyTorch
+TensorFlow
+Keras
+JAX
+MXNet
+OpenCV
+OpenGL
+CUDA
+cuDNN
+TensorRT
+
+# Image & Video Metrics
+SSIM
+PSNR
+MSE
+MAE
+IoU
+mAP
+FID
+LPIPS
+
+# Color Spaces & Image Formats
+RGB
+RGBA
+HSV
+CMYK
+YUV
+RGBD
+JPEG
+PNG
+GIF
+TIFF
+BMP
+SVG
+PDF
+
+# Biology & Medicine
+DNA
+RNA
+mRNA
+tRNA
+rRNA
+siRNA
+miRNA
+ATP
+GTP
+ADP
+GDP
+NADH
+FADH2
+CoA
+PCR
+qPCR
+RT-PCR
+ELISA
+FACS
+CRISPR
+MRI
+CT
+PET
+fMRI
+EEG
+ECG
+
+# Academic Degrees
+PhD
+PhD.
+MSc
+BSc
+MD
+DPhil
+
+# Organizations & Institutions
+China
+Chinese
+USA
+UK
+EU
+NASA
+CERN
+MIT
+UCLA
+ETH
+
+# AI & Technology Domains
+AI
+ML
+DL
+CV
+IoT
+AR
+VR
+XR
+MR
+
+# Wireless & Communication Technologies
+WiFi
+LTE
+VoIP
+Bluetooth
+NFC
+RFID
+MIMO
+OFDM
+QAM
+BPSK
+QPSK
+
+# Hardware & Computing
+GPU
+CPU
+TPU
+FPGA
+ASIC
+
+# Sensors & Positioning
+GPS
+LiDAR
+
+# Data Formats & Protocols
+JSON
+XML
+HTML
+CSS
+YAML
+CSV
+HDF5
+SQL
+NoSQL
+HTTP
+HTTPS
+FTP
+SSH
+TCP
+UDP
+IP
+
+# Operating Systems & Platforms
+MacOS
+iOS
+Android
+Linux
+Windows
+Ubuntu
+
+# Development Tools
+LaTeX
+BibTeX
+GitHub
+GitLab
+
+# Computer Vision Algorithms
+Gaussian
+Laplacian
+Sobel
+Canny
+KD-tree
+
+# Currency Codes
+USD
+EUR
+GBP
+CNY
+JPY
+
+# Latin Abbreviations & Common Terms
+vs.
+etc.
+i.e.
+e.g.
+et al.
+
+# Linear Algebra & Transforms
+SVD
+FFT
+DFT
+DCT
+IDFT
+IFFT
+IDCT
+DTCWT
+CWT
+
+# Names
+Broyden

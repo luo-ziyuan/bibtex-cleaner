@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BibTeX Cleaner</title>
+  <meta name="description" content="Clean and format BibTeX in your browser (Pyodide). Title/venue formatting, duplicate detection, field filtering, and diff view.">
+  <meta property="og:title" content="BibTeX Cleaner">
+  <meta property="og:description" content="Clean and format BibTeX in your browser (Pyodide).">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://luo-ziyuan.github.io/bibtex-cleaner/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="BibTeX Cleaner">
+  <meta name="twitter:description" content="Clean and format BibTeX in your browser (Pyodide).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <section class="grid three">
+      <article class="panel">
+        <div class="panel__header">
+          <div>
+            <p class="eyebrow">Editable</p>
+            <h2>Input BibTeX</h2>
+          </div>
+          <div class="panel__actions">
+            <button type="button" id="clear-btn" class="btn ghost">Clear</button>
+          </div>
+        </div>
+        <div class="code-wrap">
+          <div class="highlight-layer" id="input-highlight"></div>
+          <textarea id="input" spellcheck="false" wrap="off" placeholder="Paste BibTeX or upload a file"></textarea>
+        </div>
+        <p class="note"><span class="red">Red text</span> marks the part of a title before a colon so you can double-check capitalization. </p>
+      </article>
+
+      <article class="panel">
+        <div class="panel__header">
+          <div>
+            <p class="eyebrow">Editable</p>
+            <h2>Cleaned BibTeX</h2>
+          </div>
+          <div class="panel__actions">
+            <label class="toggle">
+              <input type="checkbox" id="sync-scroll" checked>
+              <span>Sync scroll</span>
+            </label>
+          </div>
+        </div>
+        <div class="code-wrap">
+          <div class="highlight-layer" id="output-highlight"></div>
+          <textarea id="output" spellcheck="false" wrap="off" placeholder="Cleaned output will appear here"></textarea>
+        </div>
+        <div class="bar" id="stats">Not processed yet</div>
+      </article>
+
+      <div class="sidebar-stack">
+        <article class="panel sidebar settings-panel">
+          <div class="panel__header">
+            <div>
+              <h2>Actions</h2>
+            </div>
+          </div>
+          <div class="sidebar__body">
+            <div class="row two">
+              <label class="btn btn-clean file-btn">
+                <input type="file" id="file-input" accept=".bib,.txt">
+                <span>Upload .bib</span>
+              </label>
+              <button type="button" id="sample-btn" class="btn btn-clean">Load sample</button>
+            </div>
+            <div class="row two">
+              <button type="button" id="copy-output" class="btn ghost">Copy Output</button>
+              <button type="button" id="download-output" class="btn ghost">Download .bib</button>
+            </div>
+            <label class="toggle toggle-note">
+              <input type="checkbox" id="trim-blank-lines" checked>
+              <span>Remove extra blank lines when copying/downloading</span>
+            </label>
+            <div class="status inline" id="status" data-tone="info">Loading runtime…</div>
+          </div>
+        </article>
+
+        <article class="panel sidebar">
+          <div class="panel__header">
+            <div>
+              <h2>Settings</h2>
+            </div>
+          </div>
+          <div class="options-grid">
+            <div class="option">
+              <p class="label">Title format</p>
+              <div class="chips">
+                <label><input type="radio" name="title-mode" value="title" checked>Title Case</label>
+                <label><input type="radio" name="title-mode" value="sentence">Sentence Case</label>
+                <label><input type="radio" name="title-mode" value="keep">Keep as-is</label>
+              </div>
+            </div>
+
+            <div class="option">
+              <p class="label">Journal / Conference</p>
+              <div class="chips">
+                <label><input type="radio" name="venue-mode" value="format" checked>Title Case</label>
+                <label><input type="radio" name="venue-mode" value="keep">Keep as-is</label>
+              </div>
+              <label class="toggle toggle-note">
+                <input type="checkbox" id="venue-normalize">
+                <span>Standardize venue names</span>
+              </label>
+              <div class="chips compact" id="venue-standardize-options">
+                <label><input type="radio" name="venue-standardize" value="full" checked disabled>Full</label>
+                <label><input type="radio" name="venue-standardize" value="abbr" disabled>Abbreviation</label>
+                <label><input type="radio" name="venue-standardize" value="acronym" disabled>Acronym</label>
+              </div>
+            </div>
+
+            <div class="option">
+              <p class="label">Duplicates</p>
+              <label class="toggle">
+                <input type="checkbox" id="auto-merge" checked>
+                <span>Auto-merge duplicates</span>
+              </label>
+              <button type="button" id="resolve-duplicates" class="btn ghost" disabled>Choose merge master</button>
+              <p class="hint">Pick a primary entry per duplicate group when auto-merge is enabled.</p>
+            </div>
+
+            <div class="option">
+              <p class="label">Fields to keep (@article / @inproceedings)</p>
+              <div class="panel__actions field-actions">
+                <button type="button" id="select-default" class="btn ghost">Default fields</button>
+                <button type="button" id="select-all" class="btn ghost">Select all</button>
+              </div>
+              <div id="fields" class="field-grid"></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <article class="panel span-two">
+        <div class="panel__header">
+          <div>
+            <p class="eyebrow">Logs</p>
+            <h2>Processing report</h2>
+          </div>
+          <div class="panel__actions">
+            <label class="toggle">
+              <input type="checkbox" id="show-diff">
+              <span>Show diff</span>
+            </label>
+            <button type="button" id="copy-log" class="btn ghost">Copy</button>
+            <button type="button" id="download-log" class="btn ghost">Download</button>
+          </div>
+        </div>
+        <pre id="log" class="log" aria-live="polite"></pre>
+        <div id="diff-panel" class="diff-panel hidden">
+          <div class="bar">Diff (input → cleaned)</div>
+          <pre id="diff" class="diff-view" aria-live="polite"></pre>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      Found this useful? Star it on
+      <a href="https://github.com/luo-ziyuan/bibtex-cleaner" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </footer>
+
+  <div id="merge-modal" class="modal hidden" aria-hidden="true">
+    <div class="modal__backdrop"></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="merge-modal-title">
+      <div class="modal__header">
+        <div>
+          <p class="eyebrow">Duplicates</p>
+          <h3 id="merge-modal-title">Choose master entries</h3>
+        </div>
+        <button type="button" class="icon-btn" id="merge-modal-close" aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="modal__body">
+        <div id="merge-groups" class="merge-groups"></div>
+      </div>
+      <div class="modal__footer">
+        <button type="button" class="btn ghost" id="merge-cancel">Cancel</button>
+        <button type="button" class="btn" id="merge-apply">Apply merges</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
