@@ -2,9 +2,7 @@
 
 **Try it online (GitHub Pages):** https://luo-ziyuan.github.io/bibtex-cleaner/
 
-**Repository:** https://github.com/luo-ziyuan/bibtex-cleaner
-
-![BibTeX Cleaner web UI preview](assets/web-preview.png)
+![BibTeX Cleaner web UI preview](docs/assets/web-preview.png)
 
 This folder contains a static web UI for cleaning and formatting BibTeX. The app runs the Python cleaning logic in the browser via Pyodide and shows the processed output side-by-side with the original input.
 

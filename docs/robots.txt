@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://luo-ziyuan.github.io/bibtex-cleaner/sitemap.xml
