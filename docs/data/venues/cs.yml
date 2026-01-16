@@ -1345,12 +1345,13 @@
   type: "conference"
   full: "Proceedings of the IEEE Symposium on Security and Privacy"
   abbreviation: "Proc. IEEE Symp. Secur. Privacy"
-  acronym: "IEEE S&P"
+  acronym: 'IEEE S\&P'
   variants:
     - "IEEE Symposium on Security and Privacy"
     - "Oakland Conference"
-    - "Proc. IEEE S&P"
-    - "IEEE IEEE S&P"
+    - 'S\&P'
+    - 'Proc. IEEE S\&P'
+    - 'IEEE IEEE S\&P'
   patterns:
     - '(?i)ieee symposium on security and privacy(?!.*workshop)'
     - '(?i)^\d{4} ieee symposium on security and privacy(?!.*workshop)'
@@ -1491,13 +1492,13 @@
 - id: sp_w
   type: "conference"
   full: "IEEE Symposium on Security and Privacy Workshops"
-  abbreviation: "IEEE S&P Workshops"
+  abbreviation: 'IEEE S\&P Workshops'
   acronym: "S&PW"
   variants:
     - "S&P Workshop"
     - "S&P Workshops"
-    - "IEEE S&P Workshop"
-    - "IEEE S&P Workshops"
+    - 'IEEE S\&P Workshop'
+    - 'IEEE S\&P Workshops'
     - "Proc. S&PW"
     - "IEEE S&PW"
   patterns:
