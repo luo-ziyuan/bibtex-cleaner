@@ -263,8 +263,14 @@ function wireEvents() {
     setStatus('Downloaded log.');
   });
 
-  ui.buttons.selectDefault.addEventListener('click', () => setFields(new Set(state.defaultFields)));
-  ui.buttons.selectAll.addEventListener('click', () => setFields(new Set(state.allFields)));
+  ui.buttons.selectDefault.addEventListener('click', () => {
+    setFields(new Set(state.defaultFields));
+    scheduleProcessing();
+  });
+  ui.buttons.selectAll.addEventListener('click', () => {
+    setFields(new Set(state.allFields));
+    scheduleProcessing();
+  });
 
   document.querySelectorAll('input[name="title-mode"]').forEach((el) => {
     el.addEventListener('change', () => scheduleProcessing());
