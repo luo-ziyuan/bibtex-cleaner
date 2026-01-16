@@ -209,6 +209,7 @@
   acronym: "AGU"
   variants:
     - "AGU Fall Meeting"
+    - "Proc. AGU"
   patterns:
     - '(?i)american geophysical union(?!.*workshop)'
 - id: egu
@@ -218,6 +219,7 @@
   acronym: "EGU"
   variants:
     - "European Geosciences Union General Assembly"
+    - "Proc. EGU"
   patterns:
     - '(?i)european geosciences union(?!.*workshop)'
 - id: scireports

@@ -16,6 +16,8 @@
   variants:
     - "IEEE International Conference on Acoustics, Speech and Signal Processing"
     - "IEEE Int. Conf. on Acoustics, Speech and Signal Processing"
+    - "Proc. ICASSP"
+    - "IEEE ICASSP"
   patterns:
     - '(?i)international conference on acoustics, speech and signal processing(?!.*workshop)'
     - '(?i)^\d{4} ieee international conference on acoustics, speech and signal processing(?!.*workshop)'
@@ -27,6 +29,7 @@
   variants:
     - "Interspeech"
     - "Annual Conference of the International Speech Communication Association"
+    - "Proc. INTERSPEECH"
   patterns:
     - '(?i)^interspeech \d{4}(?!.*workshop)'
     - '(?i)annual conference of the international speech communication association(?!.*workshop)'
@@ -38,6 +41,7 @@
   variants:
     - "Spoken Language Technology Workshop"
     - "IEEE SLT"
+    - "Proc. SLT"
   patterns:
     - '(?i)ieee spoken language technology workshop'
     - '(?i)spoken language technology workshop'
@@ -48,6 +52,8 @@
   acronym: "ASRU"
   variants:
     - "Automatic Speech Recognition and Understanding Workshop"
+    - "Proc. ASRU"
+    - "IEEE ASRU"
   patterns:
     - '(?i)ieee automatic speech recognition and understanding workshop'
 - id: mmsp
@@ -57,6 +63,8 @@
   acronym: "MMSP"
   variants:
     - "International Workshop on Multimedia Signal Processing"
+    - "Proc. MMSP"
+    - "IEEE MMSP"
   patterns:
     - '(?i)multimedia signal processing(.*workshop)?'
 - id: icme
@@ -66,6 +74,8 @@
   acronym: "ICME"
   variants:
     - "IEEE International Conference on Multimedia and Expo"
+    - "Proc. ICME"
+    - "IEEE ICME"
   patterns:
     - '(?i)ieee international conference on multimedia and expo(?!.*workshop)'
 - id: icip
@@ -75,6 +85,8 @@
   acronym: "ICIP"
   variants:
     - "IEEE International Conference on Image Processing"
+    - "Proc. ICIP"
+    - "IEEE ICIP"
   patterns:
     - '(?i)ieee international conference on image processing(?!.*workshop)'
     - '(?i)^proceedings\s*\d{4}\s+(?:ieee\s+)?international conference on image processing(?!.*workshop)'
@@ -136,6 +148,7 @@
     - "Progress in Electromagnetics Research Symposium"
     - "PIERS"
     - "PIERS Proceedings"
+    - "Proc. PIERS"
   patterns:
     - '(?i)progress in electromagnetics research symposium'
     - '(?i)^piers$'
@@ -232,6 +245,8 @@
   acronym: "IGARSS"
   variants:
     - "IEEE International Geoscience and Remote Sensing Symposium"
+    - "Proc. IGARSS"
+    - "IEEE IGARSS"
   patterns:
     - '(?i)geoscience and remote sensing(?!.*workshop)'
 - id: jstars
@@ -252,6 +267,8 @@
   acronym: "ITW"
   variants:
     - "Information Theory Workshop"
+    - "Proc. ITW"
+    - "IEEE ITW"
   patterns:
     - '(?i)information theory workshop'
 - id: isit
@@ -261,6 +278,8 @@
   acronym: "ISIT"
   variants:
     - "IEEE International Symposium on Information Theory"
+    - "Proc. ISIT"
+    - "IEEE ISIT"
   patterns:
     - '(?i)international symposium on information theory(?!.*workshop)'
 - id: spic
@@ -285,6 +304,8 @@
   acronym: "ISCAS"
   variants:
     - "IEEE International Symposium on Circuits and Systems"
+    - "Proc. ISCAS"
+    - "IEEE ISCAS"
   patterns:
     - '(?i)international symposium on circuits and systems(?!.*workshop)'
 - id: dac
@@ -294,6 +315,7 @@
   acronym: "DAC"
   variants:
     - "Design Automation Conference"
+    - "Proc. DAC"
   patterns:
     - '(?i)^\d+(st|nd|rd|th) design automation conference(?!.*workshop)'
 - id: iccad
@@ -303,6 +325,10 @@
   acronym: "ICCAD"
   variants:
     - "IEEE/ACM International Conference on Computer-Aided Design"
+    - "Proc. ICCAD"
+    - "IEEE ICCAD"
+    - "ACM ICCAD"
+    - "IEEE/ACM ICCAD"
   patterns:
     - '(?i)computer[- ]aided design(?!.*workshop)'
 - id: date
@@ -312,6 +338,7 @@
   acronym: "DATE"
   variants:
     - "Design, Automation & Test in Europe Conference"
+    - "Proc. DATE"
   patterns:
     - '(?i)design, automation & test in europe(?!.*workshop)'
 - id: computer_eng_design
@@ -360,6 +387,8 @@
   acronym: "IEMCON"
   variants:
     - "IEEE Information Technology, Electronics and Mobile Communication Conference"
+    - "Proc. IEMCON"
+    - "IEEE IEMCON"
   patterns:
     - '(?i)information technology, electronics and mobile communication(?!.*workshop)'
 - id: icmre
@@ -369,6 +398,7 @@
   acronym: "ICMRE"
   variants:
     - "International Conference on Mechatronics and Robotics Engineering"
+    - "Proc. ICMRE"
   patterns:
     - '(?i)mechatronics and robotics engineering(?!.*workshop)'
 - id: aim
@@ -398,6 +428,7 @@
   acronym: "L4DC"
   variants:
     - "Learning for Dynamics and Control Conference"
+    - "Proc. L4DC"
   patterns:
     - '(?i)learning for dynamics and control(?!.*workshop)'
 - id: cdc
@@ -407,6 +438,8 @@
   acronym: "CDC"
   variants:
     - "IEEE Conference on Decision and Control"
+    - "Proc. CDC"
+    - "IEEE CDC"
   patterns:
     - '(?i)conference on decision and control(?!.*workshop)'
 - id: tac
@@ -437,6 +470,7 @@
   variants:
     - "ACM BuildSys"
     - "Systems for Energy-Efficient Built Environments"
+    - "Proc. BuildSys"
   patterns:
     - '(?i)energy[- ]efficient built environments(?!.*workshop)'
 - id: tsg
@@ -467,6 +501,8 @@
   variants:
     - "IEEE International Conference on Quantum Computing and Engineering"
     - "Quantum Computing and Engineering Conference"
+    - "Proc. QCE"
+    - "IEEE QCE"
   patterns:
     - '(?i)quantum computing and engineering(?!.*workshop)'
 - id: tqe

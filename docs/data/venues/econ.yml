@@ -15,6 +15,7 @@
   acronym: "AEA"
   variants:
     - "American Economic Association Annual Meeting"
+    - "Proc. AEA"
   patterns:
     - '(?i)american economic association(?!.*workshop)'
 - id: nber
@@ -24,6 +25,7 @@
   acronym: "NBER"
   variants:
     - "National Bureau of Economic Research Conference"
+    - "Proc. NBER"
   patterns:
     - '(?i)nber conference(?!.*workshop)'
 - id: jef
@@ -53,6 +55,7 @@
   acronym: "WEIS"
   variants:
     - "Workshop on the Economics of Information Security"
+    - "Proc. WEIS"
   patterns:
     - '(?i)economics of information security(?!.*workshop)'
 - id: icail
@@ -62,6 +65,7 @@
   acronym: "ICAIL"
   variants:
     - "International Conference on Artificial Intelligence and Law"
+    - "Proc. ICAIL"
   patterns:
     - '(?i)artificial intelligence and law(?!.*workshop)'
 - id: jilt
@@ -125,6 +129,7 @@
   acronym: "IS4SI"
   variants:
     - "International Society for the Study of Information Summit"
+    - "Proc. IS4SI"
   patterns:
     - '(?i)study of information summit(?!.*workshop)'
 - id: nature_humanities

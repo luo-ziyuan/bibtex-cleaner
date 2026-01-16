@@ -20,6 +20,9 @@
     - "IEEE Conf. on Computer Vision and Pattern Recognition"
     - "Proceedings of the Computer Vision and Pattern Recognition Conference"
     - "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"
+    - "Proc. CVPR"
+    - "IEEE CVPR"
+    - "IEEE/CVF CVPR"
   patterns:
     - '(?i)^proceedings of the \d{4} ieee/?cvf conference on computer vision and pattern recognition(?!.*workshop)'
     - '(?i)ieee/?cvf conference on computer vision and pattern recognition(?!.*workshop)'
@@ -37,6 +40,9 @@
     - "IEEE/CVF Int. Conf. on Computer Vision"
     - "IEEE Int. Conf. on Computer Vision"
     - "Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)"
+    - "Proc. ICCV"
+    - "IEEE ICCV"
+    - "IEEE/CVF ICCV"
   patterns:
     - '(?i)^proceedings of the \d{4} ieee/?cvf international conference on computer vision(?!.*workshop)'
     - '(?i)ieee/?cvf international conference on computer vision(?!.*workshop)'
@@ -50,6 +56,7 @@
     - "European Conference on Computer Vision"
     - "Eur. Conf. on Computer Vision"
     - "Proceedings of the European Conference on Computer Vision (ECCV)"
+    - "Proc. ECCV"
   patterns:
     - '(?i)proceedings of the \d+(st|nd|rd|th) european conference on computer vision(?!.*workshop)'
     - '(?i)european conference on computer vision(?!.*workshop)'
@@ -63,6 +70,9 @@
     - "IEEE/CVF Winter Conference on Applications of Computer Vision"
     - "IEEE Winter Conference on Applications of Computer Vision"
     - "Winter Conf. on Applications of Computer Vision"
+    - "Proc. WACV"
+    - "IEEE WACV"
+    - "IEEE/CVF WACV"
   patterns:
     - '(?i)ieee/?cvf winter conference on applications of computer vision(?!.*workshop)'
     - '(?i)^\d{4} ieee/?cvf winter conference on applications of computer vision(?!.*workshop)'
@@ -74,6 +84,7 @@
   variants:
     - "British Machine Vision Conference"
     - "Br. Mach. Vis. Conf."
+    - "Proc. BMVC"
   patterns:
     - '(?i)british machine vision conference(?!.*workshop)'
     - '(?i)^\d+(st|nd|rd|th) british machine vision conference(?!.*workshop)'
@@ -94,6 +105,7 @@
   variants:
     - "International Conference on 3D Vision"
     - "IEEE International Conference on 3D Vision"
+    - "Proc. 3DV"
   patterns:
     - '(?i)international conference on 3d vision(?!.*workshop)'
 - id: accv
@@ -103,6 +115,7 @@
   acronym: "ACCV"
   variants:
     - "Asian Conference on Computer Vision"
+    - "Proc. ACCV"
   patterns:
     - '(?i)asian conference on computer vision(?!.*workshop)'
 - id: vis
@@ -113,6 +126,7 @@
   variants:
     - "IEEE Visualization Conference"
     - "IEEE VIS"
+    - "Proc. VIS"
   patterns:
     - '(?i)ieee visualization conference(?!.*workshop)'
 - id: pacificgraphics
@@ -122,6 +136,7 @@
   acronym: "Pacific Graphics"
   variants:
     - "Pacific Graphics Conference"
+    - "Proc. Pacific Graphics"
   patterns:
     - '(?i)pacific graphics(?!.*workshop)'
 - id: ivapp
@@ -131,6 +146,7 @@
   acronym: "IVAPP"
   variants:
     - "International Conference on Information Visualization Theory and Applications"
+    - "Proc. IVAPP"
   patterns:
     - '(?i)information visualization theory and applications(?!.*workshop)'
 - id: siggraph
@@ -141,6 +157,7 @@
   variants:
     - "ACM SIGGRAPH"
     - "SIGGRAPH Conference"
+    - "Proc. SIGGRAPH"
   patterns:
     - '(?i)^acm siggraph \d{4}(?!.*workshop)'
     - '(?i)acm siggraph conference(?!.*workshop)'
@@ -152,6 +169,7 @@
   variants:
     - "ACM SIGGRAPH Asia"
     - "SIGGRAPH Asia Conference"
+    - "Proc. SIGGRAPH Asia"
   patterns:
     - '(?i)acm siggraph asia(?!.*workshop)'
 - id: eurographics
@@ -162,6 +180,7 @@
   variants:
     - "Eurographics Conference"
     - "European Association for Computer Graphics Conference"
+    - "Proc. Eurographics"
   patterns:
     - '(?i)^eurographics \d{4}(?!.*workshop)'
     - '(?i)eurographics conference(?!.*workshop)'
@@ -173,6 +192,8 @@
   variants:
     - "ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games"
     - "Symposium on Interactive 3D Graphics and Games"
+    - "Proc. I3D"
+    - "ACM I3D"
   patterns:
     - '(?i)symposium on interactive 3d graphics and games(?!.*workshop)'
 - id: tvcg
@@ -318,6 +339,7 @@
     - "Proceedings of the ACM Multimedia Conference (ACM MM)"
     - "ACM Multimedia"
     - "ACM Multimedia Conference"
+    - "Proc. ACM MM"
   patterns:
     - '(?i)^proceedings\s+of\s+(the\s+)?\d+(?:st|nd|rd|th)?\s*acm\s+international\s+conference\s+on\s+multimedia(?!.*workshop)'
     - '(?i)^proceedings\s+of\s+the\s+acm\s+international\s+conference\s+on\s+multimedia(?!.*workshop)'
@@ -331,6 +353,7 @@
   variants:
     - "International Conference on Multimedia Retrieval"
     - "ACM International Conference on Multimedia Retrieval"
+    - "Proc. ICMR"
   patterns:
     - '(?i)international conference on multimedia retrieval(?!.*workshop)'
     - '(?i)^proceedings of the international conference on multimedia retrieval'
@@ -360,6 +383,8 @@
   variants:
     - "SIGGRAPH Workshop"
     - "SIGGRAPH Workshops"
+    - "Proc. SIGGRAPHW"
+    - "ACM SIGGRAPHW"
   patterns:
     - '(?i)siggraph.*workshop'
     - '(?i)siggraphw'
@@ -373,6 +398,7 @@
     - "ACM MM Workshops"
     - "ACM Multimedia Workshop"
     - "ACM Multimedia Workshops"
+    - "Proc. ACM MMW"
   patterns:
     - '(?i)acm\s+mm.*workshop'
     - '(?i)acm\s+multimedia.*workshop'
@@ -385,6 +411,9 @@
   variants:
     - "CVPR Workshop"
     - "CVPR Workshops"
+    - "Proc. CVPRW"
+    - "IEEE CVPRW"
+    - "IEEE/CVF CVPRW"
   patterns:
     - '(?i)cvpr.*workshop'
     - '(?i)cvprw'
@@ -396,6 +425,9 @@
   variants:
     - "ICCV Workshop"
     - "ICCV Workshops"
+    - "Proc. ICCVW"
+    - "IEEE ICCVW"
+    - "IEEE/CVF ICCVW"
   patterns:
     - '(?i)iccv.*workshop'
     - '(?i)iccvw'
@@ -407,6 +439,7 @@
   variants:
     - "ECCV Workshop"
     - "ECCV Workshops"
+    - "Proc. ECCVW"
   patterns:
     - '(?i)eccv.*workshop'
     - '(?i)eccvw'
@@ -422,6 +455,7 @@
     - "Neural Information Processing Systems"
     - "Neural Inf. Process. Syst."
     - "NIPS"
+    - "Proc. NeurIPS"
   patterns:
     - '(?i)neural information processing systems(?!.*workshop)'
     - '(?i)^advances in neural information processing systems \d+(?!.*workshop)'
@@ -434,6 +468,7 @@
   variants:
     - "International Conf. on Learning Representations"
     - "Int. Conf. on Learning Representations"
+    - "Proc. ICLR"
   patterns:
     - '(?i)^proceedings of the \d+(st|nd|rd|th) international conference on learning representations(?!.*workshop)'
     - '(?i)international conference on learning representations(?!.*workshop)'
@@ -446,6 +481,7 @@
     - "Int. Conf. on Machine Learning"
     - "International Conf. on Machine Learning"
     - "Proceedings of the International Conference on Machine Learning (ICML)"
+    - "Proc. ICML"
   patterns:
     - '(?i)^proceedings of the \d+(st|nd|rd|th) international conference on machine learning(?!.*workshop)'
     - '(?i)international conference on machine learning(?!.*workshop)'
@@ -457,6 +493,7 @@
   variants:
     - "AAAI Conference on Artificial Intelligence"
     - "AAAI Conf. on Artificial Intelligence"
+    - "Proc. AAAI"
   patterns:
     - '(?i)aaai conference on artificial intelligence(?!.*workshop)'
     - '(?i)^proceedings of the \d+(st|nd|rd|th) aaai conference on artificial intelligence(?!.*workshop)'
@@ -468,6 +505,7 @@
   variants:
     - "International Joint Conference on Artificial Intelligence"
     - "Int. Joint Conf. on Artificial Intelligence"
+    - "Proc. IJCAI"
   patterns:
     - '(?i)international joint conference on artificial intelligence(?!.*workshop)'
     - '(?i)^proceedings of the \d+(st|nd|rd|th) international joint conference on artificial intelligence(?!.*workshop)'
@@ -533,6 +571,7 @@
   variants:
     - "AAAI Workshop"
     - "AAAI Workshops"
+    - "Proc. AAAIW"
   patterns:
     - '(?i)aaai.*workshop'
     - '(?i)aaaiw'
@@ -544,6 +583,7 @@
   variants:
     - "IJCAI Workshop"
     - "IJCAI Workshops"
+    - "Proc. IJCAIW"
   patterns:
     - '(?i)ijcai.*workshop'
     - '(?i)ijcaiw'
@@ -557,6 +597,7 @@
     - "NeurIPS Workshops"
     - "NIPS Workshop"
     - "NIPS Workshops"
+    - "Proc. NeurIPSW"
   patterns:
     - '(?i)neurips.*workshop'
     - '(?i)nips.*workshop'
@@ -570,6 +611,7 @@
   variants:
     - "ICML Workshop"
     - "ICML Workshops"
+    - "Proc. ICMLW"
   patterns:
     - '(?i)icml.*workshop'
     - '(?i)icmlw'
@@ -581,6 +623,7 @@
   variants:
     - "ICLR Workshop"
     - "ICLR Workshops"
+    - "Proc. ICLRW"
   patterns:
     - '(?i)iclr.*workshop'
     - '(?i)iclrw'
@@ -595,6 +638,7 @@
     - "Annual Meeting of the Association for Computational Linguistics"
     - "Assoc. for Computational Linguistics Annual Meeting"
     - "ACL Conference"
+    - "Proc. ACL"
   patterns:
     - '(?i)^proceedings of the \d+(st|nd|rd|th)? annual meeting of the association for computational linguistics(?!.*(workshop|findings))'
     - '(?i)^annual meeting of the association for computational linguistics(?!.*(workshop|findings))'
@@ -607,6 +651,7 @@
   variants:
     - "Findings of ACL"
     - "ACL Findings"
+    - "Proc. ACL-Findings"
   patterns:
     - '(?i)findings.*acl'
     - '(?i)acl.*findings'
@@ -619,6 +664,7 @@
     - "Conference on Empirical Methods in Natural Language Processing"
     - "Empirical Methods in Natural Language Processing"
     - "EMNLP Conference"
+    - "Proc. EMNLP"
   patterns:
     - '(?i)^proceedings of.*conference on empirical methods in natural language processing(?!.*(workshop|findings))'
     - '(?i)^conference on empirical methods in natural language processing(?!.*(workshop|findings))'
@@ -632,6 +678,7 @@
   variants:
     - "Findings of EMNLP"
     - "EMNLP Findings"
+    - "Proc. EMNLP-Findings"
   patterns:
     - '(?i)findings.*emnlp'
     - '(?i)emnlp.*findings'
@@ -645,6 +692,7 @@
     - "North American Chapter of the Association for Computational Linguistics"
     - "NAACL-HLT"
     - "NAACL Conference"
+    - "Proc. NAACL"
   patterns:
     - '(?i)^proceedings of.*north american chapter of the association for computational linguistics(?!.*(workshop|findings))'
     - '(?i)^conference of the north american chapter of the association for computational linguistics(?!.*(workshop|findings))'
@@ -658,6 +706,7 @@
   variants:
     - "Findings of NAACL"
     - "NAACL Findings"
+    - "Proc. NAACL-Findings"
   patterns:
     - '(?i)findings.*naacl'
     - '(?i)naacl.*findings'
@@ -669,6 +718,7 @@
   variants:
     - "International Conference on Computational Linguistics"
     - "Int. Conf. on Computational Linguistics"
+    - "Proc. COLING"
   patterns:
     - '(?i)international conference on computational linguistics(?!.*workshop)'
     - '(?i)^proceedings of the \d+(st|nd|rd|th) international conference on computational linguistics(?!.*workshop)'
@@ -681,6 +731,7 @@
     - "Conference of the European Chapter of the Association for Computational Linguistics"
     - "European Chapter of the Association for Computational Linguistics"
     - "EACL Conference"
+    - "Proc. EACL"
   patterns:
     - '(?i)^proceedings of.*european chapter of the association for computational linguistics(?!.*(workshop|findings))'
     - '(?i)^conference of the european chapter of the association for computational linguistics(?!.*(workshop|findings))'
@@ -693,6 +744,7 @@
   variants:
     - "Findings of EACL"
     - "EACL Findings"
+    - "Proc. EACL-Findings"
   patterns:
     - '(?i)findings.*eacl'
     - '(?i)eacl.*findings'
@@ -703,6 +755,7 @@
   acronym: "CoNLL"
   variants:
     - "Conference on Computational Natural Language Learning"
+    - "Proc. CoNLL"
   patterns:
     - '(?i)conference on computational natural language learning(?!.*workshop)'
 - id: aacl
@@ -715,6 +768,7 @@
     - "Asia-Pacific Chapter of the Association for Computational Linguistics"
     - "AACL-IJCNLP"
     - "AACL Conference"
+    - "Proc. AACL"
   patterns:
     - '(?i)^proceedings of.*asia[- ]pacific chapter of the association for computational linguistics(?!.*(workshop|findings))'
     - '(?i)^conference of the asia[- ]pacific chapter of the association for computational linguistics(?!.*(workshop|findings))'
@@ -728,6 +782,7 @@
   variants:
     - "Findings of AACL"
     - "AACL Findings"
+    - "Proc. AACL-Findings"
   patterns:
     - '(?i)findings.*aacl'
     - '(?i)aacl.*findings'
@@ -766,6 +821,7 @@
   variants:
     - "ACL Workshop"
     - "ACL Workshops"
+    - "Proc. ACLW"
   patterns:
     - '(?i)acl.*workshop'
     - '(?i)aclw'
@@ -777,6 +833,7 @@
   variants:
     - "EMNLP Workshop"
     - "EMNLP Workshops"
+    - "Proc. EMNLPW"
   patterns:
     - '(?i)emnlp.*workshop'
     - '(?i)emnlpw'
@@ -788,6 +845,7 @@
   variants:
     - "NAACL Workshop"
     - "NAACL Workshops"
+    - "Proc. NAACLW"
   patterns:
     - '(?i)naacl.*workshop'
     - '(?i)naaclw'
@@ -799,6 +857,7 @@
   variants:
     - "COLING Workshop"
     - "COLING Workshops"
+    - "Proc. COLINGW"
   patterns:
     - '(?i)coling.*workshop'
     - '(?i)colingw'
@@ -812,6 +871,8 @@
   variants:
     - "IEEE International Conference on Robotics and Automation"
     - "IEEE/CVF International Conference on Robotics and Automation"
+    - "Proc. ICRA"
+    - "IEEE ICRA"
   patterns:
     - '(?i)international conference on robotics and automation(?!.*workshop)'
     - '(?i)^\d{4} ieee (international )?conference on robotics and automation(?!.*workshop)'
@@ -823,6 +884,9 @@
   variants:
     - "IEEE/RSJ International Conference on Intelligent Robots and Systems"
     - "IEEE/RSJ Int. Conf. on Intelligent Robots and Systems"
+    - "Proc. IROS"
+    - "IEEE IROS"
+    - "IEEE/RSJ IROS"
   patterns:
     - '(?i)international conference on intelligent robots and systems(?!.*workshop)'
     - '(?i)^\d{4} ieee/rsj international conference on intelligent robots and systems(?!.*workshop)'
@@ -834,6 +898,7 @@
   variants:
     - "Robotics: Science and Systems"
     - "Robotics Science and Systems"
+    - "Proc. RSS"
   patterns:
     - '(?i)robotics[:]? science and systems(?!.*workshop)'
 - id: humanoids
@@ -843,6 +908,9 @@
   acronym: "Humanoids"
   variants:
     - "IEEE-RAS International Conference on Humanoid Robots"
+    - "Proc. Humanoids"
+    - "IEEE Humanoids"
+    - "IEEE-RAS Humanoids"
   patterns:
     - '(?i)international conference on humanoid robots(?!.*workshop)'
 - id: corl
@@ -852,6 +920,7 @@
   acronym: "CoRL"
   variants:
     - "Conference on Robot Learning"
+    - "Proc. CoRL"
   patterns:
     - '(?i)conference on robot learning(?!.*workshop)'
 - id: ijrr
@@ -889,6 +958,8 @@
   variants:
     - "ICRA Workshop"
     - "ICRA Workshops"
+    - "Proc. ICRAW"
+    - "IEEE ICRAW"
   patterns:
     - '(?i)icra.*workshop'
     - '(?i)icraw'
@@ -900,6 +971,9 @@
   variants:
     - "IROS Workshop"
     - "IROS Workshops"
+    - "Proc. IROSW"
+    - "IEEE IROSW"
+    - "IEEE/RSJ IROSW"
   patterns:
     - '(?i)iros.*workshop'
     - '(?i)irosw'
@@ -911,6 +985,7 @@
   variants:
     - "RSS Workshop"
     - "RSS Workshops"
+    - "Proc. RSSW"
   patterns:
     - '(?i)rss.*workshop'
     - '(?i)rssw'
@@ -924,6 +999,8 @@
   variants:
     - "ACM SIGMOD International Conference on Management of Data"
     - "ACM SIGMOD Conf. on Management of Data"
+    - "Proc. SIGMOD"
+    - "ACM SIGMOD"
   patterns:
     - '(?i)acm sigmod (international )?conference on management of data(?!.*workshop)'
     - '(?i)^proceedings of the \d{4} acm sigmod international conference on management of data(?!.*workshop)'
@@ -936,6 +1013,7 @@
     - "International Conference on Very Large Data Bases"
     - "Int. Conf. on Very Large Data Bases"
     - "Proceedings of the VLDB Endowment"
+    - "Proc. VLDB"
   patterns:
     - '(?i)international conference on very large data bases(?!.*workshop)'
     - '(?i)proceedings of the vldb endowment(?!.*workshop)'
@@ -947,6 +1025,8 @@
   variants:
     - "IEEE International Conference on Data Engineering"
     - "IEEE Int. Conf. on Data Engineering"
+    - "Proc. ICDE"
+    - "IEEE ICDE"
   patterns:
     - '(?i)ieee international conference on data engineering(?!.*workshop)'
     - '(?i)^\d{4} ieee \d+(st|nd|rd|th) international conference on data engineering(?!.*workshop)'
@@ -957,6 +1037,7 @@
   acronym: "EDBT"
   variants:
     - "International Conference on Extending Database Technology"
+    - "Proc. EDBT"
   patterns:
     - '(?i)international conference on extending database technology(?!.*workshop)'
 - id: pods
@@ -966,6 +1047,8 @@
   acronym: "PODS"
   variants:
     - "ACM Symposium on Principles of Database Systems"
+    - "Proc. PODS"
+    - "ACM PODS"
   patterns:
     - '(?i)symposium on principles of database systems(?!.*workshop)'
 - id: vldbj
@@ -996,6 +1079,8 @@
   acronym: "SIGCOMM"
   variants:
     - "ACM SIGCOMM Conference"
+    - "Proc. SIGCOMM"
+    - "ACM SIGCOMM"
   patterns:
     - '(?i)acm sigcomm(?!.*workshop)'
     - '(?i)^proceedings of the \d{4} acm sigcomm conference(?!.*workshop)'
@@ -1006,6 +1091,7 @@
   acronym: "INFOCOM"
   variants:
     - "IEEE INFOCOM"
+    - "Proc. INFOCOM"
   patterns:
     - '(?i)ieee infocom(?!.*workshop)'
 - id: nsdi
@@ -1015,6 +1101,8 @@
   acronym: "NSDI"
   variants:
     - "USENIX Symposium on Networked Systems Design and Implementation"
+    - "Proc. NSDI"
+    - "USENIX NSDI"
   patterns:
     - '(?i)networked systems design and implementation(?!.*workshop)'
 - id: mobicom
@@ -1024,6 +1112,8 @@
   acronym: "MobiCom"
   variants:
     - "ACM International Conference on Mobile Computing and Networking"
+    - "Proc. MobiCom"
+    - "ACM MobiCom"
   patterns:
     - '(?i)mobile computing and networking(?!.*workshop)'
 - id: mobisys
@@ -1033,6 +1123,8 @@
   acronym: "MobiSys"
   variants:
     - "ACM International Conference on Mobile Systems, Applications, and Services"
+    - "Proc. MobiSys"
+    - "ACM MobiSys"
   patterns:
     - '(?i)mobile systems, applications, and services(?!.*workshop)'
 - id: sensys
@@ -1042,6 +1134,8 @@
   acronym: "SenSys"
   variants:
     - "ACM Conference on Embedded Networked Sensor Systems"
+    - "Proc. SenSys"
+    - "ACM SenSys"
   patterns:
     - '(?i)embedded networked sensor systems(?!.*workshop)'
 - id: imc
@@ -1052,6 +1146,8 @@
   variants:
     - "ACM Internet Measurement Conference"
     - "Internet Measurement Conference"
+    - "Proc. IMC"
+    - "ACM IMC"
   patterns:
     - '(?i)internet measurement conference(?!.*workshop)'
 - id: sosp
@@ -1061,6 +1157,8 @@
   acronym: "SOSP"
   variants:
     - "ACM Symposium on Operating Systems Principles"
+    - "Proc. SOSP"
+    - "ACM SOSP"
   patterns:
     - '(?i)symposium on operating systems principles(?!.*workshop)'
     - '(?i)^proceedings of the \d+(st|nd|rd|th) acm symposium on operating systems principles(?!.*workshop)'
@@ -1072,6 +1170,7 @@
   variants:
     - "USENIX Symposium on Operating Systems Design and Implementation"
     - "USENIX OSDI"
+    - "Proc. OSDI"
   patterns:
     - '(?i)operating systems design and implementation(?!.*workshop)'
     - '(?i)^\d+(st|nd|rd|th) usenix symposium on operating systems design and implementation(?!.*workshop)'
@@ -1082,6 +1181,7 @@
   acronym: "EuroSys"
   variants:
     - "European Conference on Computer Systems"
+    - "Proc. EuroSys"
   patterns:
     - '(?i)european conference on computer systems(?!.*workshop)'
 - id: atc
@@ -1091,6 +1191,8 @@
   acronym: "USENIX ATC"
   variants:
     - "USENIX Annual Technical Conference"
+    - "Proc. USENIX ATC"
+    - "USENIX USENIX ATC"
   patterns:
     - '(?i)usenix annual technical conference(?!.*workshop)'
 - id: fast
@@ -1100,6 +1202,8 @@
   acronym: "FAST"
   variants:
     - "USENIX Conference on File and Storage Technologies"
+    - "Proc. FAST"
+    - "USENIX FAST"
   patterns:
     - '(?i)file and storage technologies(?!.*workshop)'
 - id: ton
@@ -1165,6 +1269,8 @@
   variants:
     - "SIGCOMM Workshop"
     - "SIGCOMM Workshops"
+    - "Proc. SIGCOMMW"
+    - "ACM SIGCOMMW"
   patterns:
     - '(?i)sigcomm.*workshop'
     - '(?i)sigcommw'
@@ -1176,6 +1282,8 @@
   variants:
     - "NSDI Workshop"
     - "NSDI Workshops"
+    - "Proc. NSDIW"
+    - "USENIX NSDIW"
   patterns:
     - '(?i)nsdi.*workshop'
     - '(?i)nsdiw'
@@ -1187,6 +1295,8 @@
   variants:
     - "MobiCom Workshop"
     - "MobiCom Workshops"
+    - "Proc. MobiComW"
+    - "ACM MobiComW"
   patterns:
     - '(?i)mobicom.*workshop'
     - '(?i)mobicomw'
@@ -1198,6 +1308,8 @@
   variants:
     - "OSDI Workshop"
     - "OSDI Workshops"
+    - "Proc. OSDIW"
+    - "USENIX OSDIW"
   patterns:
     - '(?i)osdi.*workshop'
     - '(?i)osdiw'
@@ -1209,6 +1321,8 @@
   variants:
     - "SOSP Workshop"
     - "SOSP Workshops"
+    - "Proc. SOSPW"
+    - "ACM SOSPW"
   patterns:
     - '(?i)sosp.*workshop'
     - '(?i)sospw'
@@ -1220,6 +1334,8 @@
   variants:
     - "IMC Workshop"
     - "IMC Workshops"
+    - "Proc. IMCW"
+    - "ACM IMCW"
   patterns:
     - '(?i)imc.*workshop'
     - '(?i)imcw'
@@ -1233,6 +1349,8 @@
   variants:
     - "IEEE Symposium on Security and Privacy"
     - "Oakland Conference"
+    - "Proc. IEEE S&P"
+    - "IEEE IEEE S&P"
   patterns:
     - '(?i)ieee symposium on security and privacy(?!.*workshop)'
     - '(?i)^\d{4} ieee symposium on security and privacy(?!.*workshop)'
@@ -1243,6 +1361,8 @@
   acronym: "CCS"
   variants:
     - "ACM Conference on Computer and Communications Security"
+    - "Proc. CCS"
+    - "ACM CCS"
   patterns:
     - '(?i)acm conference on computer and communications security(?!.*workshop)'
     - '(?i)^proceedings of the \d+(st|nd|rd|th) acm conference on computer and communications security(?!.*workshop)'
@@ -1253,6 +1373,8 @@
   acronym: "USENIX Security"
   variants:
     - "USENIX Security Symposium"
+    - "Proc. USENIX Security"
+    - "USENIX USENIX Security"
   patterns:
     - '(?i)usenix security symposium(?!.*workshop)'
     - '(?i)^\d+(st|nd|rd|th) usenix security symposium(?!.*workshop)'
@@ -1263,6 +1385,7 @@
   acronym: "NDSS"
   variants:
     - "Network and Distributed System Security Symposium"
+    - "Proc. NDSS"
   patterns:
     - '(?i)network and distributed system security symposium(?!.*workshop)'
 - id: crypto
@@ -1273,6 +1396,7 @@
   variants:
     - "International Cryptology Conference"
     - "Advances in Cryptology - CRYPTO"
+    - "Proc. CRYPTO"
   patterns:
     - '(?i)advances in cryptology[- ]crypto(?!.*workshop)'
     - '(?i)international cryptology conference(?!.*workshop)'
@@ -1284,6 +1408,7 @@
   variants:
     - "International Conference on the Theory and Applications of Cryptographic Techniques"
     - "Advances in Cryptology - EUROCRYPT"
+    - "Proc. EUROCRYPT"
   patterns:
     - '(?i)advances in cryptology[- ]eurocrypt(?!.*workshop)'
 - id: asiacrypt
@@ -1294,6 +1419,7 @@
   variants:
     - "International Conference on the Theory and Application of Cryptology and Information Security"
     - "Advances in Cryptology - ASIACRYPT"
+    - "Proc. ASIACRYPT"
   patterns:
     - '(?i)advances in cryptology[- ]asiacrypt(?!.*workshop)'
 - id: esorics
@@ -1303,6 +1429,7 @@
   acronym: "ESORICS"
   variants:
     - "European Symposium on Research in Computer Security"
+    - "Proc. ESORICS"
   patterns:
     - '(?i)european symposium on research in computer security(?!.*workshop)'
 - id: raid
@@ -1312,6 +1439,7 @@
   acronym: "RAID"
   variants:
     - "International Symposium on Research in Attacks, Intrusions and Defenses"
+    - "Proc. RAID"
   patterns:
     - '(?i)research in attacks, intrusions and defenses(?!.*workshop)'
 - id: pets
@@ -1321,6 +1449,7 @@
   acronym: "PETS"
   variants:
     - "Privacy Enhancing Technologies Symposium"
+    - "Proc. PETS"
   patterns:
     - '(?i)privacy enhancing technologies(?!.*workshop)'
 - id: tdsc
@@ -1369,6 +1498,8 @@
     - "S&P Workshops"
     - "IEEE S&P Workshop"
     - "IEEE S&P Workshops"
+    - "Proc. S&PW"
+    - "IEEE S&PW"
   patterns:
     - '(?i)s&p.*workshop'
     - '(?i)s&pw'
@@ -1381,6 +1512,8 @@
   variants:
     - "CCS Workshop"
     - "CCS Workshops"
+    - "Proc. CCSW"
+    - "ACM CCSW"
   patterns:
     - '(?i)ccs.*workshop'
     - '(?i)ccsw'
@@ -1392,6 +1525,7 @@
   variants:
     - "USENIX Security Workshop"
     - "USENIX Security Workshops"
+    - "Proc. USENIX SecW"
   patterns:
     - '(?i)usenix.*security.*workshop'
     - '(?i)usenix.*secw'
@@ -1403,6 +1537,7 @@
   variants:
     - "NDSS Workshop"
     - "NDSS Workshops"
+    - "Proc. NDSSW"
   patterns:
     - '(?i)ndss.*workshop'
     - '(?i)ndssw'
@@ -1415,6 +1550,8 @@
   acronym: "HPCA"
   variants:
     - "IEEE International Symposium on High-Performance Computer Architecture"
+    - "Proc. HPCA"
+    - "IEEE HPCA"
   patterns:
     - '(?i)high[- ]performance computer architecture(?!.*workshop)'
     - '(?i)^\d{4} ieee international symposium on high[- ]performance computer architecture(?!.*workshop)'
@@ -1425,6 +1562,10 @@
   acronym: "ISCA"
   variants:
     - "ACM/IEEE International Symposium on Computer Architecture"
+    - "Proc. ISCA"
+    - "IEEE ISCA"
+    - "ACM ISCA"
+    - "ACM/IEEE ISCA"
   patterns:
     - '(?i)international symposium on computer architecture(?!.*workshop)'
     - '(?i)^proceedings of the \d+(st|nd|rd|th) (annual )?(acm/)?ieee international symposium on computer architecture(?!.*workshop)'
@@ -1435,6 +1576,10 @@
   acronym: "MICRO"
   variants:
     - "IEEE/ACM International Symposium on Microarchitecture"
+    - "Proc. MICRO"
+    - "IEEE MICRO"
+    - "ACM MICRO"
+    - "IEEE/ACM MICRO"
   patterns:
     - '(?i)international symposium on microarchitecture(?!.*workshop)'
     - '(?i)^\d+(st|nd|rd|th) (annual )?ieee/acm international symposium on microarchitecture(?!.*workshop)'
@@ -1445,6 +1590,7 @@
   acronym: "ASPLOS"
   variants:
     - "International Conference on Architectural Support for Programming Languages and Operating Systems"
+    - "Proc. ASPLOS"
   patterns:
     - '(?i)architectural support for programming languages and operating systems(?!.*workshop)'
 - id: sc
@@ -1455,6 +1601,7 @@
   variants:
     - "Supercomputing Conference"
     - "International Conference for High Performance Computing, Networking, Storage and Analysis"
+    - "Proc. SC"
   patterns:
     - '(?i)international conference for high performance computing, networking, storage and analysis(?!.*workshop)'
     - '(?i)^sc\d{2}[:]? proceedings(?!.*workshop)'
@@ -1465,6 +1612,8 @@
   acronym: "PPoPP"
   variants:
     - "ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming"
+    - "Proc. PPoPP"
+    - "ACM PPoPP"
   patterns:
     - '(?i)principles and practice of parallel programming(?!.*workshop)'
 - id: ics
@@ -1474,6 +1623,8 @@
   acronym: "ICS"
   variants:
     - "ACM International Conference on Supercomputing"
+    - "Proc. ICS"
+    - "ACM ICS"
   patterns:
     - '(?i)acm international conference on supercomputing(?!.*workshop)'
 - id: ipdps
@@ -1483,6 +1634,8 @@
   acronym: "IPDPS"
   variants:
     - "IEEE International Parallel and Distributed Processing Symposium"
+    - "Proc. IPDPS"
+    - "IEEE IPDPS"
   patterns:
     - '(?i)international parallel and distributed processing symposium(?!.*workshop)'
 - id: hpca_w
@@ -1493,6 +1646,8 @@
   variants:
     - "HPCA Workshop"
     - "HPCA Workshops"
+    - "Proc. HPCAW"
+    - "IEEE HPCAW"
   patterns:
     - '(?i)hpca.*workshop'
     - '(?i)hpcaw'
@@ -1504,6 +1659,7 @@
   variants:
     - "ISCA Workshop"
     - "ISCA Workshops"
+    - "Proc. ISCAW"
   patterns:
     - '(?i)isca.*workshop'
     - '(?i)iscaw'
@@ -1515,6 +1671,10 @@
   variants:
     - "MICRO Workshop"
     - "MICRO Workshops"
+    - "Proc. MICROW"
+    - "IEEE MICROW"
+    - "ACM MICROW"
+    - "IEEE/ACM MICROW"
   patterns:
     - '(?i)micro.*workshop'
     - '(?i)microw'
@@ -1526,6 +1686,7 @@
   variants:
     - "ASPLOS Workshop"
     - "ASPLOS Workshops"
+    - "Proc. ASPLOSW"
   patterns:
     - '(?i)asplos.*workshop'
     - '(?i)asplosw'
@@ -1572,6 +1733,7 @@
   acronym: "Euro-Par"
   variants:
     - "European Conference on Parallel and Distributed Computing"
+    - "Proc. Euro-Par"
   patterns:
     - '(?i)european conference on parallel and distributed computing(?!.*workshop)'
 - id: middleware
@@ -1581,6 +1743,10 @@
   acronym: "Middleware"
   variants:
     - "ACM/IFIP/USENIX International Middleware Conference"
+    - "Proc. Middleware"
+    - "ACM Middleware"
+    - "USENIX Middleware"
+    - "ACM/IFIP/USENIX Middleware"
   patterns:
     - '(?i)middleware conference(?!.*workshop)'
 - id: icac
@@ -1590,6 +1756,8 @@
   acronym: "ICAC"
   variants:
     - "IEEE International Conference on Autonomic Computing"
+    - "Proc. ICAC"
+    - "IEEE ICAC"
   patterns:
     - '(?i)international conference on autonomic computing(?!.*workshop)'
 
@@ -1601,6 +1769,10 @@
   acronym: "ICSE"
   variants:
     - "IEEE/ACM International Conference on Software Engineering"
+    - "Proc. ICSE"
+    - "IEEE ICSE"
+    - "ACM ICSE"
+    - "IEEE/ACM ICSE"
   patterns:
     - '(?i)international conference on software engineering(?!.*workshop)'
     - '(?i)^proceedings of the \d+(st|nd|rd|th) ieee/acm international conference on software engineering(?!.*workshop)'
@@ -1612,6 +1784,8 @@
   variants:
     - "ACM SIGSOFT Symposium on the Foundations of Software Engineering"
     - "Foundations of Software Engineering"
+    - "Proc. FSE"
+    - "ACM FSE"
   patterns:
     - '(?i)foundations of software engineering(?!.*workshop)'
 - id: ase
@@ -1621,6 +1795,10 @@
   acronym: "ASE"
   variants:
     - "IEEE/ACM International Conference on Automated Software Engineering"
+    - "Proc. ASE"
+    - "IEEE ASE"
+    - "ACM ASE"
+    - "IEEE/ACM ASE"
   patterns:
     - '(?i)automated software engineering(?!.*workshop)'
 - id: pldi
@@ -1630,6 +1808,8 @@
   acronym: "PLDI"
   variants:
     - "ACM SIGPLAN Conference on Programming Language Design and Implementation"
+    - "Proc. PLDI"
+    - "ACM PLDI"
   patterns:
     - '(?i)programming language design and implementation(?!.*workshop)'
 - id: popl
@@ -1639,6 +1819,8 @@
   acronym: "POPL"
   variants:
     - "ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages"
+    - "Proc. POPL"
+    - "ACM POPL"
   patterns:
     - '(?i)principles of programming languages(?!.*workshop)'
 - id: oopsla
@@ -1648,6 +1830,8 @@
   acronym: "OOPSLA"
   variants:
     - "ACM SIGPLAN International Conference on Object-Oriented Programming, Systems, Languages, and Applications"
+    - "Proc. OOPSLA"
+    - "ACM OOPSLA"
   patterns:
     - '(?i)object[- ]oriented programming, systems, languages, and applications(?!.*workshop)'
 - id: icse_w
@@ -1658,6 +1842,7 @@
   variants:
     - "ICSE Workshop"
     - "ICSE Workshops"
+    - "Proc. ICSEW"
   patterns:
     - '(?i)icse.*workshop'
     - '(?i)icsew'
@@ -1671,6 +1856,8 @@
     - "FSE Workshops"
     - "ESEC/FSE Workshop"
     - "ESEC/FSE Workshops"
+    - "Proc. FSEW"
+    - "ACM FSEW"
   patterns:
     - '(?i)fse.*workshop'
     - '(?i)fsew'
@@ -1683,6 +1870,10 @@
   variants:
     - "ASE Workshop"
     - "ASE Workshops"
+    - "Proc. ASEW"
+    - "IEEE ASEW"
+    - "ACM ASEW"
+    - "IEEE/ACM ASEW"
   patterns:
     - '(?i)ase.*workshop'
     - '(?i)asew'
@@ -1694,6 +1885,8 @@
   variants:
     - "PLDI Workshop"
     - "PLDI Workshops"
+    - "Proc. PLDIW"
+    - "ACM PLDIW"
   patterns:
     - '(?i)pldi.*workshop'
     - '(?i)pldiw'
@@ -1705,6 +1898,8 @@
   variants:
     - "OOPSLA Workshop"
     - "OOPSLA Workshops"
+    - "Proc. OOPLAW"
+    - "ACM OOPLAW"
   patterns:
     - '(?i)oopsla.*workshop'
     - '(?i)ooplaw'
@@ -1716,6 +1911,8 @@
   variants:
     - "POPL Workshop"
     - "POPL Workshops"
+    - "Proc. POPLW"
+    - "ACM POPLW"
   patterns:
     - '(?i)popl.*workshop'
     - '(?i)poplw'
@@ -1755,6 +1952,8 @@
   acronym: "CHI"
   variants:
     - "ACM CHI Conference on Human Factors in Computing Systems"
+    - "Proc. CHI"
+    - "ACM CHI"
   patterns:
     - '(?i)chi conference on human factors in computing systems(?!.*workshop)'
     - '(?i)^proceedings of the \d{4} chi conference on human factors in computing systems(?!.*workshop)'
@@ -1765,6 +1964,8 @@
   acronym: "UIST"
   variants:
     - "ACM Symposium on User Interface Software and Technology"
+    - "Proc. UIST"
+    - "ACM UIST"
   patterns:
     - '(?i)user interface software and technology(?!.*workshop)'
 - id: ubicomp
@@ -1774,6 +1975,8 @@
   acronym: "UbiComp"
   variants:
     - "ACM International Joint Conference on Pervasive and Ubiquitous Computing"
+    - "Proc. UbiComp"
+    - "ACM UbiComp"
   patterns:
     - '(?i)pervasive and ubiquitous computing(?!.*workshop)'
 - id: iui
@@ -1783,6 +1986,8 @@
   acronym: "IUI"
   variants:
     - "ACM International Conference on Intelligent User Interfaces"
+    - "Proc. IUI"
+    - "ACM IUI"
   patterns:
     - '(?i)intelligent user interfaces(?!.*workshop)'
 - id: cscw
@@ -1792,6 +1997,8 @@
   acronym: "CSCW"
   variants:
     - "ACM Conference on Computer Supported Cooperative Work"
+    - "Proc. CSCW"
+    - "ACM CSCW"
   patterns:
     - '(?i)computer supported cooperative work(?!.*workshop)'
 - id: mobilehci
@@ -1801,6 +2008,7 @@
   acronym: "MobileHCI"
   variants:
     - "International Conference on Mobile Human-Computer Interaction"
+    - "Proc. MobileHCI"
   patterns:
     - '(?i)mobile human[- ]computer interaction(?!.*workshop)'
 - id: tochi
@@ -1829,6 +2037,8 @@
   variants:
     - "CHI Workshop"
     - "CHI Workshops"
+    - "Proc. CHIW"
+    - "ACM CHIW"
   patterns:
     - '(?i)chi.*workshop'
     - '(?i)chiw'
@@ -1840,6 +2050,8 @@
   variants:
     - "UIST Workshop"
     - "UIST Workshops"
+    - "Proc. UISTW"
+    - "ACM UISTW"
   patterns:
     - '(?i)uist.*workshop'
     - '(?i)uistw'
@@ -1851,6 +2063,8 @@
   variants:
     - "UbiComp Workshop"
     - "UbiComp Workshops"
+    - "Proc. UbiCompW"
+    - "ACM UbiCompW"
   patterns:
     - '(?i)ubicomp.*workshop'
     - '(?i)ubicompw'
@@ -1861,6 +2075,8 @@
   acronym: "SIGCSE"
   variants:
     - "ACM Technical Symposium on Computer Science Education"
+    - "Proc. SIGCSE"
+    - "ACM SIGCSE"
   patterns:
     - '(?i)computer science education(?!.*workshop)'
 - id: laK
@@ -1870,6 +2086,7 @@
   acronym: "LAK"
   variants:
     - "Learning Analytics and Knowledge Conference"
+    - "Proc. LAK"
   patterns:
     - '(?i)learning analytics and knowledge(?!.*workshop)'
 - id: edmedia
@@ -1879,6 +2096,7 @@
   acronym: "EdMedia"
   variants:
     - "World Conference on Educational Media and Technology"
+    - "Proc. EdMedia"
   patterns:
     - '(?i)educational media and technology(?!.*workshop)'
 - id: computers_education
@@ -1945,6 +2163,7 @@
     - "IEEE WIFS"
     - "WIFS"
     - "Information Forensics and Security Workshop"
+    - "Proc. WIFS"
   patterns:
     - '(?i)^\d{4}\s*ieee\s+international\s+workshop\s+on\s+information\s+forensics\s+and\s+security'
     - '(?i)^ieee\s+international\s+workshop\s+on\s+information\s+forensics\s+and\s+security'
@@ -1958,6 +2177,7 @@
   variants:
     - "International Conference on Artificial Intelligence and Security"
     - "Artificial Intelligence and Security Conference"
+    - "Proc. ICAIS"
   patterns:
     - '(?i)^\d{4}\s*international conference on artificial intelligence and security(?!.*workshop)'
     - '(?i)^international conference on artificial intelligence and security(?!.*workshop)'
@@ -1968,6 +2188,7 @@
   acronym: "APA"
   variants:
     - "American Psychological Association Annual Convention"
+    - "Proc. APA"
   patterns:
     - '(?i)american psychological association(?!.*workshop)'
 - id: icwsm
@@ -1977,6 +2198,7 @@
   acronym: "ICWSM"
   variants:
     - "International Conference on Web and Social Media"
+    - "Proc. ICWSM"
   patterns:
     - '(?i)international conference on web and social media(?!.*workshop)'
 - id: webscience
@@ -1986,6 +2208,8 @@
   acronym: "WebSci"
   variants:
     - "ACM Web Science Conference"
+    - "Proc. WebSci"
+    - "ACM WebSci"
   patterns:
     - '(?i)web science conference(?!.*workshop)'
 - id: epjds
@@ -2025,6 +2249,8 @@
   variants:
     - "ACM Conference on Fairness, Accountability, and Transparency"
     - "Conference on Fairness, Accountability, and Transparency"
+    - "Proc. FAccT"
+    - "ACM FAccT"
   patterns:
     - '(?i)fairness, accountability, and transparency(?!.*workshop)'
     - '(?i)facct(?!.*workshop)'
@@ -2036,6 +2262,10 @@
   variants:
     - "AAAI/ACM Conference on Artificial Intelligence, Ethics, and Society"
     - "AIES Conference"
+    - "Proc. AIES"
+    - "ACM AIES"
+    - "AAAI AIES"
+    - "AAAI/ACM AIES"
   patterns:
     - '(?i)artificial intelligence, ethics, and society(?!.*workshop)'
     - '(?i)aies(?!.*workshop)'
@@ -2055,6 +2285,7 @@
   acronym: "FORCE11"
   variants:
     - "FORCE11 Conference on Research Communication and e-Scholarship"
+    - "Proc. FORCE11"
   patterns:
     - '(?i)force11(?!.*workshop)'
 - id: open_science
@@ -2073,6 +2304,7 @@
   acronym: "DH"
   variants:
     - "International Conference on Digital Humanities"
+    - "Proc. DH"
   patterns:
     - '(?i)digital humanities(?!.*workshop)'
 - id: adho
@@ -2112,6 +2344,7 @@
   variants:
     - "International Joint Conference on Neural Networks"
     - "IEEE World Congress on Computational Intelligence - IJCNN"
+    - "Proc. IJCNN"
   patterns:
     - '(?i)international joint conference on neural networks(?!.*workshop)'
     - '(?i)^proceedings of the international joint conference on neural networks(?!.*workshop)'
@@ -2122,6 +2355,7 @@
   acronym: "ICISA"
   variants:
     - "International Conference on Information Science and Applications"
+    - "Proc. ICISA"
   patterns:
     - '(?i)international conference on information science and applications(?!.*workshop)'
     - '(?i)^proceedings of the international conference on information science and applications'

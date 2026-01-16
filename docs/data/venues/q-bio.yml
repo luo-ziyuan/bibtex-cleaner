@@ -15,6 +15,8 @@
   acronym: "ISBI"
   variants:
     - "IEEE International Symposium on Biomedical Imaging"
+    - "Proc. ISBI"
+    - "IEEE ISBI"
   patterns:
     - '(?i)international symposium on biomedical imaging(?!.*workshop)'
 - id: miccai
@@ -24,6 +26,7 @@
   acronym: "MICCAI"
   variants:
     - "International Conference on Medical Image Computing and Computer-Assisted Intervention"
+    - "Proc. MICCAI"
   patterns:
     - '(?i)medical image computing and computer[- ]assisted intervention(?!.*workshop)'
 - id: midl
@@ -33,6 +36,7 @@
   acronym: "MIDL"
   variants:
     - "International Conference on Medical Imaging with Deep Learning"
+    - "Proc. MIDL"
   patterns:
     - '(?i)medical imaging with deep learning(?!.*workshop)'
 - id: ipmi
@@ -42,6 +46,7 @@
   acronym: "IPMI"
   variants:
     - "Information Processing in Medical Imaging"
+    - "Proc. IPMI"
   patterns:
     - '(?i)information processing in medical imaging(?!.*workshop)'
 - id: tmi
@@ -87,6 +92,7 @@
   acronym: "RECOMB"
   variants:
     - "International Conference on Research in Computational Molecular Biology"
+    - "Proc. RECOMB"
   patterns:
     - '(?i)research in computational molecular biology(?!.*workshop)'
 - id: ismb
@@ -96,6 +102,7 @@
   acronym: "ISMB"
   variants:
     - "Intelligent Systems for Molecular Biology Conference"
+    - "Proc. ISMB"
   patterns:
     - '(?i)intelligent systems for molecular biology(?!.*workshop)'
 - id: plos_cb
@@ -143,6 +150,8 @@
   acronym: "EMBC"
   variants:
     - "IEEE Engineering in Medicine and Biology Conference"
+    - "Proc. EMBC"
+    - "IEEE EMBC"
   patterns:
     - '(?i)engineering in medicine and biology(?!.*workshop)'
 - id: medinfo
@@ -152,6 +161,7 @@
   acronym: "MedInfo"
   variants:
     - "International Medical Informatics Association Conference"
+    - "Proc. MedInfo"
   patterns:
     - '(?i)medical informatics association(?!.*workshop)'
 - id: jbhi
@@ -197,6 +207,7 @@
   acronym: "WHS"
   variants:
     - "World Health Summit"
+    - "Proc. WHS"
   patterns:
     - '(?i)world health summit(?!.*workshop)'
 - id: amia
@@ -206,6 +217,7 @@
   acronym: "AMIA"
   variants:
     - "American Medical Informatics Association Annual Symposium"
+    - "Proc. AMIA"
   patterns:
     - '(?i)american medical informatics association(?!.*workshop)'
 - id: jmedethics
@@ -253,6 +265,7 @@
   acronym: "CogSci"
   variants:
     - "Annual Meeting of the Cognitive Science Society"
+    - "Proc. CogSci"
   patterns:
     - '(?i)cognitive science society(?!.*workshop)'
 - id: neurcompsys

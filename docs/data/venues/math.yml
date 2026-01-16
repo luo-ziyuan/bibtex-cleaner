@@ -15,6 +15,8 @@
   acronym: "STOC"
   variants:
     - "ACM Symposium on Theory of Computing"
+    - "Proc. STOC"
+    - "ACM STOC"
   patterns:
     - '(?i)symposium on theory of computing(?!.*workshop)'
     - '(?i)^proceedings of the \d+(st|nd|rd|th) (annual )?acm symposium on theory of computing(?!.*workshop)'
@@ -25,6 +27,8 @@
   acronym: "FOCS"
   variants:
     - "IEEE Annual Symposium on Foundations of Computer Science"
+    - "Proc. FOCS"
+    - "IEEE FOCS"
   patterns:
     - '(?i)foundations of computer science(?!.*workshop)'
 - id: soda
@@ -34,6 +38,10 @@
   acronym: "SODA"
   variants:
     - "ACM-SIAM Symposium on Discrete Algorithms"
+    - "Proc. SODA"
+    - "ACM SODA"
+    - "SIAM SODA"
+    - "ACM-SIAM SODA"
   patterns:
     - '(?i)symposium on discrete algorithms(?!.*workshop)'
 - id: jacm
@@ -61,6 +69,7 @@
   acronym: "CAV"
   variants:
     - "International Conference on Computer Aided Verification"
+    - "Proc. CAV"
   patterns:
     - '(?i)computer aided verification(?!.*workshop)'
 - id: fm
@@ -70,6 +79,7 @@
   acronym: "FM"
   variants:
     - "International Symposium on Formal Methods"
+    - "Proc. FM"
   patterns:
     - '(?i)formal methods(?!.*workshop)'
 - id: spinv
@@ -79,6 +89,7 @@
   acronym: "SPIN"
   variants:
     - "SPIN Symposium on Model Checking of Software"
+    - "Proc. SPIN"
   patterns:
     - '(?i)spin.*model checking(?!.*workshop)'
 - id: sttt

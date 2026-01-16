@@ -16,6 +16,7 @@
   variants:
     - "International Conference on Artificial Intelligence and Statistics"
     - "AISTATS"
+    - "Proc. AISTATS"
   patterns:
     - '(?i)international conference on artificial intelligence and statistics(?!.*workshop)'
     - '(?i)^proceedings of the \d+(st|nd|rd|th) international conference on artificial intelligence and statistics(?!.*workshop)'
@@ -27,6 +28,7 @@
   variants:
     - "Conference on Learning Theory"
     - "Annual Conference on Learning Theory"
+    - "Proc. COLT"
   patterns:
     - '(?i)conference on learning theory(?!.*workshop)'
     - '(?i)annual conference on learning theory(?!.*workshop)'
@@ -38,6 +40,7 @@
   variants:
     - "Conference on Uncertainty in Artificial Intelligence"
     - "Uncertainty in Artificial Intelligence"
+    - "Proc. UAI"
   patterns:
     - '(?i)conference on uncertainty in artificial intelligence(?!.*workshop)'
 - id: jmlr
@@ -82,6 +85,8 @@
     - "ACM SIGKDD Conference on Knowledge Discovery and Data Mining"
     - "ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining"
     - "Knowledge Discovery and Data Mining Conference"
+    - "Proc. KDD"
+    - "ACM KDD"
   patterns:
     - '(?i)acm sigkdd (international )?conference on knowledge discovery and data mining(?!.*workshop)'
     - '(?i)^proceedings of the \d+(st|nd|rd|th) acm sigkdd international conference on knowledge discovery and data mining(?!.*workshop)'
@@ -92,6 +97,8 @@
   acronym: "ICDM"
   variants:
     - "IEEE International Conference on Data Mining"
+    - "Proc. ICDM"
+    - "IEEE ICDM"
   patterns:
     - '(?i)ieee international conference on data mining(?!.*workshop)'
 - id: sdm
@@ -101,6 +108,8 @@
   acronym: "SDM"
   variants:
     - "SIAM International Conference on Data Mining"
+    - "Proc. SDM"
+    - "SIAM SDM"
   patterns:
     - '(?i)siam international conference on data mining(?!.*workshop)'
 - id: sigir
@@ -112,6 +121,8 @@
     - "ACM SIGIR Conference on Research and Development in Information Retrieval"
     - "SIGIR Conference on Research and Development in Information Retrieval"
     - "ACM SIGIR Conf. on Research and Development in Information Retrieval"
+    - "Proc. SIGIR"
+    - "ACM SIGIR"
   patterns:
     - '(?i)acm sigir (conference|conf\.) on research and development in information retrieval(?!.*workshop)'
     - '(?i)^proceedings of the \d+(st|nd|rd|th) acm sigir (conference|international conference) on research and development in information retrieval(?!.*workshop)'
@@ -124,6 +135,8 @@
     - "The Web Conference"
     - "International World Wide Web Conference"
     - "Proceedings of the ACM Web Conference (WWW)"
+    - "Proc. WWW"
+    - "ACM WWW"
   patterns:
     - '(?i)(the )?web conference(?!.*workshop)'
     - '(?i)international world wide web conference(?!.*workshop)'
@@ -136,6 +149,8 @@
   variants:
     - "ACM International Conference on Web Search and Data Mining"
     - "ACM Int. Conf. on Web Search and Data Mining"
+    - "Proc. WSDM"
+    - "ACM WSDM"
   patterns:
     - '(?i)acm (international )?conference on web search and data mining(?!.*workshop)'
 - id: cikm
@@ -145,6 +160,8 @@
   acronym: "CIKM"
   variants:
     - "ACM International Conference on Information and Knowledge Management"
+    - "Proc. CIKM"
+    - "ACM CIKM"
   patterns:
     - '(?i)acm (international )?conference on information and knowledge management(?!.*workshop)'
 - id: recsys
@@ -155,6 +172,8 @@
   variants:
     - "ACM Conference on Recommender Systems"
     - "RecSys Conference"
+    - "Proc. RecSys"
+    - "ACM RecSys"
   patterns:
     - '(?i)acm (conference|conf\.) on recommender systems(?!.*workshop)'
 - id: tkde
@@ -237,6 +256,8 @@
   variants:
     - "SIGIR Workshop"
     - "SIGIR Workshops"
+    - "Proc. SIGIRW"
+    - "ACM SIGIRW"
   patterns:
     - '(?i)sigir.*workshop'
     - '(?i)sigirw'
@@ -248,6 +269,8 @@
   variants:
     - "KDD Workshop"
     - "KDD Workshops"
+    - "Proc. KDDW"
+    - "ACM KDDW"
   patterns:
     - '(?i)kdd.*workshop'
     - '(?i)kddw'
@@ -261,6 +284,7 @@
     - "WWW Workshops"
     - "TheWebConf Workshop"
     - "TheWebConf Workshops"
+    - "Proc. WWWW"
   patterns:
     - '(?i)www.*workshop'
     - '(?i)wwww'
@@ -273,6 +297,8 @@
   variants:
     - "WSDM Workshop"
     - "WSDM Workshops"
+    - "Proc. WSDMW"
+    - "ACM WSDMW"
   patterns:
     - '(?i)wsdm.*workshop'
     - '(?i)wsdmw'
