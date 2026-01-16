@@ -76,6 +76,21 @@
   patterns:
     - '(?i)ieee/?cvf winter conference on applications of computer vision(?!.*workshop)'
     - '(?i)^\d{4} ieee/?cvf winter conference on applications of computer vision(?!.*workshop)'
+- id: fg
+  type: "conference"
+  full: "IEEE International Conference on Automatic Face and Gesture Recognition"
+  abbreviation: "Proc. IEEE Int. Conf. Autom. Face Gesture Recognit."
+  acronym: "FG"
+  variants:
+    - "IEEE International Conference on Automatic Face and Gesture Recognition (FG)"
+    - "Proc. FG"
+    - "IEEE FG"
+    - "International Conference on Automatic Face and Gesture Recognition"
+  patterns:
+    - '(?i)ieee international conference on automatic face and gesture recognition'
+    - '(?i)^\d+(st|nd|rd|th)?\s*ieee international conference on automatic face and gesture recognition'
+    - '(?i)international conference on automatic face and gesture recognition.*\(fg\s*\d*\)'
+    - '(?i)proc\.?\s*fg\s*\d*'
 - id: bmvc
   type: "conference"
   full: "Proceedings of the British Machine Vision Conference"
@@ -941,6 +956,22 @@
     - "IEEE Transactions on Robotics (TRO)"
   patterns:
     - '(?i)^ieee transactions on robotics'
+- id: ral
+  type: "journal"
+  full: "IEEE Robotics and Automation Letters"
+  abbreviation: "IEEE Robot. Autom. Lett."
+  acronym: "RA-L"
+  variants:
+    - "IEEE Robotics and Automation Letters (RA-L)"
+    - "IEEE RA-L"
+    - "RA-L"
+    - "RAL"
+    - "IEEE RAL"
+  patterns:
+    - '(?i)^ieee robotics and automation letters$'
+    - '(?i)^ieee robot\.?\s*autom\.?\s*lett\.?$'
+    - '(?i)^ra-l$'
+    - '(?i)^ieee ra-l$'
 - id: auro
   type: "journal"
   full: "Autonomous Robots"
@@ -1363,6 +1394,7 @@
   variants:
     - "ACM Conference on Computer and Communications Security"
     - "Proc. CCS"
+    - "Proc. ACM CCS"
     - "ACM CCS"
   patterns:
     - '(?i)acm conference on computer and communications security(?!.*workshop)'
@@ -2406,6 +2438,16 @@
   patterns:
     - '(?i)^neurocomputing$'
     - '(?i)^elsevier neurocomputing$'
+- id: frontneurosci
+  type: "journal"
+  full: "Frontiers in Neuroscience"
+  abbreviation: "Front. Neurosci."
+  acronym: "Front. Neurosci."
+  variants:
+    - "Frontiers in Neuroscience"
+  patterns:
+    - '(?i)^frontiers in neuroscience$'
+    - '(?i)^front\.?\s*neurosci\.?$'
 - id: aplsci
   type: "journal"
   full: "Applied Sciences"
